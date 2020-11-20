@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sharabia store</title>
+    <!-- link all Styles of the website  -->
+    <!-- link bootstrap file  -->
+    <link rel="stylesheet" href="../css/bootstrap.css" />
+    <!-- font awesome  style file-->
+    <link rel="stylesheet" href="../css/all.min.css">
+    <!-- swiper style file -->
+    <link rel="stylesheet" href="../css/swiper-bundle.min.css">
+    <!-- link main style  file
+         style.css {contain : override on bootstrap file} 
+         -->
+    <link rel="stylesheet" href="../css/style.css" />
+    <!-- connect js file -->
+    <!-- jquery -->
+    <script src="../js/jquery.js "></script>
+    <!-- bootstrap  -->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- font awesome  JS file-->
+    <script src="../js/all.min.js "></script>
+    <!-- swiper JS file -->
+    <script src="../js/swiper-bundle.min.js "></script>
+    <!-- main java script -->
+    <script src="../js/main.js "></script>
+</head>
+
+<body>
+    <!-- start nav bar -->
+    <nav class="header navbar navbar-expand-lg navbar-dark fixed-top p-0">
+        <!-- logo icon in header -->
+        <a class="navbar-brand px-5" href="#">
+            <i class="fab fa-slack  logo"></i>
+        </a>
+        <!-- btn for collapse  the menu with small width -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+         </button>
+        <div class="collapse navbar-collapse text-center" id="navbarCollapse">
+            <!-- start left/first side of the navbar -->
+            <ul class="navbar-nav mr-auto text-center">
+                <li class="nav-item mb-2 mb-lg-0 active language ">
+                    <i class="fas fa-flag-usa icon language-icon">
+                  </i>
+                    <p class="p-0 m-0 " id="language-text">ع</p>
+                </li>
+                </li>
+                <li class="nav-item mb-2 mb-lg-0 active notification">
+                    <i class="far fa-bell icon"></i>
+                    <li class="nav-item mb-2 mb-lg-0 dropdown profile">
+                        <a class=" dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img src="../img/stick.png" alt=""> </a>
+                        <div class="dropdown-menu dropdown-menu-right dropdown-info mt-4" aria-labelledby="navbarDropdownMenuLink-4">
+                            <a class="dropdown-item" href="#">My account</a>
+                            <a class="dropdown-item" href="#">Log out</a>
+                        </div>
+                    </li>
+                    <li class="nav-item mb-2 mb-lg-0 active seacrh-bar">
+                        <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+                    </li>
+                    <li class="nav-item mb-2 mb-lg-0 active cart ">
+                        <i class="fas fa-shopping-cart icon"></i>
+                    </li>
+            </ul>
+            <!-- end left/first side of the navbar -->
+            <!-- start right/sec. side of the navbar -->
+            <ul class="navbar-nav mr-lg-5 mt-2 mt-lg-0 text-center">
+                <li class="nav-item mb-2 mb-lg-0">
+                    <a class="nav-link links" href="../index.html" ">Home</a>
+               </li>
+               <li class=" nav-item mb-2 mb-lg-0 ">
+                  <a class=" nav-link links " href=" # ">Products</a>
+               </li>
+               <li class=" nav-item mb-2 mb-lg-0 ">
+                  <a class=" nav-link links " href=" # ">Home</a>
+               </li>
+               <li class=" nav-item mb-2 mb-lg-0 ">
+                  <a class=" nav-link " href=" # ">Home</a>
+               </li>
+            </ul>
+            <!-- end right/sec. side of the navbar -->
+         </div>
+      </nav>
+      <!--end nav bar -->
+      <!-- upper part -->
+      <section class=" row " id=" upper-part ">
+         <!--Grid column-->
+         <div class=" col-12 col-lg-3 filtring p-2 mt-2 category text-center ">
+            <button class=" btn btn-secondary w-100 dropdown-toggle d-inline-flex justify-content-center " data-target=" # category-collapse " data-toggle=" collapse " aria-expanded=" false " aria-controls=" category-collapse ">Categories
+            </button>
+            <div id=" category-collapse " class=" collapse ">
+               <ul class=" list-unstyled ">
+                  <li>
+                     Electronics
+                  </li>
+                  <li>
+                     Electronics
+                  </li>
+                  <li>
+                     Electronics
+                  </li>
+                  <li>
+                     Electronics
+                  </li>
+               </ul>
+            </div>
+            <!-- coll one -->
+            <!-- coll two -->
+            <button class=" btn btn-secondary w-100 dropdown-toggle d-inline-flex justify-content-center " data-target=" #price-collapse " data-toggle=" collapse " aria-expanded=" false " aria-controls=" price-collapse ">
+               Price
+               <form>
+            </button>
+            <div id=" price-collapse " class=" collapse ">
+            <div class=" form-group ">
+            <label for=" formControlRange ">{1:Example Range input}</label>
+            <input type=" range " class=" form-control-range " id=" formControlRange ">
+            <div class=" row ">
+            <div class=" col-12 col-lg-10 ">
+            <input class=" black text-left " type=" number " name=" " id=" ">
+            </div>
+            <div class=" col-12 col-lg-10 ">
+            <input class=" black float-right " type=" number " name=" " id=" ">
+            </div>
+            </div>
+            </div>
+            </form>
+            </div>
+            <!-- coll two -->
+            <!-- coll three -->
+            <button class=" btn btn-secondary w-100 dropdown-toggle d-inline-flex justify-content-center " data-target=" #rate-collapse " data-toggle=" collapse " aria-expanded=" false " aria-controls=" rate-collapse ">rate
+            </button>
+            <div id=" rate-collapse " class=" collapse ">
+               <div>
+                  <i class=" fa fa-star " aria-hidden=" true "></i>
+                  <i class=" fa fa-star " aria-hidden=" true "></i>
+                  <i class=" fa fa-star " aria-hidden=" true "></i>
+                  <i class=" fa fa-star " aria-hidden=" true "></i>
+                  <i class=" fa fa-star " aria-hidden=" true "></i> 5 star
+               </div>
+               <div>
+                  <i class=" fa fa-star " aria-hidden=" true "></i>
+                  <i class=" fa fa-star " aria-hidden=" true "></i>
+                  <i class=" fa fa-star " aria-hidden=" true "></i>
+                  <i class=" fa fa-star " aria-hidden=" true "></i>
+                  <i class=" fa fa-star " aria-hidden=" true "></i> 4 star and above
+               </div>
+               <div>
+                  <i class=" fa fa-star " aria-hidden=" true "></i>
+                  <i class=" fa fa-star " aria-hidden=" true "></i>
+                  <i class=" fa fa-star " aria-hidden=" true "></i>
+                  <i class=" fa fa-star " aria-hidden=" true "></i>
+                  <i class=" fa fa-star " aria-hidden=" true "></i> 3 star and above
+               </div>
+               <div>
+                  <i class=" fa fa-star " aria-hidden=" true "></i>
+                  <i class=" fa fa-star " aria-hidden=" true "></i>
+                  <i class=" fa fa-star " aria-hidden=" true "></i>
+                  <i class=" fa fa-star " aria-hidden=" true "></i>
+                  <i class=" fa fa-star " aria-hidden=" true "></i> 2 star and above
+               </div>
+               <div>
+                  <i class=" fa fa-star " aria-hidden=" true "></i>
+                  <i class=" fa fa-star " aria-hidden=" true "></i>
+                  <i class=" fa fa-star " aria-hidden=" true "></i>
+                  <i class=" fa fa-star " aria-hidden=" true "></i>
+                  <i class=" fa fa-star " aria-hidden=" true "></i> 1 star and above
+               </div>
+            </div>
+            <a href=" " class=" btn btn-primary w-90 ">  Apply</a>
+         </div>
+         <div class=" col-12 col-lg-9 ">
+         <div class=" row mb-3 text-center product-items justify-content-center " >
+            <div class=" card col-11 col-sm-5 col-md-3 col-lg-3 col-xl-2 ">
+               <a href=" ./pages/product.html ">
+               <img class=" card-img-top " src=" ../img/stick.png " alt=" ">
+               </a>
+               <div class=" card-body ">
+                  <h5 class=" card-title ">Title</h5>
+                  <p class=" card-text ">grgw rgrgwrr gwrgwr gegw gw rgw rgwrg wrg wrgwr gwrgwrg wrgwrgwrg wrg</p>
+                  <div class=" price cart-data ml-2 p-0 ">
+                     4550$
+                  </div>
+                  <button class=" btn btn-primary card-img-bottom add-to-cart w-100 ">
+                  <a class=" add-to-cart-text " data-target=" #added " data-toggle=" modal ">
+                  <i class=" fa fa-cart-plus " aria-hidden=" true "></i>
+                  Add to cart
+                  </a>
+                  </button>
+               </div>
+            </div>
+            <div class=" card col-11 col-sm-5 col-md-3 col-lg-3 col-xl-2 ">
+               <a href=" ./pages/product.html ">
+               <img class=" card-img-top " src=" ../img/stick.png " alt=" ">
+               </a>
+               <div class=" card-body ">
+                  <h5 class=" card-title ">Title</h5>
+                  <p class=" card-text ">grgw rgrgwrr gwrgwr gegw gw rgw rgwrg wrg wrgwr gwrgwrg wrgwrgwrg wrg</p>
+                  <div class=" price cart-data ml-2 p-0 ">
+                     4550$
+                  </div>
+                  <button class=" btn btn-primary card-img-bottom add-to-cart w-100 ">
+                  <a class=" add-to-cart-text " data-target=" #added " data-toggle=" modal ">
+                  <i class=" fa fa-cart-plus " aria-hidden=" true "></i>
+                  Add to cart
+                  </a>
+                  </button>
+               </div>
+            </div>
+            <div class=" card col-11 col-sm-5 col-md-3 col-lg-3 col-xl-2 ">
+               <a href=" ./pages/product.html ">
+               <img class=" card-img-top " src=" ../img/stick.png " alt=" ">
+               </a>
+               <div class=" card-body ">
+                  <h5 class=" card-title ">Title</h5>
+                  <p class=" card-text ">grgw rgrgwrr gwrgwr gegw gw rgw rgwrg wrg wrgwr gwrgwrg wrgwrgwrg wrg</p>
+                  <div class=" price cart-data ml-2 p-0 ">
+                     4550$
+                  </div>
+                  <button class=" btn btn-primary card-img-bottom add-to-cart w-100 ">
+                  <a class=" add-to-cart-text " data-target=" #added " data-toggle=" modal ">
+                  <i class=" fa fa-cart-plus " aria-hidden=" true "></i>
+                  Add to cart
+                  </a>
+                  </button>
+               </div>
+            </div>
+            <div class=" card col-11 col-sm-5 col-md-3 col-lg-3 col-xl-2 ">
+               <a href=" ./pages/product.html ">
+               <img class=" card-img-top " src=" ../img/stick.png " alt=" ">
+               </a>
+               <div class=" card-body ">
+                  <h5 class=" card-title ">Title</h5>
+                  <p class=" card-text ">grgw rgrgwrr gwrgwr gegw gw rgw rgwrg wrg wrgwr gwrgwrg wrgwrgwrg wrg</p>
+                  <div class=" price cart-data ml-2 p-0 ">
+                     4550$
+                  </div>
+                  <button class=" btn btn-primary card-img-bottom add-to-cart w-100 ">
+                  <a class=" add-to-cart-text " data-target=" #added " data-toggle=" modal ">
+                  <i class=" fa fa-cart-plus " aria-hidden=" true "></i>
+                  Add to cart
+                  </a>
+                  </button>
+               </div>
+            </div>
+            <div class=" card col-11 col-sm-5 col-md-3 col-lg-3 col-xl-2 ">
+               <a href=" ./pages/product.html ">
+               <img class=" card-img-top " src=" ../img/stick.png " alt=" ">
+               </a>
+               <div class=" card-body ">
+                  <h5 class=" card-title ">Title</h5>
+                  <p class=" card-text ">grgw rgrgwrr gwrgwr gegw gw rgw rgwrg wrg wrgwr gwrgwrg wrgwrgwrg wrg</p>
+                  <div class=" price cart-data ml-2 p-0 ">
+                     4550$
+                  </div>
+                  <button class=" btn btn-primary card-img-bottom add-to-cart w-100 ">
+                  <a class=" add-to-cart-text " data-target=" #added " data-toggle=" modal ">
+                  <i class=" fa fa-cart-plus " aria-hidden=" true "></i>
+                  Add to cart
+                  </a>
+                  </button>
+               </div>
+            </div>
+            <div class=" card col-11 col-sm-5 col-md-3 col-lg-3 col-xl-2 ">
+               <a href=" ./pages/product.html ">
+               <img class=" card-img-top " src=" ../img/stick.png " alt=" ">
+               </a>
+               <div class=" card-body ">
+                  <h5 class=" card-title ">Title</h5>
+                  <p class=" card-text ">grgw rgrgwrr gwrgwr gegw gw rgw rgwrg wrg wrgwr gwrgwrg wrgwrgwrg wrg</p>
+                  <div class=" price cart-data ml-2 p-0 ">
+                     4550$
+                  </div>
+                  <button class=" btn btn-primary card-img-bottom add-to-cart w-100 ">
+                  <a class=" add-to-cart-text " data-target=" #added " data-toggle=" modal ">
+                  <i class=" fa fa-cart-plus " aria-hidden=" true "></i>
+                  Add to cart
+                  </a>
+                  </button>
+               </div>
+            </div>
+            <div class=" card col-11 col-sm-5 col-md-3 col-lg-3 col-xl-2 ">
+               <a href=" ./pages/product.html ">
+               <img class=" card-img-top " src=" ../img/stick.png " alt=" ">
+               </a>
+               <div class=" card-body ">
+                  <h5 class=" card-title ">Title</h5>
+                  <p class=" card-text ">grgw rgrgwrr gwrgwr gegw gw rgw rgwrg wrg wrgwr gwrgwrg wrgwrgwrg wrg</p>
+                  <div class=" price cart-data ml-2 p-0 ">
+                     4550$
+                  </div>
+                  <button class=" btn btn-primary card-img-bottom add-to-cart w-100 ">
+                  <a class=" add-to-cart-text " data-target=" #added " data-toggle=" modal ">
+                  <i class=" fa fa-cart-plus " aria-hidden=" true "></i>
+                  Add to cart
+                  </a>
+                  </button>
+               </div>
+            </div>
+            <div class=" card col-11 col-sm-5 col-md-3 col-lg-3 col-xl-2 ">
+               <a href=" ./pages/product.html ">
+               <img class=" card-img-top " src=" ../img/stick.png " alt=" ">
+               </a>
+               <div class=" card-body ">
+                  <h5 class=" card-title ">Title</h5>
+                  <p class=" card-text ">grgw rgrgwrr gwrgwr gegw gw rgw rgwrg wrg wrgwr gwrgwrg wrgwrgwrg wrg</p>
+                  <div class=" price cart-data ml-2 p-0 ">
+                     4550$
+                  </div>
+                  <button class=" btn btn-primary card-img-bottom add-to-cart w-100 ">
+                  <a class=" add-to-cart-text " data-target=" #added " data-toggle=" modal ">
+                  <i class=" fa fa-cart-plus " aria-hidden=" true "></i>
+                  Add to cart
+                  </a>
+                  </button>
+               </div>
+            </div>
+            <div class=" card col-11 col-sm-5 col-md-3 col-lg-3 col-xl-2 ">
+               <a href=" ./pages/product.html ">
+               <img class=" card-img-top " src=" ../img/stick.png " alt=" ">
+               </a>
+               <div class=" card-body ">
+                  <h5 class=" card-title ">Title</h5>
+                  <p class=" card-text ">grgw rgrgwrr gwrgwr gegw gw rgw rgwrg wrg wrgwr gwrgwrg wrgwrgwrg wrg</p>
+                  <div class=" price cart-data ml-2 p-0 ">
+                     4550$
+                  </div>
+                  <button class=" btn btn-primary card-img-bottom add-to-cart w-100 ">
+                  <a class=" add-to-cart-text " data-target=" #added " data-toggle=" modal ">
+                  <i class=" fa fa-cart-plus " aria-hidden=" true "></i>
+                  Add to cart
+                  </a>
+                  </button>
+               </div>
+            </div>
+            <div class=" card col-11 col-sm-5 col-md-3 col-lg-3 col-xl-2 ">
+               <a href=" ./pages/product.html ">
+               <img class=" card-img-top " src=" ../img/stick.png " alt=" ">
+               </a>
+               <div class=" card-body ">
+                  <h5 class=" card-title ">Title</h5>
+                  <p class=" card-text ">grgw rgrgwrr gwrgwr gegw gw rgw rgwrg wrg wrgwr gwrgwrg wrgwrgwrg wrg</p>
+                  <div class=" price cart-data ml-2 p-0 ">
+                     4550$
+                  </div>
+                  <button class=" btn btn-primary card-img-bottom add-to-cart w-100 ">
+                  <a class=" add-to-cart-text " data-target=" #added " data-toggle=" modal ">
+                  <i class=" fa fa-cart-plus " aria-hidden=" true "></i>
+                  Add to cart
+                  </a>
+                  </button>
+               </div>
+            </div>
+         </div>
+      </section>
+      <div class=" product-swiper text-center w-100 justify-content-center d-inline-flex my-5 ">
+         <h4>
+            <i class=" fas fa-chevron-left mx-3 "></i>
+         </h4>
+         <h3 class=" page-number mx-3 ">w</h3>
+         <h4>
+            <i class=" fas fa-chevron-right mx-3 "></i>
+         </h4>
+      </div>
+      <section class=" related ">
+         <h4 class=" breaks ">
+            related
+         </h4>
+         <!-- <div class=" container "> -->
+         <div class=" container-fluid px-md-5 ">
+            <div class=" row mb-3 text-center product-items ">
+               <div class=" card col-11 col-sm-5 col-md-3 col-lg-3 col-xl-2 ">
+                  <a href=" ./pages/product.html ">
+                  <img class=" card-img-top " src=" ../img/stick.png " alt=" ">
+                  </a>
+                  <div class=" card-body ">
+                     <h5 class=" card-title ">Title</h5>
+                     <p class=" card-text ">grgw rgrgwrr gwrgwr gegw gw rgw rgwrg wrg wrgwr gwrgwrg wrgwrgwrg wrg</p>
+                     <div class=" price cart-data ml-2 p-0 ">
+                        4550$
+                     </div>
+                     <button class=" btn btn-primary card-img-bottom add-to-cart w-100 ">
+                     <a class=" add-to-cart-text " data-target=" #added " data-toggle=" modal ">
+                     <i class=" fa fa-cart-plus " aria-hidden=" true "></i>
+                     Add to cart
+                     </a>
+                     </button>
+                  </div>
+               </div>
+               <div class=" card col-11 col-sm-5 col-md-3 col-lg-3 col-xl-2 ">
+                  <a href=" ./pages/product.html ">
+                  <img class=" card-img-top " src=" ../img/stick.png " alt=" ">
+                  </a>
+                  <div class=" card-body ">
+                     <h5 class=" card-title ">Title</h5>
+                     <p class=" card-text ">grgw rgrgwrr gwrgwr gegw gw rgw rgwrg wrg wrgwr gwrgwrg wrgwrgwrg wrg</p>
+                     <div class=" price cart-data ml-2 p-0 ">
+                        4550$
+                     </div>
+                     <button class=" btn btn-primary card-img-bottom add-to-cart w-100 ">
+                     <a class=" add-to-cart-text " data-target=" #added " data-toggle=" modal ">
+                     <i class=" fa fa-cart-plus " aria-hidden=" true "></i>
+                     Add to cart
+                     </a>
+                     </button>
+                  </div>
+               </div>
+               <div class=" card col-11 col-sm-5 col-md-3 col-lg-3 col-xl-2 ">
+                  <a href=" ./pages/product.html ">
+                  <img class=" card-img-top " src=" ../img/stick.png " alt=" ">
+                  </a>
+                  <div class=" card-body ">
+                     <h5 class=" card-title ">Title</h5>
+                     <p class=" card-text ">grgw rgrgwrr gwrgwr gegw gw rgw rgwrg wrg wrgwr gwrgwrg wrgwrgwrg wrg</p>
+                     <div class=" price cart-data ml-2 p-0 ">
+                        4550$
+                     </div>
+                     <button class=" btn btn-primary card-img-bottom add-to-cart w-100 ">
+                     <a class=" add-to-cart-text " data-target=" #added " data-toggle=" modal ">
+                     <i class=" fa fa-cart-plus " aria-hidden=" true "></i>
+                     Add to cart
+                     </a>
+                     </button>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- Footer -->
+      <footer class=" page-footer font-small unique-color-dark mt-5 pt-5 ">
+         <!-- Footer Links -->
+         <div class=" text-center text-md-left mt-5 ">
+            <!-- Grid row -->
+            <div class=" row mt-3 ">
+               <!-- Grid column -->
+               <div class=" col-md-3 col-lg-4 col-xl-3 mx-auto mb-4 text-center ">
+                  <!-- Content -->
+                  <i class=" fab fa-slack footer-logo " aria-hidden=" true "></i>
+                  <h6 class=" text-uppercase font-weight-bold ">Company name</h6>
+                  <hr class=" deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto " style=" width: 60px; ">
+                  <p>Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
+                     consectetur
+                     adipisicing elit.
+                  </p>
+               </div>
+               <!-- Grid column -->
+               <!-- Grid column -->
+               <div class=" col-md-2 col-lg-2 col-xl-2 mx-auto mb-4 ">
+                  <!-- Links -->
+                  <h6 class=" text-uppercase font-weight-bold ">Products</h6>
+                  <hr class=" deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto " style=" width: 60px; ">
+                  <p>
+                     <a href=" #! ">MDBootstrap</a>
+                  </p>
+                  <p>
+                     <a href=" #! ">MDWordPress</a>
+                  </p>
+                  <p>
+                     <a href=" #! ">BrandFlow</a>
+                  </p>
+                  <p>
+                     <a href=" #! ">Bootstrap Angular</a>
+                  </p>
+               </div>
+               <!-- Grid column -->
+               <!-- Grid column -->
+               <div class=" col-md-3 col-lg-2 col-xl-2 mx-auto mb-4 ">
+                  <!-- Links -->
+                  <h6 class=" text-uppercase font-weight-bold ">Useful links</h6>
+                  <hr class=" deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto " style=" width: 60px; ">
+                  <p>
+                     <a href=" #! ">Your Account</a>
+                  </p>
+                  <p>
+                     <a href=" #! ">Become an Affiliate</a>
+                  </p>
+                  <p>
+                     <a href=" #! ">Shipping Rates</a>
+                  </p>
+                  <p>
+                     <a href=" #! ">Help</a>
+                  </p>
+               </div>
+               <!-- Grid column -->
+               <!-- Grid column -->
+               <div class=" col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 ">
+                  <!-- Links -->
+                  <h6 class=" text-uppercase font-weight-bold ">Contact</h6>
+                  <hr class=" deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto " style=" width: 60px; ">
+                  <p>
+                     <i class=" fas fa-home mr-3 "></i> New York, NY 10012, US
+                  </p>
+                  <p>
+                     <i class=" fas fa-envelope mr-3 "></i> info@example.com
+                  </p>
+                  <p>
+                     <i class=" fas fa-phone mr-3 "></i> + 01 234 567 88
+                  </p>
+                  <p>
+                     <i class=" fas fa-print mr-3 "></i> + 01 234 567 89
+                  </p>
+               </div>
+               <!-- Grid column -->
+            </div>
+            <!-- Grid row -->
+         </div>
+         <!-- Footer Links -->
+         <!-- social media  -->
+         <div class=" text-center ">
+            <!-- Facebook -->
+            <a class=" fb-ic ">
+            <i class=" fab fa-facebook "></i>
+            </a>
+            <!-- Twitter -->
+            <a class=" tw-ic ">
+            <i class=" fab fa-twitter "></i>
+            </a>
+            <!-- Whats app -->
+            <a class=" wa-ic ">
+            <i class=" fab fa-whatsapp " aria-hidden=" true "></i>
+            </a>
+            <!--Instagram-->
+            <a class=" ins-ic ">
+            <i class=" fab fa-instagram "></i>
+            </a>
+         </div>
+         <!-- Grid column -->
+         <!-- Copyright -->
+         <div class=" footer-copyright text-center py-3 ">© 2020 Copyright:
+            <a href=" https://mdbootstrap.com/ "> MDBootstrap.com</a>
+         </div>
+         <!-- Copyright -->
+      </footer>
+      <!-- Footer -->
+   </body>
+</html>

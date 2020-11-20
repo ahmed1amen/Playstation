@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sharabia store</title>
+    <!-- link all Styles of the website  -->
+    <link rel="stylesheet" type="text/css" href="../DataTables/datatables.min.css">
+    <!-- link bootstrap file  -->
+    <link rel="stylesheet" href="../css/bootstrap.css" />
+    <!-- font awesome  style file-->
+    <link rel="stylesheet" href="../css/all.min.css">
+    <!-- swiper style file -->
+    <!-- <link rel="stylesheet" href="../https://unpkg.com/swiper/swiper-bundle.css"> -->
+    <link rel="stylesheet" href="../css/swiper-bundle.min.css">
+    <!-- link main style  file
+         style.css {contain : override on bootstrap file} 
+         -->
+    <link rel="stylesheet" href="../css/style.css" />
+</head>
+
+<body>
+    <!-- start nav bar -->
+    <nav class="header navbar navbar-expand-lg navbar-dark fixed-top p-1">
+        <!-- <div class="container"> -->
+        <!-- logo icon in header -->
+        <a class="navbar-brand px-5" href="#"></a>
+        <i class="fab fa-slack  logo"></i>
+        </a>
+        <!-- btn for collapse  the menu with small width -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+         </button>
+        <div class="collapse navbar-collapse text-center" id="navbarCollapse">
+            <!-- start left/first side of the navbar -->
+            <ul class="navbar-nav mr-auto text-center">
+                <li class="nav-item mb-2 mb-lg-0 active language ">
+                    <i class="fas fa-flag-usa icon language-icon">
+                  </i>
+                    <p class="p-0 m-0 " id="language-text">ع</p>
+                </li>
+                <li class="nav-item mb-2 mb-lg-0 active notification">
+                    <i class="far fa-bell icon"></i>
+                </li>
+                <li class="nav-item mb-2 mb-lg-0 dropdown profile">
+                    <a class=" dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <div class="profile-img-block">
+                            <img src="../img/stick.png" id="profile-img" alt="">
+                        </div>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-info mt-4" aria-labelledby="navbarDropdownMenuLink-4">
+                        <a class="dropdown-item" href="./pages/log-in.html">My account</a>
+                        <a class="dropdown-item" href="./pages/my-cart.html">My cart</a>
+                        <a class="dropdown-item" href="#">Log out</a>
+                    </div>
+                </li>
+                <li class="nav-item mb-2 mb-lg-0 active seacrh-bar">
+                    <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+                </li>
+                <li class="nav-item mb-2 mb-lg-0 active cart ">
+                    <i class="fas fa-shopping-cart icon"></i>
+                </li>
+            </ul>
+            <!-- end left/first side of the navbar -->
+            <!-- start right/sec. side of the navbar -->
+            <ul class="navbar-nav mr-lg-5 pr-lg-5 mt-2 mt-lg-0 text-center">
+                <li class="nav-item mb-2 mb-lg-0">
+                    <a class="nav-link links" href="#">Home</a>
+                </li>
+                <li class="nav-item mb-2 mb-lg-0">
+                    <a class="nav-link links" href="./pages/Products.html">Products</a>
+                </li>
+                <li class="nav-item mb-2 mb-lg-0">
+                    <a class="nav-link links" href="#">Home</a>
+                </li>
+                <li class="nav-item mb-2 mb-lg-0">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+            </ul>
+            <!-- end right/sec. side of the navbar -->
+        </div>
+    </nav>
+    <!--end nav bar -->
+    <div class="row cart-data p-4">
+        <div class="col-12 col-lg-9 h-100 align-self-start mt-5">
+            <!-- table-borderless -->
+            <table id="dtBasicExample" class="table  table-hover table-borderless   " cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <th scope="col" class="text-center">#
+                        </th>
+                        <th scope="col" class="text-center">product image
+                        </th>
+                        <th scope="col" class="text-center"> Description
+                        </th>
+                        <th scope="col " class="text-center">price
+                        </th>
+                        <th scope="col" class="text-center">count
+                        </th>
+                        <th scope="col" class="text-center">total
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="text-left">
+                    <tr>
+                        <th scope="row">1</th>
+                        <td class="product-img justify-content-center ">
+                            <img class="justify-center " src="../img/slider.png" alt="">
+                        </td>
+                        <td class="product-description">
+                            <h5 class="product-name">
+                                testtttt
+                            </h5>
+                            <ul class="product-details list-unstyled ">
+                                <li>
+                                    <strong>Storage: </strong>
+                                    <span> 64GB
+                              </span>
+                                </li>
+                                <li>
+                                    <strong>Storage: </strong>
+                                    <span> 64GB
+                              </span>
+                                </li>
+                                <li>
+                                    <strong>Storage: </strong>
+                                    <span> 64GB
+                              </span>
+                                </li>
+                            </ul>
+                            <i class="fa fa-trash  " type="button" data-toggle="modal" data-target="#modalConfirmDelete">
+                        </i>
+                        </td>
+                        <td class="text-center product-price">61</td>
+                        <td class="text-center">
+                            <div class=" counter d-flex col m-0 p-0 ">
+                                <i class=" fa fa-minus mx-3 " aria-hidden=" true "></i>
+                                <h3 class=" mx-3 "> 1 </h3>
+                                <i class=" fas fa-plus mx-3 "></i>
+                            </div>
+                        </td>
+                        <td class="text-center">$320,800</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td class="product-img">
+                            <img src="../img/stick.png" alt="">
+                        </td>
+                        <td class="product-description">
+                            <h5 class="product-name">
+                                testtttt
+                            </h5>
+                            <ul class="product-details list-unstyled ">
+                                <li>
+                                    <strong>Storage: </strong>
+                                    <span> 64GB
+                              </span>
+                                </li>
+                                <li>
+                                    <strong>Storage: </strong>
+                                    <span> 64GB
+                              </span>
+                                </li>
+                                <li>
+                                    <strong>Storage: </strong>
+                                    <span> 64GB
+                              </span>
+                                </li>
+                            </ul>
+                            <i class="fa fa-trash  " type="button" data-toggle="modal" data-target="#modalConfirmDelete">
+                        </i>
+                        </td>
+                        <td class="text-center product-price">61</td>
+                        <td class="text-center">
+                            <div class=" counter d-flex col m-0 p-0 ">
+                                <i class=" fa fa-minus mx-3 " aria-hidden=" true "></i>
+                                <h3 class=" mx-3 "> 1 </h3>
+                                <i class=" fas fa-plus mx-3 "></i>
+                            </div>
+                        </td>
+                        <td class="text-center">$320,800</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-12 col-lg-3 align-self-start mt-5">
+            <div class="check-out  text-center px-1 ">
+                <a href="../index.html" class="btn btn-primary w-90 p-1 my-1">
+               continue shopping
+               </a>
+                <p class="text-left font-weight-normal my-1">
+                    Order summary
+                </p>
+                <hr class="text-black-100" />
+                <div class="checkout-summary">
+                    </a>
+                    <p class="-6 light text-left">sup-price: <span class="float-right"> $423,322.00</span></p>
+                    <p class="-6 light text-left">shipping: <span class="float-right"> $0.00</span></p>
+                    <p class="-6 light text-left">Tax:<span class="float-right"> $0.00</span></p>
+                    <p class="-6 dark text-left font-weight-normal">Total: <span class="float-right"> $423,322.00</span>
+                    </p>
+                    <a href="" class="btn btn-primary w-90 p-1 my-1" data-target="#check-out" data-toggle="modal">
+                  Check out
+                  </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <!-- modals -->
+    <!-- modal check out -->
+    <div id="check-out" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body w-100">
+                    <!-- Address-details -->
+                    <div class="location-details">
+
+                        <button class="btn btn-primary w-100 " data-target="#address " data-toggle="collapse" aria-expanded="false" aria-controls="address">Location details</button>
+                        <div id="address" class="collapse black     ">
+                            <div class="row user-name">
+                                <div class="col">
+                                    <label for="user-first-name">first name</label>
+                                    <input type="text" id="user-first-name" class="form-control mb-4" placeholder="first-name">
+
+                                </div>
+                                <div class="col"> <label for="user-last-name">last-name</label>
+                                    <input type="text" id="user-last-name" class="form-control mb-4" placeholder="last-name">
+                                </div>
+                            </div>
+                            <div class="user-phone">
+                                <label for="user-phone">phone number</label>
+                                <input type="text" id="user-phone" class="form-control mb-4" placeholder="+01xxxxxxxxx">
+
+                            </div>
+
+                            <div>
+                                <div class="user-location">
+                                    <div class="user-city">
+
+                                        <label for="user-city">city</label>
+                                        <select class="form-control mb-4" id="user-last-name">
+        <option value="" disabled="" selected="">cairo</option>
+        <option value="1">cairo</option>
+        <option value="2">Option 2</option>
+        <option value="3">Option 3</option>
+    </select>
+                                    </div>
+
+                                    <div class="user-town">
+
+
+                                        <label for="user-town">Town</label>
+                                        <select class="form-control mb-4" id="user-last-name">
+            <option value="" disabled="" selected="">cairo</option>
+            <option value="1">faisal</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3</option>
+        </select>
+                                    </div>
+                                </div>
+                                <div class=" next-btn w-100 text-center">
+                                    <div class="btn btn-secandary " data-target=" #address,#delivary-details" data-toggle="collapse">
+                                        save and continue
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+
+
+
+
+                        </div>
+                    </div>
+                    <!-- Address-details -->
+
+                    <button class="btn btn-primary w-100" data-target="#delivary-details" data-toggle="collapse" aria-expanded="false" aria-controls="delivary-details">payment method</button>
+                    <div id="delivary-details" class="collapse ">
+
+                        <div class="row">
+                            <div class="mx-auto">
+                                <div>
+                                    <div>
+                                        <div class=" pt-4 pl-2 pr-2 pb-2">
+                                            <!-- Credit form tabs -->
+                                            <ul role="tablist" class="nav bg-light nav-pills rounded nav-fill mb-3">
+                                                <li class="nav-item">
+                                                    <a data-toggle="pill" href="#credit-card" class="nav-link active "> <i class="fas fa-credit-  mr-2"></i> Credit </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a data-toggle="pill" href="#paypal" class="nav-link "> <i class="fab fa-paypal mr-2"></i> Paypal </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a data-toggle="pill" href="#net-banking" class="nav-link "> <i class="fas fa-mobile-alt mr-2"></i> Net Banking </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <!-- End -->
+                                        <!-- Credit form content -->
+                                        <div class="tab-content black ">
+                                            <!-- credit info-->
+                                            <div id="credit-card" class="tab-pane fade show active pt-3">
+                                                <form role="form">
+                                                    <div class="form-group"> <label for="username">
+                                                            <h6>  Owner</h6>
+                                                        </label> <input type="text" name="username" placeholder="  Owner Name" required class="form-control "> </div>
+                                                    <div class="form-group"> <label for="cardNumber">
+                                                            <h6>  number</h6>
+                                                        </label>
+                                                        <div class="input-group"> <input type="text" name="cardNumber" placeholder="Valid number" class="form-control " required>
+                                                            <div class="input-group-append"> <span class="input-group-text text-muted"> <i class="fab fa-cc-visa mx-1"></i> <i class="fab fa-cc-master  mx-1"></i> <i class="fab fa-cc-amex mx-1"></i> </span> </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-sm-8">
+                                                            <div class="form-group"> <label><span class="hidden-xs">
+                                                                        <h6>Expiration Date</h6>
+                                                                    </span></label>
+                                                                <div class="input-group"> <input type="number" placeholder="MM" name="" class="form-control" required> <input type="number" placeholder="YY" name="" class="form-control" required> </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group mb-4"> <label data-toggle="tooltip" title="Three digit CV code on the back of your card">
+                                                                <div class="input-group"> <input type="number" placeholder="MM" name="" class="form-control" required> <input type="number" placeholder="YY" name="" class="form-control" required> </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group mb-4"> <label data-toggle="tooltip" title="Three digit CV code on the back of your card">
+                                                                <div class="input-group"> <input type="number" placeholder="MM" name="" class="form-control" required> <input type="number" placeholder="YY" name="" class="form-control" required> </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group mb-4"> <label data-toggle="tooltip" title="Three digit CV code on the back of your card">
+                                                                <div class="input-group"> <input type="number" placeholder="MM" name="" class="form-control" required> <input type="number" placeholder="YY" name="" class="form-control" required> </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group mb-4"> <label data-toggle="tooltip" title="Three digit CV code on the back of your card">
+                                                                    <h6>CVV <i class="fa fa-question-circle d-inline"></i></h6>
+                                                                </label> <input type="text" required class="form-control"> </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-footer text-center"> <button type="button" class="subscribe btn btn-primary  "> Confirm Payment </button>
+                                                </form>
+                                                </div>
+                                            </div>
+                                            <!-- End -->
+                                            <!-- Paypal info -->
+                                            <div id="paypal" class="tab-pane fade pt-3 black">
+                                                <h6 class="pb-2">Select your paypal account type</h6>
+                                                <div class="form-group "> <label class="radio-inline"> <input type="radio" name="optradio" checked> Domestic </label> <label class="radio-inline"> <input type="radio" name="optradio" class="ml-5">International </label></div>
+                                                <div class="text-center"> <button type="button" class="btn btn-primary "><i class="fab fa-paypal mr-2"></i> Log into my Paypal</button> </div>
+
+                                            </div>
+                                            <!-- End -->
+                                            <!-- bank transfer info -->
+                                            <div id="net-banking" class="tab-pane fade pt-3 black">
+                                                <div class="form-group "> <label for="Select Your Bank">
+                                                    <h6>Select your Bank</h6>
+                                                </label> <select class="form-control" id="ccmonth">
+                                                    <option value="" selected disabled>--Please select your Bank--</option>
+                                                    <option>Bank 1</option>
+                                                    <option>Bank 2</option>
+                                                    <option>Bank 3</option>
+                                                    <option>Bank 4</option>
+                                                    <option>Bank 5</option>
+                                                    <option>Bank 6</option>
+                                                    <option>Bank 7</option>
+                                                    <option>Bank 8</option>
+                                                    <option>Bank 9</option>
+                                                    <option>Bank 10</option>
+                                                </select> </div>
+                                                <div class="form-group text-center">
+                                                    <div class="text-center"> <button type="button" class="btn btn-primary "><i class="fas fa-mobile-alt mr-2"></i> Proceed Pyment</button> </div>
+                                                </div>
+                                            </div>
+                                            <!-- End -->
+                                            <!-- End -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="page-footer font-small unique-color-dark   mt-5 pt-5">
+            <!-- Footer Links -->
+            <div class=" text-center text-md-left mt-5">
+                <!-- Grid row -->
+                <div class="row mt-3">
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4 text-center">
+                        <!-- Content -->
+                        <i class="fab fa-slack footer-logo h-100 w-25" aria-hidden="true"></i>
+                        <h6 class="text-uppercase font-weight-bold">Company name</h6>
+                        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                        <p>Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase font-weight-bold">Products</h6>
+                        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                        <p>
+                            <a href="#!">MDBootstrap</a>
+                        </p>
+                        <p>
+                            <a href="#!">MDWordPress</a>
+                        </p>
+                        <p>
+                            <a href="#!">BrandFlow</a>
+                        </p>
+                        <p>
+                            <a href="#!">Bootstrap Angular</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase font-weight-bold">Useful links</h6>
+                        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                        <p>
+                            <a href="#!">Your Account</a>
+                        </p>
+                        <p>
+                            <a href="#!">Become an Affiliate</a>
+                        </p>
+                        <p>
+                            <a href="#!">Shipping Rates</a>
+                        </p>
+                        <p>
+                            <a href="#!">Help</a>
+                            <!-- Grid column -->
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase font-weight-bold">Contact</h6>
+                        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                        <p>
+                            <i class="fas fa-home mr-3"></i> New York, NY 10012, US
+                        </p>
+                        <p>
+                            <i class="fas fa-envelope mr-3"></i> info@example.com
+                        </p>
+                        <p>
+                            <i class="fas fa-phone mr-3"></i> + 01 234 567 88
+                        </p>
+                        <p>
+                            <i class="fas fa-print mr-3"></i> + 01 234 567 89
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
+            </div>
+            <!-- Footer Links -->
+            <!-- social media  -->
+            <div class=" text-center">
+                <!-- Facebook -->
+                <a class="fb-ic">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <!-- Twitter -->
+                <a class="tw-ic">
+                    <i class="fab fa-twitter    "></i>
+                </a>
+                <!-- Whats app -->
+                <a class="wa-ic">
+                    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                </a>
+                <!-- Footer Links -->
+            </div>
+            `
+            <!-- Grid column -->
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3">© 2020 Copyright:
+                <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+            </div>
+            <!-- Copyright -->
+        </footer>
+        <!-- Footer -->
+
+
+
+        <!--Modal: modalConfirmDelete-->
+        <div id="modalConfirmDelete" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <!--Content-->
+                    <div class="modal-content text-center">
+                        <!--Header-->
+                        <div class="modal-header d-flex justify-content-center">
+                            <p class="heading">Are you sure?</p>
+                        </div>
+                        <!--Body-->
+                        <div class="modal-body">
+                            <i class="fas fa-heart-broken"></i>
+                        </div>
+                        <!--Footer-->
+                        <div class="modal-footer flex-center">
+                            <a href="" class="btn  btn-primary ">Yes</a>
+                            <a type="button" class="btn  btn-danger waves-effect" data-dismiss="modal">No</a>
+                        </div>
+                    </div>
+                    <!--/.Content-->
+                </div>
+            </div>
+        </div>
+        <!--Modal: modalConfirmDelete-->
+        <!--  regester    -->
+        <!--   log in -->
+        <div class="modal fade text-center" id="login" role="dialog">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Log in</h5>
+                    </div>
+                    <div class="modal-body text-center">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-sm">
+                            <i class="fa fa-envelope"></i>
+                            </span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1" />
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-sm">
+                            <i class="fa fa-lock"></i>
+                            </span>
+                            </div>
+                            <input type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1" />
+                        </div>
+                        <button type="submit" name="commit" class="btn btn-primary btn-lg ">
+                      <span>Login <i class="fa fa-sign-in"></i></span>
+                      </button>
+                        <div class="text-center">
+                            <a class="" href="" data-dismiss="modal" data-toggle="modal" data-target="#signup">Signup</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- sign in -->
+        <div class="modal fade" id="signup" role="dialog">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Sign up</h5>
+                    </div>
+                    <div class="modal-body text-center">
+                        <div class="input-group mb-3 ">
+                            <div class="input-group-prepend ">
+                                <span class="input-group-text " id="inputGroup-sizing-sm ">
+                            <i class="fa fa-envelope "></i>
+                            </span>
+                            </div>
+                            <input type="text " class="form-control " placeholder="Email " aria-label="Email " aria-describedby="basic-addon1 " />
+                        </div>
+                        <div class="input-group mb-3 ">
+                            <div class="input-group-prepend ">
+                                <span class="input-group-text " id="inputGroup-sizing-sm ">
+                            <i class="fa fa-lock "></i>
+                            </span>
+                            </div>
+                            <input type="password " class="form-control " placeholder="Password " aria-label="Password " aria-describedby="basic-addon1 " />
+                        </div>
+                        <div class="input-group mb-3 justify-content-center ">
+                            <p class=" breaks-dark black ">
+                                log in with
+                            </p>
+                            <h5 class="mx-1 ">
+                                <i class="fab fa-facebook text-center path-dark-green "></i>
+                            </h5>
+                            <h5 class="mx-1 ">
+                                <i class="fa fa-google text-center path-dark-green " aria-hidden="true "></i>
+                            </h5>
+                        </div>
+                        <a href="pages/profile.html ">
+                            <button type="submit " name="commit " class="btn btn-primary btn-lg  ">
+                      <span>
+                      Login
+                      <i class="fa fa-sign-in "></i></span>
+                      </button>
+                        </a>
+                        <div class="text-center">
+                            <a class="" href="" data-dismiss="modal" data-toggle="modal" data-target="#login">Login</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--  item added modal -->
+        <div class="modal fade" id="added" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog " role="document">
+                <div class="modal-content">
+                    <div class="modal-body text-center">
+                        <i class="fas fa-check path-green "></i>
+                        <p class="black ">added to your cart</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  item added modal -->
+    <!--  item submited modal -->
+    <div id="submeted" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <p>Content</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  item submited modal -->
+    <!--  item liked modal -->
+    <div id="liked " class="modal fade " tabindex="-1 " role="dialog " aria-hidden="true ">
+        <div class="modal-dialog " role="document ">
+            <div class="modal-content ">
+                <div class="modal-body text-center ">
+                    <i class="fas fa-check path-green "></i>
+                    <p class="black ">added to your likes</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  item liked modal -->
+    <!-- modals -->
+    <!-- connect js file -->
+    <!-- jquery -->
+    <script src="../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf8" src="../DataTables/datatables.min.js"></script>
+    <!-- bootstrap  -->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- font awesome  JS file-->
+    <script src="../js/all.min.js"></script>
+    <!-- swiper JS file -->
+    <script src="../js/swiper-bundle.min.js"></script>
+    <!-- main java script -->
+    <script src="../js/main.js"></script>
+</body>
+
+</html>
