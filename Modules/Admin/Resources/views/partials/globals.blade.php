@@ -17,4 +17,4 @@
 
 @stack('globals')
 
-@routes
+@routes('admin')
