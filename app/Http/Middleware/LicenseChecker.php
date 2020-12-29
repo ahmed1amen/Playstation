@@ -4,6 +4,7 @@ namespace FleetCart\Http\Middleware;
 
 use Closure;
 use FleetCart\License;
+use Illuminate\Support\Facades\Storage;
 
 class LicenseChecker
 {
@@ -16,13 +17,14 @@ class LicenseChecker
 
     public function handle($request, Closure $next)
     {
-        if ($this->license->shouldRecheck()) {
-            $this->license->recheck();
-        }
 
-        if ($this->license->shouldCreateLicense()) {
-            return redirect()->route('license.create');
-        }
+//        if ($this->license->shouldRecheck()) {
+//            $this->license->recheck();
+//        }
+//
+//        if ($this->license->shouldCreateLicense()) {
+//            return redirect()->route('license.create');
+//        }
 
         return $next($request);
     }
