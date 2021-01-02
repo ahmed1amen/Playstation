@@ -3,7 +3,11 @@
 @section('title', setting('store_tagline'))
 
 @section('content')
-    @includeUnless(is_null($slider), 'public.home.sections.slider')
+   @push('slider')
+
+       @includeUnless(is_null($slider), 'public.home.sections.slider')
+
+   @endpush
 
     @if (setting('storefront_features_section_enabled'))
         <home-features :features="{{ json_encode($features) }}"></home-features>

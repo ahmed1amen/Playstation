@@ -526,7 +526,8 @@ class Product extends Model
 
     public static function findBySlug($slug)
     {
-        return self::with([
+        return self::with(
+        [
             'categories', 'tags', 'attributes.attribute.attributeSet',
             'options', 'files', 'relatedProducts', 'upSellProducts',
         ])

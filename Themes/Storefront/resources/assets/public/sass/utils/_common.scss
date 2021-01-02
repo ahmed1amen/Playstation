@@ -6,7 +6,6 @@
 
 .wrapper {
     position: relative;
-    background: $color-white;
 }
 
 .overlay {
@@ -110,7 +109,7 @@
         transition: 500ms ease-in-out;
 
         &.animating {
-            animation: zoomInOut 500ms ease-in-out; 
+            animation: zoomInOut 500ms ease-in-out;
         }
     }
 }

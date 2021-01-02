@@ -6,7 +6,7 @@
                     <input
                         type="text"
                         name="query"
-                        class="form-control search-input"
+                        class="form-control search-input bg-dark text-white"
                         autocomplete="off"
                         v-model="form.query"
                         :placeholder="$trans('storefront::layout.search_for_products')"

@@ -47,7 +47,9 @@ class ProductController extends Controller
      */
     public function show($slug)
     {
+
         $product = Product::findBySlug($slug);
+
         $relatedProducts = $product->relatedProducts()->forCard()->get();
         $upSellProducts = $product->upSellProducts()->forCard()->get();
         $review = $this->getReviewData($product);

@@ -24,7 +24,52 @@
         @endif
 
         <link rel="shortcut icon" href="{{ $favicon }}" type="image/x-icon">
+        <link rel="stylesheet" href="{{ v(Theme::url('public/css/style.css')) }}">
+        <link rel="stylesheet" href="{{ v(Theme::url('public/css/bootstrap.css')) }}" />
+        <style>
 
+
+            .container {
+                padding-left: 4.5%;
+                padding-right: 4.5%;
+            }
+
+            @media screen and (min-width: 1920px) {
+                .container {
+                    max-width: 1770px;
+                    padding-left: 15px;
+                    padding-right: 15px;
+                }
+            }
+            @media screen and (min-width: 2200px) {
+                .container {
+                    max-width: 1920px;
+                }
+            }
+            @media screen and (max-width: 1920px) {
+                .container {
+                    max-width: 100%;
+                    padding-left: 4%;
+                    padding-right: 4%;
+                }
+            }
+            @media screen and (max-width: 1500px) {
+                .container {
+                    padding-left: 1.5%;
+                    padding-right: 1.5%;
+                }
+            }
+            @media screen and (max-width: 991px) {
+                .container {
+                    padding-left: 15px;
+                    padding-right: 15px;
+                }
+            }
+        </style>
+        <!-- font awesome  style file-->
+        <link rel="stylesheet" href="{{ v(Theme::url('public/css/all.min.css')) }}">
+        <!-- swiper style file -->
+        <link rel="stylesheet" href="{{ v(Theme::url('public/css/swiper-bundle.min.css')) }}">
         @stack('styles')
 
         {!! setting('custom_header_assets') !!}
@@ -75,7 +120,16 @@
         {!! $schemaMarkup->toScript() !!}
 
         @stack('globals')
+        <style>
+            .nice-select .list {
 
+                background-color: #0f8c69;
+
+
+            }
+
+
+        </style>
         @routes
     </head>
 
@@ -87,9 +141,20 @@
             --color-primary-transparent: {{ color2rgba($themeColor, 0.8) }};
             --color-primary-transparent-lite: {{ color2rgba($themeColor, 0.3) }};"
     >
+
+
         <div class="wrapper" id="app">
             @include('public.layout.top_nav')
+
+
+
+            <div class="banner">
+        @stack('slider')
+            </div>
+
+
             @include('public.layout.header')
+
             @include('public.layout.navigation')
             @include('public.layout.breadcrumb')
 
@@ -111,6 +176,15 @@
 
         <script src="{{ v(Theme::url('public/js/app.js')) }}"></script>
 
+
+        <!-- bootstrap  -->
+        <script src="{{ v(Theme::url('public/js/bootstrap.min.js')) }}"></script>
+        <!-- font awesome  JS file-->
+        <script src="{{ v(Theme::url('public/js/all.min.js')) }}"></script>
+        <script src="{{ v(Theme::url('public/js/swiper-bundle.min.js')) }}"></script>
+        <!-- swiper JS file -->
+        <!-- main java script -->
+        <script src="{{ v(Theme::url('public/js/main.js')) }}"></script>
         @stack('scripts')
 
         {!! setting('custom_footer_assets') !!}

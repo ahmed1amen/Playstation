@@ -11,14 +11,7 @@
                         </div>
                     </div>
 
-                    <a href="{{ route('home') }}" class="header-logo">
-                        @if (is_null($logo))
 
-                            <h3>{{ setting('store_name') }}</h3>
-                        @else
-                            <img src="{{ $logo }}" alt="logo">
-                        @endif
-                    </a>
                 </div>
 
                 <header-search
@@ -39,14 +32,7 @@
                         <span>{{ trans('storefront::layout.favorites') }}</span>
                     </a>
 
-                    <div class="header-cart">
-                        <div class="icon-wrap">
-                            <i class="las la-cart-arrow-down"></i>
-                            <div class="count" v-text="cart.quantity"></div>
-                        </div>
 
-                        <span v-html="cart.subTotal.inCurrentCurrency.formatted"></span>
-                    </div>
                 </div>
             </div>
         </div>
