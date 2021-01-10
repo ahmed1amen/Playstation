@@ -3,6 +3,11 @@
 *.sublime-project
 node_modules/
 /vendor/
+/storage/framework/sessions
+/storage/framework/log
+/storage/logs
+/storage/framework/views
+/bootstrap/cache
 /public/storage/
 /public/modules/
 /public/themes/
@@ -11,6 +16,7 @@ node_modules/
 /tags
 mix-manifest.json
 npm-debug.log
+lerna-debug.log
 yarn-error.log
 *.map
 .env
