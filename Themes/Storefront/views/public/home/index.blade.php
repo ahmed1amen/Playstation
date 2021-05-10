@@ -52,9 +52,3 @@
         <banner-one-column :banner="{{ json_encode($oneColumnBanner) }}"></banner-one-column>
     @endif
 @endsection
-            <script>
-                import DigitalGamesSlider from "../../../resources/assets/public/js/components/home/DigitalGamesSlider";
-                export default {
-                    components: {DigitalGamesSlider}
-                }
-            </script>
