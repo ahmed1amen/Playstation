@@ -1,5 +1,5 @@
 {
-    "name": "fleetcartA /core",
+    "name": "fleetcart/core",
     "description": "The FleetCart Core Module.",
     "authors": [
         {
@@ -31,3 +31,6 @@
     },
     "minimum-stability": "dev"
 }
+
+
+

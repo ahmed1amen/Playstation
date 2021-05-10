@@ -28,7 +28,6 @@ class StorefrontController
     public function update(SaveStorefrontRequest $request)
     {
         setting($request->except('_token', '_method'));
-
         return back()->withSuccess(trans('admin::messages.resource_saved', ['resource' => trans('setting::settings.settings')]));
     }
 }

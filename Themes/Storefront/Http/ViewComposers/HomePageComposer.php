@@ -25,7 +25,7 @@ class HomePageComposer
             'sliderBanners' => Banner::getSliderBanners(),
             'features' => Feature::all(),
             'featuredCategories' => $this->featuredCategoriesSection(),
-            'threeColumnFullWidthBanners' => $this->threeColumnFullWidthBanners(),
+            'digitalGamesSlider' => $this->digitalGamesSlider(),
             'productTabsOne' => $this->productTabsOne(),
             'topBrands' => $this->topBrands(),
             'flashSaleAndVerticalProducts' => $this->flashSaleAndVerticalProducts(),
@@ -72,10 +72,10 @@ class HomePageComposer
             });
     }
 
-    private function threeColumnFullWidthBanners()
+    private function digitalGamesSlider()
     {
-        if (setting('storefront_three_column_full_width_banners_enabled')) {
-            return Banner::getThreeColumnFullWidthBanners();
+        if (setting('storefront_slider_games_enabled')) {
+            return Slider::findWithSlides(setting('storefront_slider_games'));
         }
     }
 

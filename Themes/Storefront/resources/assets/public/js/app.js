@@ -23,7 +23,7 @@ import FlashSale from './components/home/FlashSale.vue';
 import BannerTwoColumn from './components/home/BannerTwoColumn.vue';
 import VerticalProducts from './components/home/VerticalProducts.vue';
 import ProductGrid from './components/home/ProductGrid.vue';
-import BannerThreeColumn from './components/home/BannerThreeColumn.vue';
+import DigitalGamesSlider from './components/home/DigitalGamesSlider.vue';
 import ProductTabsTwo from './components/home/ProductTabsTwo.vue';
 import BannerOneColumn from './components/home/BannerOneColumn.vue';
 import ProductIndex from './components/products/Index';
@@ -62,7 +62,7 @@ Vue.component('flash-sale', FlashSale);
 Vue.component('banner-two-column', BannerTwoColumn);
 Vue.component('vertical-products', VerticalProducts);
 Vue.component('product-grid', ProductGrid);
-Vue.component('banner-three-column', BannerThreeColumn);
+Vue.component('digital-games-slider', DigitalGamesSlider);
 Vue.component('product-tabs-two', ProductTabsTwo);
 Vue.component('banner-one-column', BannerOneColumn);
 Vue.component('product-index', ProductIndex);
@@ -94,3 +94,4 @@ $.ajaxSetup({
         'X-CSRF-TOKEN': FleetCart.csrfToken,
     },
 });
+

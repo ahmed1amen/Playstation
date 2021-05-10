@@ -17,6 +17,7 @@
         "laravel/framework": "^7.0",
         "laravel/helpers": "^1.1",
         "laravel/tinker": "^2.0",
+        "mcamara/laravel-localization": "^1.6",
         "mehedi/stylist": "^1.0",
         "nwidart/laravel-modules": "^6.0",
         "swayok/alternative-laravel-cache": "^5.4",
