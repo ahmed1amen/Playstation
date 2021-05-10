@@ -1,7 +1,7 @@
 <section class="home-section-wrap">
     <div class="container">
         <div class="row">
-            <div class="home-section-inner">
+            <div class="home-section-inner row">
                 <div class="home-slider-wrap">
                     <div
                         class="home-slider"
