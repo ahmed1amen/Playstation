@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="home-section-inner row">
-                <div class="home-slider-wrap">
+                <div class="home-slider-wrap banner m-b-30">
                     <div
                         class="home-slider"
                         data-speed="{{ $slider->speed ?? '1000' }}"
