@@ -192,10 +192,10 @@ class StorefrontTabs extends Tabs
 
     private function threeColumnFullWidthBanners()
     {
-        return tap(new Tab('three_column_full_width_banners', trans('storefront::storefront.tabs.three_column_full_width_banners')), function (Tab $tab) {
+        return tap(new Tab('digital_game_slider', trans('storefront::storefront.tabs.digital_game_slider')), function (Tab $tab) {
             $tab->weight(35);
-            $tab->view('admin.storefront.tabs.three_column_full_width_banners', [
-                'banners' => Banner::getThreeColumnFullWidthBanners(),
+            $tab->view('admin.storefront.tabs.digital_game_slider', [
+                'sliders' =>$this->getSliders(),
             ]);
         });
     }
@@ -290,6 +290,7 @@ class StorefrontTabs extends Tabs
             $tab->weight(75);
             $tab->view('admin.storefront.tabs.three_column_banners', [
                 'banners' => Banner::getThreeColumnBanners(),
+
             ]);
         });
     }

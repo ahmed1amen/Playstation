@@ -13,8 +13,11 @@
         <featured-categories :data="{{ json_encode($featuredCategories) }}"></featured-categories>
     @endif
 
-    @if (setting('storefront_three_column_full_width_banners_enabled'))
-        <banner-three-column-full-width :data="{{ json_encode($threeColumnFullWidthBanners) }}"></banner-three-column-full-width>
+    @if (setting('storefront_slider_games_enabled'))
+
+        <digital-games-slider :data="{{ json_encode($digitalGamesSlider) }}"></digital-games-slider>
+
+
     @endif
 
     @if (setting('storefront_product_tabs_1_section_enabled'))
@@ -49,3 +52,9 @@
         <banner-one-column :banner="{{ json_encode($oneColumnBanner) }}"></banner-one-column>
     @endif
 @endsection
+            <script>
+                import DigitalGamesSlider from "../../../resources/assets/public/js/components/home/DigitalGamesSlider";
+                export default {
+                    components: {DigitalGamesSlider}
+                }
+            </script>

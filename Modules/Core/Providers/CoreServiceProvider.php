@@ -17,14 +17,15 @@ class CoreServiceProvider extends ServiceProvider
      * @var array
      */
     protected $middleware = [
+        'localize' => \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationRoutes::class,
+        'locale_session_redirect' => \Mcamara\LaravelLocalization\Middleware\LocaleSessionRedirect::class,
+        'localization_redirect' => \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationRedirectFilter::class,
         'auth' => \Modules\Core\Http\Middleware\Authenticate::class,
         'admin' => \Modules\Core\Http\Middleware\AdminMiddleware::class,
         'licensed' => \FleetCart\Http\Middleware\LicenseChecker::class,
         'guest' => \Modules\Core\Http\Middleware\GuestMiddleware::class,
         'can' => \Modules\Core\Http\Middleware\Authorization::class,
-        'localize' => \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationRoutes::class,
-        'locale_session_redirect' => \Mcamara\LaravelLocalization\Middleware\LocaleSessionRedirect::class,
-        'localization_redirect' => \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationRedirectFilter::class,
+
     ];
 
     /**
