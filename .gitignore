@@ -2,7 +2,7 @@
 .phpintel/
 *.sublime-project
 .DS_Store
-
+/bootstrap/cache
 node_modules/
 /vendor/
 /public/storage/
