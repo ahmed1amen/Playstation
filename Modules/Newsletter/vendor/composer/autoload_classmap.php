@@ -6,7 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
     'Modules\\Newsletter\\Http\\Controllers\\SubscriberController' => $baseDir . '/Http/Controllers/SubscriberController.php',
     'Modules\\Newsletter\\Http\\Requests\\StoreSubscriberRequest' => $baseDir . '/Http/Requests/StoreSubscriberRequest.php',
     'Modules\\Newsletter\\Providers\\NewsletterServiceProvider' => $baseDir . '/Providers/NewsletterServiceProvider.php',

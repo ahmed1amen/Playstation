@@ -6,7 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
     'Modules\\User\\Admin\\ProfileTabs' => $baseDir . '/Admin/ProfileTabs.php',
     'Modules\\User\\Admin\\RoleTabs' => $baseDir . '/Admin/RoleTabs.php',
     'Modules\\User\\Admin\\UserTable' => $baseDir . '/Admin/UserTable.php',
@@ -18,6 +17,7 @@ return array(
     'Modules\\User\\Entities\\Role' => $baseDir . '/Entities/Role.php',
     'Modules\\User\\Entities\\RoleTranslation' => $baseDir . '/Entities/RoleTranslation.php',
     'Modules\\User\\Entities\\User' => $baseDir . '/Entities/User.php',
+    'Modules\\User\\Events\\CustomerRegistered' => $baseDir . '/Events/CustomerRegistered.php',
     'Modules\\User\\Events\\UserHasActivatedAccount' => $baseDir . '/Events/UserHasActivatedAccount.php',
     'Modules\\User\\Events\\UserHasRegistered' => $baseDir . '/Events/UserHasRegistered.php',
     'Modules\\User\\Guards\\Sentinel' => $baseDir . '/Guards/Sentinel.php',
@@ -36,6 +36,8 @@ return array(
     'Modules\\User\\Http\\Requests\\SaveUserRequest' => $baseDir . '/Http/Requests/SaveUserRequest.php',
     'Modules\\User\\Http\\Requests\\UpdateProfileRequest' => $baseDir . '/Http/Requests/UpdateProfileRequest.php',
     'Modules\\User\\Http\\ViewComposers\\CurrentUserComposer' => $baseDir . '/Http/ViewComposers/CurrentUserComposer.php',
+    'Modules\\User\\Listeners\\SendWelcomeEmail' => $baseDir . '/Listeners/SendWelcomeEmail.php',
+    'Modules\\User\\Listeners\\SendWelcomeSms' => $baseDir . '/Listeners/SendWelcomeSms.php',
     'Modules\\User\\LoginProvider' => $baseDir . '/LoginProvider.php',
     'Modules\\User\\Mail\\ResetPasswordEmail' => $baseDir . '/Mail/ResetPasswordEmail.php',
     'Modules\\User\\Mail\\Welcome' => $baseDir . '/Mail/Welcome.php',

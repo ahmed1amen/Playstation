@@ -6,7 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
     'Modules\\Core\\Events\\CollectingAssets' => $baseDir . '/Events/CollectingAssets.php',
     'Modules\\Core\\Foundation\\Asset\\AssetNotFoundException' => $baseDir . '/Foundation/Asset/AssetNotFoundException.php',
     'Modules\\Core\\Foundation\\Asset\\Manager\\AssetManager' => $baseDir . '/Foundation/Asset/Manager/AssetManager.php',

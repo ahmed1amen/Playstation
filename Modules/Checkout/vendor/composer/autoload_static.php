@@ -21,12 +21,13 @@ class ComposerStaticInitaf2b6a309b55ffb670a715b80dc78324
     );
 
     public static $classMap = array (
-        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Modules\\Checkout\\Events\\OrderPlaced' => __DIR__ . '/../..' . '/Events/OrderPlaced.php',
         'Modules\\Checkout\\Http\\Controllers\\CheckoutCompleteController' => __DIR__ . '/../..' . '/Http/Controllers/CheckoutCompleteController.php',
         'Modules\\Checkout\\Http\\Controllers\\CheckoutController' => __DIR__ . '/../..' . '/Http/Controllers/CheckoutController.php',
         'Modules\\Checkout\\Http\\Controllers\\PaymentCanceledController' => __DIR__ . '/../..' . '/Http/Controllers/PaymentCanceledController.php',
         'Modules\\Checkout\\Listeners\\AddPlacedOrderToSession' => __DIR__ . '/../..' . '/Listeners/AddPlacedOrderToSession.php',
+        'Modules\\Checkout\\Listeners\\SendNewOrderEmails' => __DIR__ . '/../..' . '/Listeners/SendNewOrderEmails.php',
+        'Modules\\Checkout\\Listeners\\SendNewOrderSms' => __DIR__ . '/../..' . '/Listeners/SendNewOrderSms.php',
         'Modules\\Checkout\\Listeners\\SendOrderEmails' => __DIR__ . '/../..' . '/Listeners/SendOrderEmails.php',
         'Modules\\Checkout\\Listeners\\UpdateOrderStatus' => __DIR__ . '/../..' . '/Listeners/UpdateOrderStatus.php',
         'Modules\\Checkout\\Mail\\Invoice' => __DIR__ . '/../..' . '/Mail/Invoice.php',

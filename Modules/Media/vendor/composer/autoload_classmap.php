@@ -6,7 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
     'Modules\\Media\\Admin\\MediaTable' => $baseDir . '/Admin/MediaTable.php',
     'Modules\\Media\\Eloquent\\HasMedia' => $baseDir . '/Eloquent/HasMedia.php',
     'Modules\\Media\\Entities\\File' => $baseDir . '/Entities/File.php',

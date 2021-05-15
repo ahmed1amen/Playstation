@@ -21,7 +21,6 @@ class ComposerStaticInit99a5c32e9725fc87ae54e2874c14a93b
     );
 
     public static $classMap = array (
-        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Modules\\Media\\Admin\\MediaTable' => __DIR__ . '/../..' . '/Admin/MediaTable.php',
         'Modules\\Media\\Eloquent\\HasMedia' => __DIR__ . '/../..' . '/Eloquent/HasMedia.php',
         'Modules\\Media\\Entities\\File' => __DIR__ . '/../..' . '/Entities/File.php',

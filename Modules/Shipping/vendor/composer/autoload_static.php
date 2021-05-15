@@ -21,7 +21,6 @@ class ComposerStaticInit4bb87315460fb642d72f87484faeef28
     );
 
     public static $classMap = array (
-        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Modules\\Shipping\\Facades\\ShippingMethod' => __DIR__ . '/../..' . '/Facades/ShippingMethod.php',
         'Modules\\Shipping\\Method' => __DIR__ . '/../..' . '/Method.php',
         'Modules\\Shipping\\Providers\\ShippingServiceProvider' => __DIR__ . '/../..' . '/Providers/ShippingServiceProvider.php',

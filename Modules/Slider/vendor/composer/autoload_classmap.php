@@ -6,7 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
     'Modules\\Slider\\Admin\\SliderTabs' => $baseDir . '/Admin/SliderTabs.php',
     'Modules\\Slider\\Entities\\Slider' => $baseDir . '/Entities/Slider.php',
     'Modules\\Slider\\Entities\\SliderSlide' => $baseDir . '/Entities/SliderSlide.php',

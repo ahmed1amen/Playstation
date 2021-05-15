@@ -21,7 +21,6 @@ class ComposerStaticInit9139fcaef0fc5b798563f41606e475aa
     );
 
     public static $classMap = array (
-        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Modules\\Review\\Admin\\ProductTabsExtender' => __DIR__ . '/../..' . '/Admin/ProductTabsExtender.php',
         'Modules\\Review\\Admin\\ReviewTable' => __DIR__ . '/../..' . '/Admin/ReviewTable.php',
         'Modules\\Review\\Admin\\ReviewTabs' => __DIR__ . '/../..' . '/Admin/ReviewTabs.php',

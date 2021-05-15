@@ -6,21 +6,25 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
     'Modules\\Order\\Admin\\OrderTable' => $baseDir . '/Admin/OrderTable.php',
     'Modules\\Order\\Entities\\Order' => $baseDir . '/Entities/Order.php',
+    'Modules\\Order\\Entities\\OrderDownload' => $baseDir . '/Entities/OrderDownload.php',
     'Modules\\Order\\Entities\\OrderProduct' => $baseDir . '/Entities/OrderProduct.php',
     'Modules\\Order\\Entities\\OrderProductOption' => $baseDir . '/Entities/OrderProductOption.php',
     'Modules\\Order\\Entities\\OrderProductOptionValue' => $baseDir . '/Entities/OrderProductOptionValue.php',
     'Modules\\Order\\Entities\\OrderTax' => $baseDir . '/Entities/OrderTax.php',
+    'Modules\\Order\\Events\\OrderStatusChanged' => $baseDir . '/Events/OrderStatusChanged.php',
     'Modules\\Order\\Http\\Controllers\\Admin\\OrderController' => $baseDir . '/Http/Controllers/Admin/OrderController.php',
     'Modules\\Order\\Http\\Controllers\\Admin\\OrderEmailController' => $baseDir . '/Http/Controllers/Admin/OrderEmailController.php',
     'Modules\\Order\\Http\\Controllers\\Admin\\OrderPrintController' => $baseDir . '/Http/Controllers/Admin/OrderPrintController.php',
     'Modules\\Order\\Http\\Controllers\\Admin\\OrderStatusController' => $baseDir . '/Http/Controllers/Admin/OrderStatusController.php',
     'Modules\\Order\\Http\\Controllers\\OrderController' => $baseDir . '/Http/Controllers/OrderController.php',
     'Modules\\Order\\Http\\Requests\\StoreOrderRequest' => $baseDir . '/Http/Requests/StoreOrderRequest.php',
+    'Modules\\Order\\Listeners\\SendOrderStatusChangedEmail' => $baseDir . '/Listeners/SendOrderStatusChangedEmail.php',
+    'Modules\\Order\\Listeners\\SendOrderStatusChangedSms' => $baseDir . '/Listeners/SendOrderStatusChangedSms.php',
     'Modules\\Order\\Mail\\OrderStatusChanged' => $baseDir . '/Mail/OrderStatusChanged.php',
     'Modules\\Order\\OrderCollection' => $baseDir . '/OrderCollection.php',
+    'Modules\\Order\\Providers\\EventServiceProvider' => $baseDir . '/Providers/EventServiceProvider.php',
     'Modules\\Order\\Providers\\OrderServiceProvider' => $baseDir . '/Providers/OrderServiceProvider.php',
     'Modules\\Order\\Sidebar\\SidebarExtender' => $baseDir . '/Sidebar/SidebarExtender.php',
 );

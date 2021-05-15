@@ -21,7 +21,6 @@ class ComposerStaticInit68c2a41cf40407458d29bbd5a6432de7
     );
 
     public static $classMap = array (
-        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Modules\\Payment\\Facades\\Gateway' => __DIR__ . '/../..' . '/Facades/Gateway.php',
         'Modules\\Payment\\GatewayInterface' => __DIR__ . '/../..' . '/GatewayInterface.php',
         'Modules\\Payment\\GatewayManager' => __DIR__ . '/../..' . '/GatewayManager.php',
@@ -31,13 +30,16 @@ class ComposerStaticInit68c2a41cf40407458d29bbd5a6432de7
         'Modules\\Payment\\Gateways\\CheckPayment' => __DIR__ . '/../..' . '/Gateways/CheckPayment.php',
         'Modules\\Payment\\Gateways\\Instamojo' => __DIR__ . '/../..' . '/Gateways/Instamojo.php',
         'Modules\\Payment\\Gateways\\PayPal' => __DIR__ . '/../..' . '/Gateways/PayPal.php',
+        'Modules\\Payment\\Gateways\\Paytm' => __DIR__ . '/../..' . '/Gateways/Paytm.php',
         'Modules\\Payment\\Gateways\\Razorpay' => __DIR__ . '/../..' . '/Gateways/Razorpay.php',
         'Modules\\Payment\\Gateways\\Stripe' => __DIR__ . '/../..' . '/Gateways/Stripe.php',
         'Modules\\Payment\\HasTransactionReference' => __DIR__ . '/../..' . '/HasTransactionReference.php',
         'Modules\\Payment\\Providers\\GatewayServiceProvider' => __DIR__ . '/../..' . '/Providers/GatewayServiceProvider.php',
+        'Modules\\Payment\\Providers\\PaymentServiceProvider' => __DIR__ . '/../..' . '/Providers/PaymentServiceProvider.php',
         'Modules\\Payment\\Responses\\InstamojoResponse' => __DIR__ . '/../..' . '/Responses/InstamojoResponse.php',
         'Modules\\Payment\\Responses\\NullResponse' => __DIR__ . '/../..' . '/Responses/NullResponse.php',
         'Modules\\Payment\\Responses\\PayPalResponse' => __DIR__ . '/../..' . '/Responses/PayPalResponse.php',
+        'Modules\\Payment\\Responses\\PaytmResponse' => __DIR__ . '/../..' . '/Responses/PaytmResponse.php',
         'Modules\\Payment\\Responses\\RazorpayResponse' => __DIR__ . '/../..' . '/Responses/RazorpayResponse.php',
         'Modules\\Payment\\Responses\\StripeResponse' => __DIR__ . '/../..' . '/Responses/StripeResponse.php',
         'Modules\\Payment\\ShouldRedirect' => __DIR__ . '/../..' . '/ShouldRedirect.php',

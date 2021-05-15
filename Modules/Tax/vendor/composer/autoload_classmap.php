@@ -6,7 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
     'Modules\\Tax\\Admin\\TaxTabs' => $baseDir . '/Admin/TaxTabs.php',
     'Modules\\Tax\\Entities\\TaxClass' => $baseDir . '/Entities/TaxClass.php',
     'Modules\\Tax\\Entities\\TaxClassTranslation' => $baseDir . '/Entities/TaxClassTranslation.php',

@@ -6,7 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
     'Modules\\Import\\Http\\Controllers\\Admin\\DownloadCsvController' => $baseDir . '/Http/Controllers/Admin/DownloadCsvController.php',
     'Modules\\Import\\Http\\Controllers\\Admin\\ImporterController' => $baseDir . '/Http/Controllers/Admin/ImporterController.php',
     'Modules\\Import\\Http\\Requests\\StoreImporterRequest' => $baseDir . '/Http/Requests/StoreImporterRequest.php',

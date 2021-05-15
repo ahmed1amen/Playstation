@@ -6,7 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
     'Modules\\Support\\Country' => $baseDir . '/Country.php',
     'Modules\\Support\\Eloquent\\Model' => $baseDir . '/Eloquent/Model.php',
     'Modules\\Support\\Eloquent\\Sluggable' => $baseDir . '/Eloquent/Sluggable.php',

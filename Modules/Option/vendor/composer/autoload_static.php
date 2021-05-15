@@ -21,7 +21,6 @@ class ComposerStaticInit0b74d84095db8e58fe58a5a6ed1635ed
     );
 
     public static $classMap = array (
-        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Modules\\Option\\Admin\\OptionTable' => __DIR__ . '/../..' . '/Admin/OptionTable.php',
         'Modules\\Option\\Admin\\OptionTabs' => __DIR__ . '/../..' . '/Admin/OptionTabs.php',
         'Modules\\Option\\Admin\\ProductTabsExtender' => __DIR__ . '/../..' . '/Admin/ProductTabsExtender.php',

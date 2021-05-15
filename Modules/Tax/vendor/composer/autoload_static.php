@@ -21,7 +21,6 @@ class ComposerStaticInit6dea01a43d62b60936babc1e8aadb6e0
     );
 
     public static $classMap = array (
-        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Modules\\Tax\\Admin\\TaxTabs' => __DIR__ . '/../..' . '/Admin/TaxTabs.php',
         'Modules\\Tax\\Entities\\TaxClass' => __DIR__ . '/../..' . '/Entities/TaxClass.php',
         'Modules\\Tax\\Entities\\TaxClassTranslation' => __DIR__ . '/../..' . '/Entities/TaxClassTranslation.php',

@@ -21,7 +21,6 @@ class ComposerStaticInite01314e95b29303579998eced0d3e90a
     );
 
     public static $classMap = array (
-        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Modules\\Core\\Events\\CollectingAssets' => __DIR__ . '/../..' . '/Events/CollectingAssets.php',
         'Modules\\Core\\Foundation\\Asset\\AssetNotFoundException' => __DIR__ . '/../..' . '/Foundation/Asset/AssetNotFoundException.php',
         'Modules\\Core\\Foundation\\Asset\\Manager\\AssetManager' => __DIR__ . '/../..' . '/Foundation/Asset/Manager/AssetManager.php',

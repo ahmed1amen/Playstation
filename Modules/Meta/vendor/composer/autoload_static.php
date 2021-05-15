@@ -21,7 +21,6 @@ class ComposerStaticInit394d6c7c862cf453afb714ed9aa9ea6a
     );
 
     public static $classMap = array (
-        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Modules\\Meta\\Eloquent\\HasMetaData' => __DIR__ . '/../..' . '/Eloquent/HasMetaData.php',
         'Modules\\Meta\\Entities\\MetaData' => __DIR__ . '/../..' . '/Entities/MetaData.php',
         'Modules\\Meta\\Entities\\MetaDataTranslation' => __DIR__ . '/../..' . '/Entities/MetaDataTranslation.php',

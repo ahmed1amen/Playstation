@@ -21,12 +21,16 @@ class ComposerStaticInit516611523588a5f18ac9da5dca50cb9c
     );
 
     public static $classMap = array (
-        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'Modules\\Account\\Http\\Controllers\\AccountAddressController' => __DIR__ . '/../..' . '/Http/Controllers/AccountAddressController.php',
         'Modules\\Account\\Http\\Controllers\\AccountDashboardController' => __DIR__ . '/../..' . '/Http/Controllers/AccountDashboardController.php',
+        'Modules\\Account\\Http\\Controllers\\AccountDefaultAddressController' => __DIR__ . '/../..' . '/Http/Controllers/AccountDefaultAddressController.php',
+        'Modules\\Account\\Http\\Controllers\\AccountDownloadsController' => __DIR__ . '/../..' . '/Http/Controllers/AccountDownloadsController.php',
         'Modules\\Account\\Http\\Controllers\\AccountOrderController' => __DIR__ . '/../..' . '/Http/Controllers/AccountOrderController.php',
+        'Modules\\Account\\Http\\Controllers\\AccountOrdersController' => __DIR__ . '/../..' . '/Http/Controllers/AccountOrdersController.php',
         'Modules\\Account\\Http\\Controllers\\AccountProfileController' => __DIR__ . '/../..' . '/Http/Controllers/AccountProfileController.php',
         'Modules\\Account\\Http\\Controllers\\AccountReviewController' => __DIR__ . '/../..' . '/Http/Controllers/AccountReviewController.php',
         'Modules\\Account\\Http\\Controllers\\AccountWishlistController' => __DIR__ . '/../..' . '/Http/Controllers/AccountWishlistController.php',
+        'Modules\\Account\\Http\\Requests\\SaveAddressRequest' => __DIR__ . '/../..' . '/Http/Requests/SaveAddressRequest.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

@@ -6,7 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
     'Modules\\Cart\\Cart' => $baseDir . '/Cart.php',
     'Modules\\Cart\\CartCondition' => $baseDir . '/CartCondition.php',
     'Modules\\Cart\\CartCoupon' => $baseDir . '/CartCoupon.php',

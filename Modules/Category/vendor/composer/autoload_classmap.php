@@ -6,7 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
     'Modules\\Category\\Database\\Seeders\\CategoryDatabaseSeeder' => $baseDir . '/Database/Seeders/CategoryDatabaseSeeder.php',
     'Modules\\Category\\Entities\\Category' => $baseDir . '/Entities/Category.php',
     'Modules\\Category\\Entities\\CategoryTranslation' => $baseDir . '/Entities/CategoryTranslation.php',

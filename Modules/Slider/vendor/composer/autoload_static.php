@@ -21,7 +21,6 @@ class ComposerStaticInit81b7b404c631798aa00eeff2ef4a9004
     );
 
     public static $classMap = array (
-        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Modules\\Slider\\Admin\\SliderTabs' => __DIR__ . '/../..' . '/Admin/SliderTabs.php',
         'Modules\\Slider\\Entities\\Slider' => __DIR__ . '/../..' . '/Entities/Slider.php',
         'Modules\\Slider\\Entities\\SliderSlide' => __DIR__ . '/../..' . '/Entities/SliderSlide.php',

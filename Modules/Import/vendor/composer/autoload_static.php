@@ -21,7 +21,6 @@ class ComposerStaticInitbce6ac52ab4f5f50764875058f8335e8
     );
 
     public static $classMap = array (
-        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Modules\\Import\\Http\\Controllers\\Admin\\DownloadCsvController' => __DIR__ . '/../..' . '/Http/Controllers/Admin/DownloadCsvController.php',
         'Modules\\Import\\Http\\Controllers\\Admin\\ImporterController' => __DIR__ . '/../..' . '/Http/Controllers/Admin/ImporterController.php',
         'Modules\\Import\\Http\\Requests\\StoreImporterRequest' => __DIR__ . '/../..' . '/Http/Requests/StoreImporterRequest.php',

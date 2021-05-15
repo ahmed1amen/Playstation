@@ -6,10 +6,14 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
+    'Modules\\Account\\Http\\Controllers\\AccountAddressController' => $baseDir . '/Http/Controllers/AccountAddressController.php',
     'Modules\\Account\\Http\\Controllers\\AccountDashboardController' => $baseDir . '/Http/Controllers/AccountDashboardController.php',
+    'Modules\\Account\\Http\\Controllers\\AccountDefaultAddressController' => $baseDir . '/Http/Controllers/AccountDefaultAddressController.php',
+    'Modules\\Account\\Http\\Controllers\\AccountDownloadsController' => $baseDir . '/Http/Controllers/AccountDownloadsController.php',
     'Modules\\Account\\Http\\Controllers\\AccountOrderController' => $baseDir . '/Http/Controllers/AccountOrderController.php',
+    'Modules\\Account\\Http\\Controllers\\AccountOrdersController' => $baseDir . '/Http/Controllers/AccountOrdersController.php',
     'Modules\\Account\\Http\\Controllers\\AccountProfileController' => $baseDir . '/Http/Controllers/AccountProfileController.php',
     'Modules\\Account\\Http\\Controllers\\AccountReviewController' => $baseDir . '/Http/Controllers/AccountReviewController.php',
     'Modules\\Account\\Http\\Controllers\\AccountWishlistController' => $baseDir . '/Http/Controllers/AccountWishlistController.php',
+    'Modules\\Account\\Http\\Requests\\SaveAddressRequest' => $baseDir . '/Http/Requests/SaveAddressRequest.php',
 );

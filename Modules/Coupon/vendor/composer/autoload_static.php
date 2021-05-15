@@ -21,7 +21,6 @@ class ComposerStaticInit014e82e80030fae0c2888fb0f0c54bf6
     );
 
     public static $classMap = array (
-        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Modules\\Coupon\\Admin\\CouponTable' => __DIR__ . '/../..' . '/Admin/CouponTable.php',
         'Modules\\Coupon\\Admin\\CouponTabs' => __DIR__ . '/../..' . '/Admin/CouponTabs.php',
         'Modules\\Coupon\\Checkers\\AlreadyApplied' => __DIR__ . '/../..' . '/Checkers/AlreadyApplied.php',

@@ -6,7 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
     'Modules\\Coupon\\Admin\\CouponTable' => $baseDir . '/Admin/CouponTable.php',
     'Modules\\Coupon\\Admin\\CouponTabs' => $baseDir . '/Admin/CouponTabs.php',
     'Modules\\Coupon\\Checkers\\AlreadyApplied' => $baseDir . '/Checkers/AlreadyApplied.php',

@@ -21,7 +21,6 @@ class ComposerStaticInit23f96f1b4ba9bddee73805d4b58e7bdb
     );
 
     public static $classMap = array (
-        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Modules\\Contact\\Http\\Controllers\\ContactController' => __DIR__ . '/../..' . '/Http/Controllers/ContactController.php',
         'Modules\\Contact\\Http\\Requests\\ContactRequest' => __DIR__ . '/../..' . '/Http/Requests/ContactRequest.php',
     );

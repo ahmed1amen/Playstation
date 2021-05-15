@@ -21,7 +21,6 @@ class ComposerStaticInit0ad90ab5162e2354a1f850aa397d9841
     );
 
     public static $classMap = array (
-        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Modules\\Newsletter\\Http\\Controllers\\SubscriberController' => __DIR__ . '/../..' . '/Http/Controllers/SubscriberController.php',
         'Modules\\Newsletter\\Http\\Requests\\StoreSubscriberRequest' => __DIR__ . '/../..' . '/Http/Requests/StoreSubscriberRequest.php',
         'Modules\\Newsletter\\Providers\\NewsletterServiceProvider' => __DIR__ . '/../..' . '/Providers/NewsletterServiceProvider.php',

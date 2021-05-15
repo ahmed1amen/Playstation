@@ -21,7 +21,6 @@ class ComposerStaticInitd2d797738fa1698d939abb6f2f72b14b
     );
 
     public static $classMap = array (
-        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Modules\\Currency\\Admin\\CurrencyRateTable' => __DIR__ . '/../..' . '/Admin/CurrencyRateTable.php',
         'Modules\\Currency\\Admin\\CurrencyRateTabs' => __DIR__ . '/../..' . '/Admin/CurrencyRateTabs.php',
         'Modules\\Currency\\Console\\RefreshCurrencyRatesCommand' => __DIR__ . '/../..' . '/Console/RefreshCurrencyRatesCommand.php',

@@ -21,7 +21,8 @@ class ComposerStaticInitdd1bc86041e23f5cd7953636cb021590
     );
 
     public static $classMap = array (
-        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'Modules\\Report\\BrandedProductsReport' => __DIR__ . '/../..' . '/BrandedProductsReport.php',
+        'Modules\\Report\\CategorizedProductsReport' => __DIR__ . '/../..' . '/CategorizedProductsReport.php',
         'Modules\\Report\\CouponsReport' => __DIR__ . '/../..' . '/CouponsReport.php',
         'Modules\\Report\\CustomersOrderReport' => __DIR__ . '/../..' . '/CustomersOrderReport.php',
         'Modules\\Report\\Http\\Controllers\\Admin\\ReportController' => __DIR__ . '/../..' . '/Http/Controllers/Admin/ReportController.php',
@@ -34,7 +35,9 @@ class ComposerStaticInitdd1bc86041e23f5cd7953636cb021590
         'Modules\\Report\\SearchReport' => __DIR__ . '/../..' . '/SearchReport.php',
         'Modules\\Report\\ShippingReport' => __DIR__ . '/../..' . '/ShippingReport.php',
         'Modules\\Report\\Sidebar\\SidebarExtender' => __DIR__ . '/../..' . '/Sidebar/SidebarExtender.php',
+        'Modules\\Report\\TaggedProductsReport' => __DIR__ . '/../..' . '/TaggedProductsReport.php',
         'Modules\\Report\\TaxReport' => __DIR__ . '/../..' . '/TaxReport.php',
+        'Modules\\Report\\TaxedProductsReport' => __DIR__ . '/../..' . '/TaxedProductsReport.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

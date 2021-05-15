@@ -6,7 +6,8 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
+    'Modules\\Report\\BrandedProductsReport' => $baseDir . '/BrandedProductsReport.php',
+    'Modules\\Report\\CategorizedProductsReport' => $baseDir . '/CategorizedProductsReport.php',
     'Modules\\Report\\CouponsReport' => $baseDir . '/CouponsReport.php',
     'Modules\\Report\\CustomersOrderReport' => $baseDir . '/CustomersOrderReport.php',
     'Modules\\Report\\Http\\Controllers\\Admin\\ReportController' => $baseDir . '/Http/Controllers/Admin/ReportController.php',
@@ -19,5 +20,7 @@ return array(
     'Modules\\Report\\SearchReport' => $baseDir . '/SearchReport.php',
     'Modules\\Report\\ShippingReport' => $baseDir . '/ShippingReport.php',
     'Modules\\Report\\Sidebar\\SidebarExtender' => $baseDir . '/Sidebar/SidebarExtender.php',
+    'Modules\\Report\\TaggedProductsReport' => $baseDir . '/TaggedProductsReport.php',
     'Modules\\Report\\TaxReport' => $baseDir . '/TaxReport.php',
+    'Modules\\Report\\TaxedProductsReport' => $baseDir . '/TaxedProductsReport.php',
 );

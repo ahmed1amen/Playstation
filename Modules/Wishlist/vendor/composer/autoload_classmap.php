@@ -6,7 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
     'Modules\\Wishlist\\Http\\Controllers\\WishlistController' => $baseDir . '/Http/Controllers/WishlistController.php',
     'Modules\\Wishlist\\Http\\Controllers\\WishlistProductController' => $baseDir . '/Http/Controllers/WishlistProductController.php',
 );

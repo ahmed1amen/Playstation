@@ -21,21 +21,25 @@ class ComposerStaticInitf74f5e4de120926c136cd22a97cd5e2f
     );
 
     public static $classMap = array (
-        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Modules\\Order\\Admin\\OrderTable' => __DIR__ . '/../..' . '/Admin/OrderTable.php',
         'Modules\\Order\\Entities\\Order' => __DIR__ . '/../..' . '/Entities/Order.php',
+        'Modules\\Order\\Entities\\OrderDownload' => __DIR__ . '/../..' . '/Entities/OrderDownload.php',
         'Modules\\Order\\Entities\\OrderProduct' => __DIR__ . '/../..' . '/Entities/OrderProduct.php',
         'Modules\\Order\\Entities\\OrderProductOption' => __DIR__ . '/../..' . '/Entities/OrderProductOption.php',
         'Modules\\Order\\Entities\\OrderProductOptionValue' => __DIR__ . '/../..' . '/Entities/OrderProductOptionValue.php',
         'Modules\\Order\\Entities\\OrderTax' => __DIR__ . '/../..' . '/Entities/OrderTax.php',
+        'Modules\\Order\\Events\\OrderStatusChanged' => __DIR__ . '/../..' . '/Events/OrderStatusChanged.php',
         'Modules\\Order\\Http\\Controllers\\Admin\\OrderController' => __DIR__ . '/../..' . '/Http/Controllers/Admin/OrderController.php',
         'Modules\\Order\\Http\\Controllers\\Admin\\OrderEmailController' => __DIR__ . '/../..' . '/Http/Controllers/Admin/OrderEmailController.php',
         'Modules\\Order\\Http\\Controllers\\Admin\\OrderPrintController' => __DIR__ . '/../..' . '/Http/Controllers/Admin/OrderPrintController.php',
         'Modules\\Order\\Http\\Controllers\\Admin\\OrderStatusController' => __DIR__ . '/../..' . '/Http/Controllers/Admin/OrderStatusController.php',
         'Modules\\Order\\Http\\Controllers\\OrderController' => __DIR__ . '/../..' . '/Http/Controllers/OrderController.php',
         'Modules\\Order\\Http\\Requests\\StoreOrderRequest' => __DIR__ . '/../..' . '/Http/Requests/StoreOrderRequest.php',
+        'Modules\\Order\\Listeners\\SendOrderStatusChangedEmail' => __DIR__ . '/../..' . '/Listeners/SendOrderStatusChangedEmail.php',
+        'Modules\\Order\\Listeners\\SendOrderStatusChangedSms' => __DIR__ . '/../..' . '/Listeners/SendOrderStatusChangedSms.php',
         'Modules\\Order\\Mail\\OrderStatusChanged' => __DIR__ . '/../..' . '/Mail/OrderStatusChanged.php',
         'Modules\\Order\\OrderCollection' => __DIR__ . '/../..' . '/OrderCollection.php',
+        'Modules\\Order\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/Providers/EventServiceProvider.php',
         'Modules\\Order\\Providers\\OrderServiceProvider' => __DIR__ . '/../..' . '/Providers/OrderServiceProvider.php',
         'Modules\\Order\\Sidebar\\SidebarExtender' => __DIR__ . '/../..' . '/Sidebar/SidebarExtender.php',
     );

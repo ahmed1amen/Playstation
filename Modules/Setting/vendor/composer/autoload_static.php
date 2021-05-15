@@ -21,7 +21,6 @@ class ComposerStaticInit8fcedff8f493215f5e9971c93ed708f6
     );
 
     public static $classMap = array (
-        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Modules\\Setting\\Admin\\SettingTabs' => __DIR__ . '/../..' . '/Admin/SettingTabs.php',
         'Modules\\Setting\\Database\\Seeders\\SettingDatabaseSeeder' => __DIR__ . '/../..' . '/Database/Seeders/SettingDatabaseSeeder.php',
         'Modules\\Setting\\Entities\\Setting' => __DIR__ . '/../..' . '/Entities/Setting.php',

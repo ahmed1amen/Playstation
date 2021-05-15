@@ -21,7 +21,6 @@ class ComposerStaticInitd6a3e7de5715063d88d959885f0babb2
     );
 
     public static $classMap = array (
-        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Modules\\Admin\\Http\\Controllers\\Admin\\DashboardController' => __DIR__ . '/../..' . '/Http/Controllers/Admin/DashboardController.php',
         'Modules\\Admin\\Http\\Controllers\\Admin\\SalesAnalyticsController' => __DIR__ . '/../..' . '/Http/Controllers/Admin/SalesAnalyticsController.php',
         'Modules\\Admin\\Http\\ViewComposers\\AssetsComposer' => __DIR__ . '/../..' . '/Http/ViewComposers/AssetsComposer.php',

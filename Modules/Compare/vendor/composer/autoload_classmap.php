@@ -6,7 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
     'Modules\\Compare\\Compare' => $baseDir . '/Compare.php',
     'Modules\\Compare\\Http\\Controllers\\CompareController' => $baseDir . '/Http/Controllers/CompareController.php',
     'Modules\\Compare\\Http\\Controllers\\CompareRelatedProductController' => $baseDir . '/Http/Controllers/CompareRelatedProductController.php',

@@ -21,7 +21,6 @@ class ComposerStaticInitbeff0ff5165655493de2dd6e02613a84
     );
 
     public static $classMap = array (
-        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Modules\\User\\Admin\\ProfileTabs' => __DIR__ . '/../..' . '/Admin/ProfileTabs.php',
         'Modules\\User\\Admin\\RoleTabs' => __DIR__ . '/../..' . '/Admin/RoleTabs.php',
         'Modules\\User\\Admin\\UserTable' => __DIR__ . '/../..' . '/Admin/UserTable.php',
@@ -33,6 +32,7 @@ class ComposerStaticInitbeff0ff5165655493de2dd6e02613a84
         'Modules\\User\\Entities\\Role' => __DIR__ . '/../..' . '/Entities/Role.php',
         'Modules\\User\\Entities\\RoleTranslation' => __DIR__ . '/../..' . '/Entities/RoleTranslation.php',
         'Modules\\User\\Entities\\User' => __DIR__ . '/../..' . '/Entities/User.php',
+        'Modules\\User\\Events\\CustomerRegistered' => __DIR__ . '/../..' . '/Events/CustomerRegistered.php',
         'Modules\\User\\Events\\UserHasActivatedAccount' => __DIR__ . '/../..' . '/Events/UserHasActivatedAccount.php',
         'Modules\\User\\Events\\UserHasRegistered' => __DIR__ . '/../..' . '/Events/UserHasRegistered.php',
         'Modules\\User\\Guards\\Sentinel' => __DIR__ . '/../..' . '/Guards/Sentinel.php',
@@ -51,6 +51,8 @@ class ComposerStaticInitbeff0ff5165655493de2dd6e02613a84
         'Modules\\User\\Http\\Requests\\SaveUserRequest' => __DIR__ . '/../..' . '/Http/Requests/SaveUserRequest.php',
         'Modules\\User\\Http\\Requests\\UpdateProfileRequest' => __DIR__ . '/../..' . '/Http/Requests/UpdateProfileRequest.php',
         'Modules\\User\\Http\\ViewComposers\\CurrentUserComposer' => __DIR__ . '/../..' . '/Http/ViewComposers/CurrentUserComposer.php',
+        'Modules\\User\\Listeners\\SendWelcomeEmail' => __DIR__ . '/../..' . '/Listeners/SendWelcomeEmail.php',
+        'Modules\\User\\Listeners\\SendWelcomeSms' => __DIR__ . '/../..' . '/Listeners/SendWelcomeSms.php',
         'Modules\\User\\LoginProvider' => __DIR__ . '/../..' . '/LoginProvider.php',
         'Modules\\User\\Mail\\ResetPasswordEmail' => __DIR__ . '/../..' . '/Mail/ResetPasswordEmail.php',
         'Modules\\User\\Mail\\Welcome' => __DIR__ . '/../..' . '/Mail/Welcome.php',

@@ -21,7 +21,6 @@ class ComposerStaticInit6ee8a58468ff25178ec9d264217fd1ac
     );
 
     public static $classMap = array (
-        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Modules\\Compare\\Compare' => __DIR__ . '/../..' . '/Compare.php',
         'Modules\\Compare\\Http\\Controllers\\CompareController' => __DIR__ . '/../..' . '/Http/Controllers/CompareController.php',
         'Modules\\Compare\\Http\\Controllers\\CompareRelatedProductController' => __DIR__ . '/../..' . '/Http/Controllers/CompareRelatedProductController.php',

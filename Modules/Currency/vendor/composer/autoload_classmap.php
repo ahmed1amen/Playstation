@@ -6,7 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
     'Modules\\Currency\\Admin\\CurrencyRateTable' => $baseDir . '/Admin/CurrencyRateTable.php',
     'Modules\\Currency\\Admin\\CurrencyRateTabs' => $baseDir . '/Admin/CurrencyRateTabs.php',
     'Modules\\Currency\\Console\\RefreshCurrencyRatesCommand' => $baseDir . '/Console/RefreshCurrencyRatesCommand.php',

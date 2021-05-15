@@ -21,7 +21,6 @@ class ComposerStaticInitcaabb624dbea5dbe518405a4d24537f7
     );
 
     public static $classMap = array (
-        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Modules\\FlashSale\\Admin\\FlashSaleTabs' => __DIR__ . '/../..' . '/Admin/FlashSaleTabs.php',
         'Modules\\FlashSale\\Database\\Seeders\\FlashSaleDatabaseSeeder' => __DIR__ . '/../..' . '/Database/Seeders/FlashSaleDatabaseSeeder.php',
         'Modules\\FlashSale\\Entities\\FlashSale' => __DIR__ . '/../..' . '/Entities/FlashSale.php',

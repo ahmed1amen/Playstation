@@ -21,7 +21,6 @@ class ComposerStaticInit085094bd69983e6e5c1ac1021c5ce0c5
     );
 
     public static $classMap = array (
-        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Modules\\Wishlist\\Http\\Controllers\\WishlistController' => __DIR__ . '/../..' . '/Http/Controllers/WishlistController.php',
         'Modules\\Wishlist\\Http\\Controllers\\WishlistProductController' => __DIR__ . '/../..' . '/Http/Controllers/WishlistProductController.php',
     );

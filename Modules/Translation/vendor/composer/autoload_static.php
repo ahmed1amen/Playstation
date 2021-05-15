@@ -21,7 +21,6 @@ class ComposerStaticInit0c8461fa1a12bd85397d1b27c61df0e5
     );
 
     public static $classMap = array (
-        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Modules\\Translation\\Entities\\Translation' => __DIR__ . '/../..' . '/Entities/Translation.php',
         'Modules\\Translation\\Entities\\TranslationTranslation' => __DIR__ . '/../..' . '/Entities/TranslationTranslation.php',
         'Modules\\Translation\\Http\\Controllers\\Admin\\TranslationController' => __DIR__ . '/../..' . '/Http/Controllers/Admin/TranslationController.php',

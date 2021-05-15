@@ -6,12 +6,13 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
     'Modules\\Checkout\\Events\\OrderPlaced' => $baseDir . '/Events/OrderPlaced.php',
     'Modules\\Checkout\\Http\\Controllers\\CheckoutCompleteController' => $baseDir . '/Http/Controllers/CheckoutCompleteController.php',
     'Modules\\Checkout\\Http\\Controllers\\CheckoutController' => $baseDir . '/Http/Controllers/CheckoutController.php',
     'Modules\\Checkout\\Http\\Controllers\\PaymentCanceledController' => $baseDir . '/Http/Controllers/PaymentCanceledController.php',
     'Modules\\Checkout\\Listeners\\AddPlacedOrderToSession' => $baseDir . '/Listeners/AddPlacedOrderToSession.php',
+    'Modules\\Checkout\\Listeners\\SendNewOrderEmails' => $baseDir . '/Listeners/SendNewOrderEmails.php',
+    'Modules\\Checkout\\Listeners\\SendNewOrderSms' => $baseDir . '/Listeners/SendNewOrderSms.php',
     'Modules\\Checkout\\Listeners\\SendOrderEmails' => $baseDir . '/Listeners/SendOrderEmails.php',
     'Modules\\Checkout\\Listeners\\UpdateOrderStatus' => $baseDir . '/Listeners/UpdateOrderStatus.php',
     'Modules\\Checkout\\Mail\\Invoice' => $baseDir . '/Mail/Invoice.php',

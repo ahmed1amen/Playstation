@@ -6,7 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
     'Modules\\Attribute\\Admin\\AttributeSetTabs' => $baseDir . '/Admin/AttributeSetTabs.php',
     'Modules\\Attribute\\Admin\\AttributeTable' => $baseDir . '/Admin/AttributeTable.php',
     'Modules\\Attribute\\Admin\\AttributeTabs' => $baseDir . '/Admin/AttributeTabs.php',

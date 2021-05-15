@@ -21,7 +21,6 @@ class ComposerStaticInite06e3ed15c1a5bc61d8a485142572e34
     );
 
     public static $classMap = array (
-        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Modules\\Support\\Country' => __DIR__ . '/../..' . '/Country.php',
         'Modules\\Support\\Eloquent\\Model' => __DIR__ . '/../..' . '/Eloquent/Model.php',
         'Modules\\Support\\Eloquent\\Sluggable' => __DIR__ . '/../..' . '/Eloquent/Sluggable.php',

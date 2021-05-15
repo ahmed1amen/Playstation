@@ -6,7 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
     'Modules\\Payment\\Facades\\Gateway' => $baseDir . '/Facades/Gateway.php',
     'Modules\\Payment\\GatewayInterface' => $baseDir . '/GatewayInterface.php',
     'Modules\\Payment\\GatewayManager' => $baseDir . '/GatewayManager.php',
@@ -16,13 +15,16 @@ return array(
     'Modules\\Payment\\Gateways\\CheckPayment' => $baseDir . '/Gateways/CheckPayment.php',
     'Modules\\Payment\\Gateways\\Instamojo' => $baseDir . '/Gateways/Instamojo.php',
     'Modules\\Payment\\Gateways\\PayPal' => $baseDir . '/Gateways/PayPal.php',
+    'Modules\\Payment\\Gateways\\Paytm' => $baseDir . '/Gateways/Paytm.php',
     'Modules\\Payment\\Gateways\\Razorpay' => $baseDir . '/Gateways/Razorpay.php',
     'Modules\\Payment\\Gateways\\Stripe' => $baseDir . '/Gateways/Stripe.php',
     'Modules\\Payment\\HasTransactionReference' => $baseDir . '/HasTransactionReference.php',
     'Modules\\Payment\\Providers\\GatewayServiceProvider' => $baseDir . '/Providers/GatewayServiceProvider.php',
+    'Modules\\Payment\\Providers\\PaymentServiceProvider' => $baseDir . '/Providers/PaymentServiceProvider.php',
     'Modules\\Payment\\Responses\\InstamojoResponse' => $baseDir . '/Responses/InstamojoResponse.php',
     'Modules\\Payment\\Responses\\NullResponse' => $baseDir . '/Responses/NullResponse.php',
     'Modules\\Payment\\Responses\\PayPalResponse' => $baseDir . '/Responses/PayPalResponse.php',
+    'Modules\\Payment\\Responses\\PaytmResponse' => $baseDir . '/Responses/PaytmResponse.php',
     'Modules\\Payment\\Responses\\RazorpayResponse' => $baseDir . '/Responses/RazorpayResponse.php',
     'Modules\\Payment\\Responses\\StripeResponse' => $baseDir . '/Responses/StripeResponse.php',
     'Modules\\Payment\\ShouldRedirect' => $baseDir . '/ShouldRedirect.php',

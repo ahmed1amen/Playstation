@@ -6,7 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
     'Modules\\FlashSale\\Admin\\FlashSaleTabs' => $baseDir . '/Admin/FlashSaleTabs.php',
     'Modules\\FlashSale\\Database\\Seeders\\FlashSaleDatabaseSeeder' => $baseDir . '/Database/Seeders/FlashSaleDatabaseSeeder.php',
     'Modules\\FlashSale\\Entities\\FlashSale' => $baseDir . '/Entities/FlashSale.php',
