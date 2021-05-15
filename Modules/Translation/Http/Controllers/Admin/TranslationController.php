@@ -13,7 +13,14 @@ class TranslationController
      */
     public function index()
     {
-        $translations = Translation::retrieve();
+        $translations = Translation::getFileTranslations();
+
+        foreach (array_keys($translations) as $translati)
+        Translation::create(['key' => $translati]);
+
+
+
+
 
         return view('translation::admin.translations.index', compact('translations'));
     }
