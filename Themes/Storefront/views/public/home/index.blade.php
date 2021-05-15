@@ -14,10 +14,7 @@
     @endif
 
     @if (setting('storefront_slider_games_enabled'))
-
         <digital-games-slider :data="{{ json_encode($digitalGamesSlider) }}"></digital-games-slider>
-
-
     @endif
 
     @if (setting('storefront_product_tabs_1_section_enabled'))
