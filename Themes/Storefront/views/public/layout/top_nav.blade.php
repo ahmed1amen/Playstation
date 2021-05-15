@@ -51,21 +51,7 @@
                             </li>
                         @endif
 
-                        @auth
-                            <li>
-                                <a href="{{ route('account.dashboard.index') }}">
-                                    <i class="las la-user"></i>
-                                    {{ trans('storefront::layout.account') }}
-                                </a>
-                            </li>
-                        @else
-                            <li>
-                                <a href="{{ route('login') }}">
-                                    <i class="las la-sign-in-alt"></i>
-                                    {{ trans('storefront::layout.login') }}
-                                </a>
-                            </li>
-                        @endauth
+
                     </ul>
                 </div>
             </div>
