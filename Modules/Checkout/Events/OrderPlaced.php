@@ -2,6 +2,7 @@
 
 namespace Modules\Checkout\Events;
 
+use Modules\Order\Entities\Order;
 use Illuminate\Queue\SerializesModels;
 
 class OrderPlaced
@@ -18,9 +19,10 @@ class OrderPlaced
     /**
      * Create a new event instance.
      *
+     * @param \Modules\Order\Entities\Order $order
      * @return void
      */
-    public function __construct($order)
+    public function __construct(Order $order)
     {
         $this->order = $order;
     }

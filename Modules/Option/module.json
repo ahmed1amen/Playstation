@@ -1,7 +1,7 @@
 {
     "name": "Option",
     "alias": "option",
-    "order": 100,
+    "priority": 100,
     "providers": [
         "Modules\\Option\\Providers\\OptionServiceProvider",
         "Modules\\Option\\Providers\\EventServiceProvider"

@@ -33,5 +33,7 @@
     "Brand": true,
     "Newsletter": true,
     "Tag": true,
-    "Import": true
+    "Import": true,
+    "Address": true,
+    "Sms": true
 }

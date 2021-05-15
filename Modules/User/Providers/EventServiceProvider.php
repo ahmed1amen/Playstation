@@ -12,6 +12,9 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        //
+        \Modules\User\Events\CustomerRegistered::class => [
+            \Modules\User\Listeners\SendWelcomeEmail::class,
+            \Modules\User\Listeners\SendWelcomeSms::class,
+        ],
     ];
 }

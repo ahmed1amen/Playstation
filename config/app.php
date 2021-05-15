@@ -10,9 +10,9 @@ return [
     | framework needs to place the application's name in a notification or
     | any other location as required by the application or its packages.
     */
-    'name' => 'PlayStation',
+    'name' => 'FleetCart',
 
-    'installed' => true,
+    'installed' => env('APP_INSTALLED', false),
 
     /*
    |--------------------------------------------------------------------------
@@ -34,7 +34,7 @@ return [
     |
     */
 
-    'env' => env('APP_ENV', 'development'),
+    'env' => env('APP_ENV', 'production'),
 
     /*
     |--------------------------------------------------------------------------
@@ -47,7 +47,7 @@ return [
     |
     */
 
-    'debug' => env('APP_DEBUG', true),
+    'debug' => env('APP_DEBUG', false),
 
     /*
     |--------------------------------------------------------------------------
@@ -179,6 +179,8 @@ return [
          */
         FleetCart\Providers\AppServiceProvider::class,
         FleetCart\Providers\RouteServiceProvider::class,
+        Nwidart\Modules\LaravelModulesServiceProvider::class,
+        Mehedi\Stylist\StylistServiceProvider::class,
     ],
 
     /*

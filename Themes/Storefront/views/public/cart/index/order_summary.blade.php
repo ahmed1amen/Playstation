@@ -46,10 +46,10 @@
                 </li>
             </ul>
 
-            <div class="shipping-methods" v-cloak>
+            <div class="shipping-methods" v-if="hasShippingMethod" v-cloak>
                 <h6>{{ trans('storefront::cart.shipping_method') }}</h6>
 
-                <div class="form-group" v-if="hasShippingMethod">
+                <div class="form-group">
                     <div class="form-radio" v-for="shippingMethod in cart.availableShippingMethods">
                         <input
                             type="radio"
@@ -69,10 +69,6 @@
                         </span>
                     </div>
                 </div>
-
-                <span class="error-message" v-else>
-                    {{ trans('storefront::cart.shipping_method_is_not_configured') }}
-                </span>
             </div>
 
             <div class="order-summary-total">
@@ -85,7 +81,6 @@
             <a
                 href="{{ route('checkout.create') }}"
                 class="btn btn-primary btn-proceed-to-checkout"
-                :class="{ disabled: ! hasShippingMethod }"
             >
                 {{ trans('storefront::cart.proceed_to_checkout') }}
             </a>

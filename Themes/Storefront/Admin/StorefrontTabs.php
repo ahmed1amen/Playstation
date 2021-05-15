@@ -244,7 +244,7 @@ class StorefrontTabs extends Tabs
 
     private function flashSaleAndVerticalProducts()
     {
-        return tap(new Tab('flashSaleAndVerticalProducts', trans('storefront::storefront.tabs.flash_sale_and_vertical_products')), function (Tab $tab) {
+        return tap(new Tab('flash_sale_and_vertical_products', trans('storefront::storefront.tabs.flash_sale_and_vertical_products')), function (Tab $tab) {
             $tab->weight(60);
             $tab->view('admin.storefront.tabs.flash_sale_and_vertical_products', [
                 'flashSales' => $this->getFlashSales(),

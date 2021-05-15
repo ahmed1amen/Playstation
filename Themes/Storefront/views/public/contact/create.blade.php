@@ -23,17 +23,19 @@
                         <h3 class="title">{{ trans('storefront::contact.contact') }}</h3>
 
                         <ul class="list-inline contact-info">
-                            @if (setting('store_phone'))
+                            @if (setting('store_phone') && ! setting('store_phone_hide'))
                                 <li>
                                     <i class="las la-phone"></i>
                                     <span>{{ setting('store_phone') }}</span>
                                 </li>
                             @endif
 
-                            <li>
-                                <i class="las la-envelope"></i>
-                                <span>{{ setting('store_email') }}</span>
-                            </li>
+                            @if(! setting('store_email_hide'))
+                                <li>
+                                    <i class="las la-envelope"></i>
+                                    <span>{{ setting('store_email') }}</span>
+                                </li>
+                            @endif
 
                             @if (setting('storefront_address'))
                                 <li>

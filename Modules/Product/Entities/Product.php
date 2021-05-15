@@ -56,6 +56,7 @@ class Product extends Model
         'manage_stock',
         'qty',
         'in_stock',
+        'virtual',
         'is_active',
         'new_from',
         'new_to',
@@ -93,8 +94,8 @@ class Product extends Model
      * @var array
      */
     protected $appends = [
-        'base_image', 'formatted_price', 'rating_percent', 'is_in_stock', 'is_out_of_stock',
-        'is_new', 'has_percentage_special_price', 'special_price_percent',
+        'base_image', 'formatted_price', 'rating_percent', 'is_in_stock',
+        'is_out_of_stock', 'is_new', 'has_percentage_special_price', 'special_price_percent',
     ];
 
     /**
@@ -302,6 +303,19 @@ class Product extends Model
             ->sortBy('pivot.id');
     }
 
+    /**
+     * Get product's downloadable files.
+     *
+     * @return \Illuminate\Database\Eloquent\Collection
+     */
+    public function getDownloadsAttribute()
+    {
+        return $this->files
+            ->where('pivot.zone', 'downloads')
+            ->sortBy('pivot.id')
+            ->flatten();
+    }
+
     public function getFormattedPriceAttribute()
     {
         return product_price_formatted($this);
@@ -367,9 +381,18 @@ class Product extends Model
         return ! $this->isInStock();
     }
 
-    public function outOfStock()
+    public function markAsInStock()
     {
-        $this->update(['in_stock' => false]);
+        $this->withoutEvents(function () {
+            $this->update(['in_stock' => true]);
+        });
+    }
+
+    public function markAsOutOfStock()
+    {
+        $this->withoutEvents(function () {
+            $this->update(['in_stock' => false]);
+        });
     }
 
     public function hasAnyAttribute()

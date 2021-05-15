@@ -115,7 +115,7 @@ class Cart extends DarryldecodeCart implements JsonSerializable
             $cartItem->product->decrement('qty', $cartItem->qty);
 
             if ($cartItem->refreshStock()->product->qty === 0) {
-                $cartItem->product->outOfStock();
+                $cartItem->product->markAsOutOfStock();
             }
         });
     }
@@ -146,7 +146,18 @@ class Cart extends DarryldecodeCart implements JsonSerializable
 
     public function availableShippingMethods()
     {
+        if ($this->allItemsAreVirtual()) {
+            return collect();
+        }
+
         return ShippingMethod::available();
+    }
+
+    public function allItemsAreVirtual()
+    {
+        return $this->items()->every(function (CartItem $cartItem) {
+            return $cartItem->product->virtual;
+        });
     }
 
     public function hasShippingMethod()

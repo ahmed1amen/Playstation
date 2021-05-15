@@ -20,6 +20,7 @@ if (process.env.theme !== undefined) {
 
 mix.setPublicPath('./')
     .options({ processCssUrls: false })
+    .sourceMaps(true, 'eval-source-map')
     .mergeManifest();
 
 let onBuildExit = [];

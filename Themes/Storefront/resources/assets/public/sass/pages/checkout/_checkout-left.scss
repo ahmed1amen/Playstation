@@ -1,4 +1,5 @@
 .checkout-left {
+    flex-grow: 1;
     padding-right: 15px;
 }
 
@@ -28,6 +29,55 @@
 
         label {
             color: $color-black;
+        }
+    }
+
+    .select-address {
+        padding: 3px 0;
+
+        .form-group {
+            margin-bottom: 0;
+        }
+
+        .form-radio {
+            margin-bottom: 9px;
+        }
+
+        label {
+            > span {
+                font-weight: 500;
+                display: block;
+                color: $color-black;
+
+                &:not(:first-child) {
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 22px;
+                    color: $color-gray;
+                }
+
+                &:nth-child(2) {
+                    margin-top: 5px;
+                }
+            }
+        }
+
+        .error-message {
+            display: inline-flex;
+            margin: 0 0 20px;
+        }
+    }
+
+    .add-new-address-wrap {
+        .btn-add-new-address {
+            font-weight: 500;
+            margin-bottom: 22px;
+            padding: 5px 0;
+
+            &:hover {
+                color: $color-default;
+                color: var(--color-primary);
+            }
         }
     }
 

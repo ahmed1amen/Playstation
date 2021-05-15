@@ -59,14 +59,19 @@
                                                     <td>{{ trans('order::print.email') }}:</td>
                                                     <td>{{ $order->customer_email }}</td>
                                                 </tr>
+
                                                 <tr>
                                                     <td>{{ trans('order::print.phone') }}:</td>
-                                                    <td>{{ $order->customer_phone ?: '-' }}</td>
+                                                    <td>{{ $order->customer_phone }}</td>
                                                 </tr>
-                                                <tr>
-                                                    <td>{{ trans('order::print.shipping_method') }}:</td>
-                                                    <td>{{ $order->shipping_method }}</td>
-                                                </tr>
+
+                                                @if ($order->shipping_method)
+                                                    <tr>
+                                                        <td>{{ trans('order::print.shipping_method') }}:</td>
+                                                        <td>{{ $order->shipping_method }}</td>
+                                                    </tr>
+                                                @endif
+
                                                 <tr>
                                                     <td>{{ trans('order::print.payment_method') }}:</td>
                                                     <td>{{ $order->payment_method }}</td>
@@ -141,10 +146,12 @@
                                                         </div>
                                                     @endif
                                                 </td>
+
                                                 <td>
                                                     <label class="visible-xs">{{ trans('order::print.unit_price') }}:</label>
                                                     <span>{{ $product->unit_price->convert($order->currency, $order->currency_rate)->convert($order->currency, $order->currency_rate)->format($order->currency) }}</span>
                                                 </td>
+
                                                 <td>
                                                     <label class="visible-xs">{{ trans('order::print.quantity') }}:</label>
                                                     <span>{{ $product->qty }}</span>

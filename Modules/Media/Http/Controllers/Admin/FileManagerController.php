@@ -2,8 +2,6 @@
 
 namespace Modules\Media\Http\Controllers\Admin;
 
-use Illuminate\Http\Request;
-
 class FileManagerController
 {
     /**

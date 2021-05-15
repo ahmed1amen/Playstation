@@ -1,4 +1,4 @@
-<div class="home-banner-wrap col">
+<div class="home-banner-wrap">
     <a href="{{ $sliderBanners['banner_1']->call_to_action_url }}"
         class="banner"
         target="{{ $sliderBanners['banner_1']->open_in_new_window ? '_blank' : '_self' }}"

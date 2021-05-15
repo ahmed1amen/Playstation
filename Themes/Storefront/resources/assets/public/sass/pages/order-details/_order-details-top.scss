@@ -36,12 +36,19 @@
 .order-billing-details,
 .order-shipping-details {
     h4 {
-        margin-bottom: 14px;
+        margin-bottom: 18px;
     }
 
     address {
-        line-height: 31px;
-        color: $color-gray;
+        > span {
+            display: block;
+            margin-bottom: 9px;
+            color: $color-gray;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
     }
 }
 

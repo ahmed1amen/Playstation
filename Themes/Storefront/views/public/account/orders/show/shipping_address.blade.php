@@ -3,19 +3,15 @@
         <h4>{{ trans('storefront::account.view_order.shipping_address') }}</h4>
 
         <address>
-            {{ $order->shipping_full_name }}
-            <br>
-            {{ $order->shipping_address_1 }}
-            <br>
+            <span>{{ $order->shipping_full_name }}</span>
+            <span>{{ $order->shipping_address_1 }}</span>
 
             @if ($order->shipping_address_2)
-                {{ $order->shipping_address_2 }}
-                <br>
+                <span>{{ $order->shipping_address_2 }}</span>
             @endif
 
-            {{ $order->shipping_city }}, {{ $order->shipping_state_name }} {{ $order->shipping_zip }}
-            <br>
-            {{ $order->shipping_country_name }}
+            <span>{{ $order->shipping_city }}, {{ $order->shipping_state_name }} {{ $order->shipping_zip }}</span>
+            <span>{{ $order->shipping_country_name }}</span>
         </address>
     </div>
 </div>

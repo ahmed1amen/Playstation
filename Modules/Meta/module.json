@@ -2,5 +2,5 @@
     "name": "Meta",
     "alias": "meta",
     "description": "Meta data management",
-    "order": 110
+    "priority": 110
 }

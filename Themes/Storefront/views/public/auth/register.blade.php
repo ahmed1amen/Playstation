@@ -48,6 +48,18 @@
                     </div>
 
                     <div class="form-group">
+                        <label for="phone">
+                            {{ trans('user::auth.phone') }}<span>*</span>
+                        </label>
+
+                        <input type="text" name="phone" value="{{ old('phone') }}" id="phone" class="form-control">
+
+                        @error('phone')
+                            <span class="error-message">{{ $message }}</span>
+                        @enderror
+                    </div>
+
+                    <div class="form-group">
                         <label for="password">
                             {{ trans('user::auth.password') }}<span>*</span>
                         </label>

@@ -2,7 +2,7 @@
     "name": "Newsletter",
     "alias": "newsletter",
     "description": "The FleetCart Newsletter Module.",
-    "order": 100,
+    "priority": 100,
     "providers": [
         "Modules\\Newsletter\\Providers\\NewsletterServiceProvider"
     ]

@@ -96,6 +96,6 @@ class StoreCartItemRequest extends Request
         return array_merge([
             'options.*.required' => trans('cart::validation.this_field_is_required'),
             'options.*.in' => trans('cart::validation.the_selected_option_is_invalid'),
-        ], $this->getDefaultMessages());
+        ], parent::messages());
     }
 }

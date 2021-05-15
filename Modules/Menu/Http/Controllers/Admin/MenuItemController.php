@@ -65,7 +65,7 @@ class MenuItemController
      */
     public function update($menuId, $id, SaveMenuItemRequest $request)
     {
-        $menuItem = MenuItem::withoutGlobalScope('active')
+        MenuItem::withoutGlobalScope('active')
             ->findOrFail($id)
             ->update(
                 $this->prepare($menuId, $request->all())

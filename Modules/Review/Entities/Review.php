@@ -68,6 +68,15 @@ class Review extends Model
         return $this->created_at->toFormattedDateString();
     }
 
+    public function status()
+    {
+        if ($this->is_approved) {
+            return trans('review::statuses.approved');
+        }
+
+        return trans('review::statuses.unapproved');
+    }
+
     public function product()
     {
         return $this->belongsTo(Product::class)->withTrashed();

@@ -21,6 +21,34 @@
                     <div class="row">
                         <div class="col-md-9">
                             <div class="form-group">
+                                <label for="email">
+                                    {{ trans('storefront::account.profile.email') }}<span>*</span>
+                                </label>
+
+                                <input type="text" name="email" value="{{ old('email', $account->email) }}" id="email" class="form-control">
+
+                                @error('email')
+                                    <span class="error-message">{{ $message }}</span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="col-md-9">
+                            <div class="form-group">
+                                <label for="phone">
+                                    {{ trans('storefront::account.profile.phone') }}<span>*</span>
+                                </label>
+
+                                <input type="text" name="phone" value="{{ old('phone', $account->phone) }}" id="phone" class="form-control">
+
+                                @error('phone')
+                                    <span class="error-message">{{ $message }}</span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="col-md-9">
+                            <div class="form-group">
                                 <label for="first-name">
                                     {{ trans('storefront::account.profile.first_name') }}<span>*</span>
                                 </label>
@@ -32,9 +60,7 @@
                                 @enderror
                             </div>
                         </div>
-                    </div>
 
-                    <div class="row">
                         <div class="col-md-9">
                             <div class="form-group">
                                 <label for="last-name">
@@ -48,9 +74,7 @@
                                 @enderror
                             </div>
                         </div>
-                    </div>
 
-                    <div class="row">
                         <div class="col-md-9">
                             <div class="form-group">
                                 <label for="password">
@@ -64,9 +88,7 @@
                                 @enderror
                             </div>
                         </div>
-                    </div>
 
-                    <div class="row">
                         <div class="col-md-9">
                             <div class="form-group">
                                 <label for="confirm-password">
@@ -82,7 +104,7 @@
                         </div>
                     </div>
 
-                    <button type="submit" class="btn btn-lg btn-primary" data-loading>
+                    <button type="submit" class="btn btn-lg btn-primary btn-save-changes" data-loading>
                         {{ trans('storefront::account.profile.save_changes') }}
                     </button>
                 </form>

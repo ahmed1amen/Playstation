@@ -14,7 +14,6 @@
     </section>
 
 </template>
-
 <script>
 import { Splide, SplideSlide } from '@splidejs/vue-splide';
 import '@splidejs/splide/dist/css/themes/splide-skyblue.min.css';

@@ -17,7 +17,6 @@ class ProductsViewReport extends Report
     {
         return Product::withoutGlobalScope('active')
             ->select('id', 'viewed')
-            ->where('viewed', '!=', 0)
             ->when(request()->has('product'), function ($query) {
                 $query->whereTranslationLike('name', request('product') . '%');
             })

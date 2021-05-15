@@ -7,7 +7,7 @@ class Requirement
     public function extensions()
     {
         return [
-            'PHP >= 7.2.5' => version_compare(phpversion(), '7.2.5'),
+            'PHP >= 7.3.0' => version_compare(phpversion(), '7.3.0'),
             'Intl PHP Extension' => extension_loaded('intl'),
             'OpenSSL PHP Extension' => extension_loaded('openssl'),
             'PDO PHP Extension' => extension_loaded('pdo'),

@@ -12,6 +12,10 @@ return [
             'products_purchase_report' => 'Products Purchase Report',
             'products_stock_report' => 'Products Stock Report',
             'products_view_report' => 'Products View Report',
+            'branded_products_report' => 'Branded Products Report',
+            'categorized_products_report' => 'Categorized Products Report',
+            'taxed_products_report' => 'Taxed Products Report',
+            'tagged_products_report' => 'Tagged Products Report',
             'sales_report' => 'Sales Report',
             'search_report' => 'Search Report',
             'shipping_report' => 'Shipping Report',
@@ -33,6 +37,10 @@ return [
         'customer_email' => 'Customer Email',
         'product' => 'Product',
         'sku' => 'SKU',
+        'brand' => 'Brand',
+        'category' => 'Category',
+        'tax_class' => 'Tax Class',
+        'tag' => 'Tag',
         'keyword' => 'Keyword',
         'quantity_below' => 'Quantity Below',
         'quantity_above' => 'Quantity Above',
@@ -49,6 +57,7 @@ return [
         'orders' => 'Orders',
         'products' => 'Products',
         'product' => 'Product',
+        'products_count' => 'Products Count',
         'total' => 'Total',
 
         // coupons_report
@@ -70,6 +79,18 @@ return [
 
         // products view report
         'views' => 'Views',
+
+        // branded products report
+        'brand' => 'Brand',
+
+        // category products report
+        'category' => 'Category',
+
+        // taxed products report
+        'tax_class' => 'Tax Class',
+
+        // tagged products report
+        'tag' => 'Tag',
 
         // sales report
         'subtotal' => 'Subtotal',

@@ -108,7 +108,7 @@ trait InputFields
         return $html;
     }
 
-    protected function field($name, $title, $errors, $entity, $options = [], callable $fieldCallback, ...$args)
+    protected function field($name, $title, $errors, $entity, $options, callable $fieldCallback, ...$args)
     {
         $value = $this->getValue($entity, $name);
 
@@ -173,7 +173,7 @@ trait InputFields
 
     private function getValue($entity, $name)
     {
-        if (method_exists($entity, 'translate') && $entity->isTranslationAttribute($name)) {
+        if (is_object($entity) && method_exists($entity, 'translate') && $entity->isTranslationAttribute($name)) {
             $translatedValue = optional($entity->translate(locale(), false))->$name;
 
             return old($name, $translatedValue);
@@ -181,7 +181,7 @@ trait InputFields
 
         $camelCaseName = camel_case($name);
 
-        if (method_exists($entity, $camelCaseName) && $entity->{$camelCaseName}() instanceof Relation) {
+        if (is_object($entity) && method_exists($entity, $camelCaseName) && $entity->{$camelCaseName}() instanceof Relation) {
             $name = $camelCaseName;
         }
 

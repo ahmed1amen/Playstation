@@ -8,7 +8,7 @@ use Illuminate\Database\Query\JoinClause;
 use Modules\Attribute\Entities\Attribute;
 use Modules\Attribute\Entities\AttributeValue;
 
-class   QueryStringFilter
+class QueryStringFilter
 {
     private $sorts = [
         'relevance',
@@ -57,7 +57,7 @@ class   QueryStringFilter
         $query->join('product_translations', function (JoinClause $join) {
             $join->on('products.id', '=', 'product_translations.product_id');
         })
-        ->groupBy($this->groupColumns)
+        ->groupBy(array_merge($this->groupColumns, ['product_translations.name']))
         ->orderBy('product_translations.name');
     }
 

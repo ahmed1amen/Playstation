@@ -37,8 +37,6 @@ class CheckoutCompleteController
 
         event(new OrderPlaced($order));
 
-        session()->put('placed_order', $order);
-
         if (! request()->ajax()) {
             return redirect()->route('checkout.complete.show');
         }

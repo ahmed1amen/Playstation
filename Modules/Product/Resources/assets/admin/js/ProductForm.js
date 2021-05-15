@@ -3,7 +3,8 @@ export default class {
         this.managerStock();
 
         window.admin.removeSubmitButtonOffsetOn([
-            '#images', '#attributes', '#options', '#related_products', '#up_sells', '#cross_sells', '#reviews',
+            '#images', '#downloads', '#attributes', '#options',
+            '#related_products', '#up_sells', '#cross_sells', '#reviews',
         ]);
 
         $('#product-create-form, #product-edit-form').on('submit', this.submit);

@@ -48,7 +48,11 @@
             @endif
 
             Mousetrap.bind('del', function () {
-                $('{{ $selector ?? '' }} .btn-delete').trigger('click');
+                $('.btn-delete').trigger('click');
+            });
+
+            Mousetrap.bind('backspace', function () {
+                $('.btn-delete').trigger('click');
             });
 
             @isset($resource)

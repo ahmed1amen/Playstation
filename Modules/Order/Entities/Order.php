@@ -2,9 +2,12 @@
 
 namespace Modules\Order\Entities;
 
+use Modules\Cart\CartTax;
+use Modules\Cart\CartItem;
 use Modules\Support\Money;
 use Modules\Support\State;
 use Modules\Support\Country;
+use Modules\Media\Entities\File;
 use Modules\Tax\Entities\TaxRate;
 use Illuminate\Support\Collection;
 use Modules\Order\OrderCollection;
@@ -112,6 +115,11 @@ class Order extends Model
         return $this->hasMany(OrderProduct::class);
     }
 
+    public function downloads()
+    {
+        return $this->hasMany(OrderDownload::class);
+    }
+
     public function coupon()
     {
         return $this->belongsTo(Coupon::class)->withTrashed();
@@ -164,7 +172,7 @@ class Order extends Model
      */
     public function getShippingMethodAttribute($shippingMethod)
     {
-        return ShippingMethod::get($shippingMethod)->label ?? '';
+        return ShippingMethod::get($shippingMethod)->label ?? null;
     }
 
     /**
@@ -218,7 +226,7 @@ class Order extends Model
         return $query->whereNotIn('status', [self::CANCELED, self::REFUNDED]);
     }
 
-    public function storeProducts($cartItem)
+    public function storeProducts(CartItem $cartItem)
     {
         $orderProduct = $this->products()->create([
             'product_id' => $cartItem->product->id,
@@ -230,7 +238,14 @@ class Order extends Model
         $orderProduct->storeOptions($cartItem->options);
     }
 
-    public function attachTax($cartTax)
+    public function storeDownloads(CartItem $cartItem)
+    {
+        $cartItem->product->downloads->each(function (File $file) {
+            $this->downloads()->create(['file_id' => $file->id]);
+        });
+    }
+
+    public function attachTax(CartTax $cartTax)
     {
         $this->taxes()->attach($cartTax->id(), ['amount' => $cartTax->amount()->amount()]);
     }

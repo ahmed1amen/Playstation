@@ -31,6 +31,10 @@ export default class {
         Vue.delete(this.errors, this.normalizeKey(key));
     }
 
+    reset() {
+        this.errors = {};
+    }
+
     normalizeKey(key) {
         let keyParts = key.replace('[]', '').split('[');
 

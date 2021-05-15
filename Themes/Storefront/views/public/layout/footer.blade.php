@@ -8,14 +8,14 @@
                             <h4 class="title">{{ trans('storefront::layout.contact_us') }}</h4>
 
                             <ul class="list-inline contact-info">
-                                @if (setting('store_phone'))
+                                @if (setting('store_phone') && ! setting('store_phone_hide'))
                                     <li>
                                         <i class="las la-phone"></i>
                                         <span>{{ setting('store_phone') }}</span>
                                     </li>
                                 @endif
 
-                                @if (setting('store_email'))
+                                @if (setting('store_email') && ! setting('store_email_hide'))
                                     <li>
                                         <i class="las la-envelope"></i>
                                         <span>{{ setting('store_email') }}</span>

@@ -28,6 +28,7 @@ class UserTabs extends Tabs
                 'first_name',
                 'last_name',
                 'email',
+                'phone',
                 'activated',
                 'roles',
             ]);

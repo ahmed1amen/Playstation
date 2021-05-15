@@ -19,6 +19,17 @@ class UpdateSettingRequest extends Request
     protected $availableAttributes = 'setting::attributes';
 
     /**
+     * Array of attributes that should be merged with null
+     * if attribute is not found in the current request.
+     *
+     * @var array
+     */
+    private $shouldCheck = [
+        'sms_order_statuses',
+        'email_order_statuses',
+    ];
+
+    /**
      * Get the validation rules that apply to the request.
      *
      * @return array
@@ -36,6 +47,7 @@ class UpdateSettingRequest extends Request
             'default_currency' => 'required|in_array:supported_currencies.*',
 
             'translatable.store_name' => 'required',
+            'store_phone' => ['required'],
             'store_email' => 'required|email',
             'store_country' => ['required', Rule::in(Country::codes())],
 
@@ -44,6 +56,13 @@ class UpdateSettingRequest extends Request
             'currency_data_feed_api_key' => 'required_if:currency_rate_exchange_service,currency_data_feed',
             'auto_refresh_currency_rates' => 'required|boolean',
             'auto_refresh_currency_rate_frequency' => ['required_if:auto_refresh_currency_rates,1', Rule::in($this->refreshFrequencies())],
+
+            'sms_service' => ['nullable', Rule::in($this->smsServices())],
+            'vonage_key' => ['required_if:sms_service,vonage'],
+            'vonage_secret' => ['required_if:sms_service,vonage'],
+            'twilio_sid' => ['required_if:sms_service,twilio'],
+            'twilio_token' => ['required_if:sms_service,twilio'],
+            'sms_order_statuses.*' => ['nullable', Rule::in($this->orderStatuses())],
 
             'mail_from_address' => 'nullable|email',
             'mail_encryption' => ['nullable', Rule::in($this->mailEncryptionProtocols())],
@@ -125,6 +144,26 @@ class UpdateSettingRequest extends Request
     }
 
     /**
+     * Returns SMS services.
+     *
+     * @return array
+     */
+    private function smsServices()
+    {
+        return array_keys(trans('sms::services'));
+    }
+
+    /**
+     * Returns order statuses.
+     *
+     * @return array
+     */
+    private function orderStatuses()
+    {
+        return array_keys(trans('order::statuses'));
+    }
+
+    /**
      * Returns mail encryption protocols.
      *
      * @return array
@@ -132,5 +171,21 @@ class UpdateSettingRequest extends Request
     private function mailEncryptionProtocols()
     {
         return array_keys(trans('setting::settings.form.mail_encryption_protocols'));
+    }
+
+    /**
+     * Get data to be validated from the request.
+     *
+     * @return array
+     */
+    public function validationData()
+    {
+        foreach ($this->shouldCheck as $attribute) {
+            if (! $this->has($attribute)) {
+                $this->merge([$attribute => null]);
+            }
+        }
+
+        return $this->all();
     }
 }

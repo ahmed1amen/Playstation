@@ -5,6 +5,7 @@ namespace Modules\Tag\Entities;
 use Modules\Admin\Ui\AdminTable;
 use Modules\Support\Eloquent\Model;
 use Illuminate\Support\Facades\Cache;
+use Modules\Product\Entities\Product;
 use Modules\Support\Eloquent\Sluggable;
 use Modules\Support\Eloquent\Translatable;
 
@@ -71,6 +72,16 @@ class Tag extends Model
     public function url()
     {
         return route('tags.products.index', ['tag' => $this->slug]);
+    }
+
+    /**
+     * Get related products.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function products()
+    {
+        return $this->belongsToMany(Product::class, 'product_tags');
     }
 
     /**

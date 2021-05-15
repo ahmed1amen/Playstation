@@ -218,19 +218,19 @@ class ModuleScaffold
     {
         $moduleJson = $this->finder->get($this->getModulesPath('module.json'));
 
-        $moduleJson = $this->setModuleOrder($moduleJson);
+        $moduleJson = $this->setModulePriority($moduleJson);
 
         $this->finder->put($this->getModulesPath('module.json'), $moduleJson);
     }
 
     /**
-     * Set the module order for composer.json file.
+     * Set the module priority for composer.json file.
      *
      * @return string
      */
-    private function setModuleOrder($content)
+    private function setModulePriority($content)
     {
-        return str_replace('"order": 0,', '"order": 100,', $content);
+        return str_replace('"priority": 0,', '"priority": 100,', $content);
     }
 
     /**
@@ -266,9 +266,7 @@ JSON;
         $search = <<<JSON
 ],
     "aliases": {},
-    "files": [
-        "start.php"
-    ],
+    "files": [],
     "requires": []
 JSON;
 
@@ -309,7 +307,7 @@ JSON;
         $replace = <<<JSON
 ],
     "require": {
-        "php": ">=7.2.5"
+        "php": ">=7.3.0"
     },
     "autoload": {
         "psr-4": {
@@ -325,6 +323,7 @@ JSON;
         "sort-packages": true
     },
     "minimum-stability": "dev"
+}
 JSON;
 
         $composerJson = str_replace($search, $replace, $composerJsonText);

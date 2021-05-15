@@ -2,7 +2,7 @@
     "name": "Review",
     "alias": "review",
     "description": "The FleetCart Review Module.",
-    "order": 100,
+    "priority": 100,
     "providers": [
         "Modules\\Review\\Providers\\ReviewServiceProvider"
     ]

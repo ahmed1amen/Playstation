@@ -3,11 +3,10 @@
 namespace FleetCart\Providers;
 
 use Illuminate\Support\Facades\URL;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\ServiceProvider;
-use Mehedi\Stylist\StylistServiceProvider;
-use Nwidart\Modules\LaravelModulesServiceProvider;
 use Jackiedo\DotenvEditor\DotenvEditorServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -20,6 +19,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
+        Paginator::useBootstrap();
 
         if (Request::secure()) {
             URL::forceScheme('https');
@@ -33,8 +33,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->register(StylistServiceProvider::class);
-        $this->app->register(LaravelModulesServiceProvider::class);
         if (! config('app.installed')) {
             $this->app->register(DotenvEditorServiceProvider::class);
         }

@@ -13,7 +13,7 @@ class SaveProductAttributes
      * @param \Modules\Product\Entities\Product $product
      * @return void
      */
-    public function handle($product)
+    public function handle(Product $product)
     {
         $this->deleteProductAttributes($product);
         $this->createProductAttributes($product);
@@ -25,7 +25,7 @@ class SaveProductAttributes
      * @param \Modules\Product\Entities\Product $product
      * @return void
      */
-    private function deleteProductAttributes($product)
+    private function deleteProductAttributes(Product $product)
     {
         $product->attributes()->delete();
     }
@@ -36,7 +36,7 @@ class SaveProductAttributes
      * @param \Modules\Product\Entities\Product $product
      * @return void
      */
-    private function createProductAttributes($product)
+    private function createProductAttributes(Product $product)
     {
         $productAttributeValues = [];
 
@@ -62,7 +62,7 @@ class SaveProductAttributes
      * @param array $productAttributeValues
      * @return void
      */
-    private function createProductAttributeValues($productAttributeValues)
+    private function createProductAttributeValues(array $productAttributeValues)
     {
         ProductAttributeValue::insert($productAttributeValues);
     }

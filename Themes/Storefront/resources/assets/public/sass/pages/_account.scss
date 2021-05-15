@@ -1,7 +1,25 @@
 @import 'account/_my-orders',
+		'account/_my-downloads',
 		'account/_my-wishlist',
 		'account/_my-reviews',
+		'account/_my-addresses',
 		'account/_my-profile';
+
+%account-common-buttons {
+	display: inline-flex;
+	margin-top: -2px;
+	padding: 0;
+	letter-spacing: 2px;
+
+	&:hover {
+		color: $color-default;
+        color: var(--color-primary);
+	}
+
+	> i {
+		margin: 5px 10px 0 0;
+	}
+}
 
 .account-wrap {
 	margin-top: 42px;
@@ -61,7 +79,8 @@
 				font-size: 24px;
 				vertical-align: top;
 				margin-top: 5px;
-				margin: 5px 12px 0 0;
+                margin: 5px 12px 0 0;
+                color: $color-gray;
 			}
 		}
 	}

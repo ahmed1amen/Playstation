@@ -2,5 +2,5 @@
     "name": "Account",
     "alias": "account",
     "description": "The FleetCart Account Module.",
-    "order": 100
+    "priority": 100
 }

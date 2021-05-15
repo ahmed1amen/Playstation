@@ -49,6 +49,7 @@
         new DataTable('.file-manager .table', {
             columns: [
                 { data: 'checkbox', orderable: false, searchable: false, width: '3%' },
+                { data: 'id', width: '5%' },
                 { data: 'thumbnail', orderable: false, searchable: false, width: '10%' },
                 { data: 'filename', name: 'filename' },
                 { data: 'created', name: 'created_at' },

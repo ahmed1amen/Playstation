@@ -90,6 +90,7 @@ class AuthController extends BaseAuthController
             'first_name' => $firstName,
             'last_name' => $lastName,
             'email' => $user->getEmail(),
+            'phone' => '',
             'password' => str_random(),
         ]);
 

@@ -2,7 +2,7 @@
     "name": "Checkout",
     "alias": "checkout",
     "description": "The FleetCart Checkout Module.",
-    "order": 100,
+    "priority": 100,
     "providers": [
         "Modules\\Checkout\\Providers\\EventServiceProvider"
     ]

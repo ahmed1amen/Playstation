@@ -10,6 +10,7 @@ use Illuminate\Routing\Controller;
 use Modules\Payment\Facades\Gateway;
 use Modules\User\Services\CustomerService;
 use Modules\Checkout\Services\OrderService;
+use Modules\Address\Entities\DefaultAddress;
 use Modules\Cart\Http\Middleware\CheckCartStock;
 use Modules\Order\Http\Requests\StoreOrderRequest;
 use Modules\Cart\Http\Middleware\CheckCouponUsageLimit;
@@ -38,12 +39,28 @@ class CheckoutController extends Controller
      */
     public function create()
     {
-        $cart = Cart::instance();
-        $countries = Country::supported();
-        $gateways = Gateway::all();
-        $termsPageURL = Page::urlForPage(setting('storefront_terms_page'));
+        return view('public.checkout.create', [
+            'cart' => Cart::instance(),
+            'countries' => Country::supported(),
+            'gateways' => Gateway::all(),
+            'defaultAddress' => auth()->user()->defaultAddress ?? new DefaultAddress,
+            'addresses' => $this->getAddresses(),
+            'termsPageURL' => Page::urlForPage(setting('storefront_terms_page')),
+        ]);
+    }
 
-        return view('public.checkout.create', compact('cart', 'countries', 'gateways', 'termsPageURL'));
+    /**
+     * Get addresses for the logged in user.
+     *
+     * @return \Illuminate\Support\Collection
+     */
+    private function getAddresses()
+    {
+        if (auth()->guest()) {
+            return collect();
+        }
+
+        return auth()->user()->addresses->keyBy('id');
     }
 
     /**

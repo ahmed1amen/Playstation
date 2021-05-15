@@ -35,6 +35,7 @@ import CartIndex from './components/cart/Index';
 import CheckoutCreate from './components/checkout/Create';
 import CompareIndex from './components/compare/Index';
 import MyWishlist from './components/account/wishlist/Index';
+import MyAddresses from './components/account/addresses/Index';
 
 Vue.prototype.route = route;
 Vue.prototype.$notify = notify;
@@ -74,6 +75,7 @@ Vue.component('cart-index', CartIndex);
 Vue.component('checkout-create', CheckoutCreate);
 Vue.component('compare-index', CompareIndex);
 Vue.component('my-wishlist', MyWishlist);
+Vue.component('my-addresses', MyAddresses);
 
 new Vue({
     el: '#app',
@@ -94,4 +96,3 @@ $.ajaxSetup({
         'X-CSRF-TOKEN': FleetCart.csrfToken,
     },
 });
-

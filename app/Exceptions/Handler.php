@@ -5,6 +5,7 @@ namespace FleetCart\Exceptions;
 use Throwable;
 use Illuminate\Http\Request;
 use Swift_TransportException;
+use Modules\Sms\Exceptions\SmsException;
 use Illuminate\Validation\ValidationException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
@@ -57,6 +58,10 @@ class Handler extends ExceptionHandler
             return $this->handleSwiftException($request, $e);
         }
 
+        if ($e instanceof SmsException) {
+            return $this->handleSmsException($request, $e);
+        }
+
         if ($e instanceof ValidationException && $request->ajax()) {
             return response()->json([
                 'message' => trans('core::messages.the_given_data_was_invalid'),
@@ -96,6 +101,28 @@ class Handler extends ExceptionHandler
 
         return back()->withInput()
             ->with('error', trans('core::messages.mail_is_not_configured'));
+    }
+
+    /**
+     * Handle sms exception.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @param \Modules\Sms\Exceptions\SmsException $e
+     * @return mixed
+     *
+     * @throws \Modules\Sms\Exceptions\SmsException
+     */
+    private function handleSmsException(Request $request, SmsException $e)
+    {
+        if (config('app.debug')) {
+            throw $e;
+        }
+
+        if ($request->ajax()) {
+            abort(400, $e->getMessage());
+        }
+
+        return back()->withInput()->with('error', $e->getMessage());
     }
 
     /**

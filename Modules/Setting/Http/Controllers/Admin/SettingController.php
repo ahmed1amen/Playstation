@@ -29,9 +29,9 @@ class SettingController
      */
     public function update(UpdateSettingRequest $request)
     {
-        setting($request->except('_token', '_method'));
-
         $this->handleMaintenanceMode($request);
+
+        setting($request->except('_token', '_method'));
 
         return redirect(non_localized_url())
             ->with('success', trans('setting::messages.settings_have_been_saved'));
@@ -40,20 +40,9 @@ class SettingController
     private function handleMaintenanceMode($request)
     {
         if ($request->maintenance_mode) {
-            Artisan::call('down', [
-                '--allow' => $this->allowedIps($request),
-            ]);
+            Artisan::call('down');
         } elseif (app()->isDownForMaintenance()) {
             Artisan::call('up');
         }
-    }
-
-    private function allowedIps($request)
-    {
-        $ips = explode(PHP_EOL, $request->allowed_ips);
-
-        return array_map(function ($ip) {
-            return trim($ip, "\r\n");
-        }, $ips);
     }
 }

@@ -8,7 +8,7 @@
         }
     ],
     "require": {
-        "php": ">=7.2.5",
+        "php": ">=7.3.0",
         "florianv/swap": "^4.0",
         "nyholm/psr7": "^1.2",
         "php-http/curl-client": "^2.1",

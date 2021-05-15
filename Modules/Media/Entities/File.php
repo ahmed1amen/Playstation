@@ -31,8 +31,8 @@ class File extends Model
      */
     protected static function booted()
     {
-        static::deleted(function ($file) {
-            Storage::disk($file->disk)->delete($file->getOriginal('path'));
+        static::deleting(function ($file) {
+            Storage::disk($file->disk)->delete($file->getRawOriginal('path'));
         });
     }
 
@@ -56,6 +56,18 @@ class File extends Model
     {
         if (! is_null($path)) {
             return Storage::disk($this->disk)->url($path);
+        }
+    }
+
+    /**
+     * Get file's real path.
+     *
+     * @return void
+     */
+    public function realPath()
+    {
+        if (! is_null($this->attributes['path'])) {
+            return Storage::disk($this->disk)->path($this->attributes['path']);
         }
     }
 

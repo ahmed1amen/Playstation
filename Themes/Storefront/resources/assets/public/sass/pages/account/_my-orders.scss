@@ -8,23 +8,11 @@
 	}
 
 	tbody {
-		tr {
-			&:first-child {
-				td {
-					padding-top: 30px;
-				}
-			}
-		}
-
 		td {
             white-space: nowrap;
 
 			&:first-child {
 				font-weight: 500;
-			}
-
-			&:nth-child(2) {
-				color: $color-gray;
 			}
 
             &:nth-child(4) {
@@ -42,18 +30,7 @@
 	}
 
 	.btn-view {
-		margin-top: -2px;
-		padding: 0;
-		letter-spacing: 2px;
-
-		&:hover {
-			color: $color-default;
-            color: var(--color-primary);
-		}
-
-		> i {
-			margin-right: 7px;
-		}
+		@extend %account-common-buttons;
 	}
 }
 

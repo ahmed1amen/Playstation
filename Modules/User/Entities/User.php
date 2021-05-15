@@ -6,9 +6,11 @@ use Modules\Order\Entities\Order;
 use Modules\User\Admin\UserTable;
 use Modules\Review\Entities\Review;
 use Illuminate\Auth\Authenticatable;
+use Modules\Address\Entities\Address;
 use Modules\Product\Entities\Product;
 use Modules\User\Repositories\Permission;
 use Cartalyst\Sentinel\Users\EloquentUser;
+use Modules\Address\Entities\DefaultAddress;
 use Cartalyst\Sentinel\Laravel\Facades\Activation;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
@@ -16,6 +18,20 @@ use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 class User extends EloquentUser implements AuthenticatableContract
 {
     use Authenticatable;
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'email',
+        'phone',
+        'password',
+        'last_name',
+        'first_name',
+        'permissions',
+    ];
 
     /**
      * The attributes that should be mutated to dates.
@@ -134,6 +150,26 @@ class User extends EloquentUser implements AuthenticatableContract
     public function wishlist()
     {
         return $this->belongsToMany(Product::class, 'wish_lists')->withTimestamps();
+    }
+
+    /**
+     * Get the default address of the user.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function defaultAddress()
+    {
+        return $this->hasOne(DefaultAddress::class, 'customer_id')->withDefault();
+    }
+
+    /**
+     * Get the addresses of the user.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function addresses()
+    {
+        return $this->hasMany(Address::class, 'customer_id');
     }
 
     /**

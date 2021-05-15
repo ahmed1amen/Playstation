@@ -13,7 +13,9 @@
 @endsection
 
 @section('report_result')
-    <h3 class="tab-content-title">{{ trans('report::admin.filters.report_types.coupons_report') }}</h3>
+    <h3 class="tab-content-title">
+        {{ trans('report::admin.filters.report_types.coupons_report') }}
+    </h3>
 
     <div class="table-responsive">
         <table class="table">

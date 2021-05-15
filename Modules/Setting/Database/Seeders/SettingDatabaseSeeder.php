@@ -34,7 +34,7 @@ class SettingDatabaseSeeder extends Seeder
             'local_pickup_cost' => 0,
             'flat_rate_cost' => 0,
             'translatable' => [
-                'store_name' => 'PlayStation',
+                'store_name' => 'FleetCart',
                 'free_shipping_label' => 'Free Shipping',
                 'local_pickup_label' => 'Local Pickup',
                 'flat_rate_label' => 'Flat Rate',
@@ -42,6 +42,8 @@ class SettingDatabaseSeeder extends Seeder
                 'paypal_description' => 'Pay via your PayPal account.',
                 'stripe_label' => 'Stripe',
                 'stripe_description' => 'Pay via credit or debit card.',
+                'paytm_label' => 'Paytm',
+                'paytm_description' => 'The best payment gateway provider in India for e-payment through credit card, debit card & net banking.',
                 'razorpay_label' => 'Razorpay',
                 'razorpay_description' => 'Pay securely by Credit or Debit card or Internet Banking through Razorpay.',
                 'instamojo_label' => 'Instamojo',

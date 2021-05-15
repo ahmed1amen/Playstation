@@ -31,7 +31,7 @@ class MinimumSpendException extends Exception
     public function render()
     {
         return response()->json([
-            'message' => trans('coupon::messages.minimum_spend', ['amount' => $this->money->format()]),
+            'message' => trans('coupon::messages.minimum_spend', ['amount' => $this->money->convertToCurrentCurrency()->format()]),
         ], 403);
     }
 }

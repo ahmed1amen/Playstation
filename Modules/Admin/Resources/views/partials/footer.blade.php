@@ -27,5 +27,5 @@
         <i class="fa fa-keyboard-o"></i>
     </a>&nbsp;
 
-    <span>Copyright &copy; {{ date('Y')}} <a href="https://www.ahmedamen.com" target="_blank">Playstation</a></span>
+    <span>Copyright &copy; {{ date('Y')}} ShrbiaStore</span>
 </footer>
