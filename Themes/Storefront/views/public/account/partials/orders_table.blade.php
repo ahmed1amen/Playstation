@@ -4,7 +4,7 @@
             <tr>
                 <th>{{ trans('storefront::account.orders.order_id') }}</th>
                 <th>{{ trans('storefront::account.date') }}</th>
-                <th>{{ trans('storefront::account.orders.status') }}</th>
+                <th>{{ trans('storefront::account.status') }}</th>
                 <th>{{ trans('storefront::account.orders.total') }}</th>
                 <th>{{ trans('storefront::account.action') }}</th>
             </tr>

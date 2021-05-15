@@ -38,7 +38,7 @@ class OrderStatusChanged extends Mailable implements ShouldQueue
     {
         return trans('order::mail.your_order_status_changed_text', [
             'order_id' => $order->id,
-            'status' => trans("order::statuses.{$order->status}"),
+            'status' => mb_strtolower($order->status()),
         ]);
     }
 

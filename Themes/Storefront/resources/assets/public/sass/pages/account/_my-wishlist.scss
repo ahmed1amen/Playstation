@@ -45,16 +45,8 @@
 	}
 
 	.btn-delete {
-		padding: 0;
-		letter-spacing: 2px;
+		margin-top: 0 !important;
 
-		&:hover {
-			color: $color-default;
-            color: var(--color-primary);
-		}
-
-		> i {
-			margin-right: 7px;
-		}
+		@extend %account-common-buttons;
 	}
 }

@@ -6,7 +6,7 @@
     <div class="box">
         <div class="installation-message text-center">
             <i class="fa fa-check-circle-o" aria-hidden="true"></i>
-            <h3>FleetCart installed successfully!</h3>
+            <h3>ShrbiaStore installed successfully!</h3>
         </div>
 
         <div class="clearfix"></div>

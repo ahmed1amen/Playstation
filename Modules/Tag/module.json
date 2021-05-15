@@ -2,7 +2,7 @@
     "name": "Tag",
     "alias": "tag",
     "description": "The FleetCart Tag Module.",
-    "order": 100,
+    "priority": 100,
     "providers": [
         "Modules\\Tag\\Providers\\TagServiceProvider"
     ]

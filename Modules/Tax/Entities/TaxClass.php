@@ -5,6 +5,7 @@ namespace Modules\Tax\Entities;
 use Modules\Admin\Ui\AdminTable;
 use Modules\Support\Eloquent\Model;
 use Illuminate\Support\Facades\Cache;
+use Modules\Product\Entities\Product;
 use Modules\Support\Eloquent\Translatable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -102,6 +103,11 @@ class TaxClass extends Model
     public function taxRates()
     {
         return $this->hasMany(TaxRate::class)->orderBy('position');
+    }
+
+    public function products()
+    {
+        return $this->hasMany(Product::class);
     }
 
     public function table()

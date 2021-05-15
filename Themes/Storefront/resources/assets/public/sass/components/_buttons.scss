@@ -14,11 +14,6 @@
     }
 }
 
-.btn-lg {
-    margin-top: 5px;
-    padding: 12px 50px;
-}
-
 .btn-primary {
     font-weight: 500;
     color: $color-white;
@@ -104,6 +99,11 @@
             }
         }
     }
+}
+
+.btn-lg {
+    margin-top: 5px;
+    padding: 12px 50px;
 }
 
 .btn-remove {

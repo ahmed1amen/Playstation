@@ -25,6 +25,7 @@ class SettingTabs extends Tabs
             ->add($this->maintenance())
             ->add($this->store())
             ->add($this->currency())
+            ->add($this->sms())
             ->add($this->mail())
             ->add($this->newsletter())
             ->add($this->customCssJs());
@@ -41,6 +42,7 @@ class SettingTabs extends Tabs
         $this->group('payment_methods', trans('setting::settings.tabs.group.payment_methods'))
             ->add($this->paypal())
             ->add($this->stripe())
+            ->add($this->paytm())
             ->add($this->razorpay())
             ->add($this->instamojo())
             ->add($this->cod())
@@ -134,6 +136,34 @@ class SettingTabs extends Tabs
         return $currencyRateExchangeServices += trans('currency::services');
     }
 
+    private function sms()
+    {
+        return tap(new Tab('sms', trans('setting::settings.tabs.sms')), function (Tab $tab) {
+            $tab->weight(25);
+
+            $tab->fields([
+                'sms_service',
+                'vonage_key',
+                'vonage_secret',
+                'twilio_sid',
+                'twilio_token',
+                'sms_order_statuses',
+            ]);
+
+            $tab->view('setting::admin.settings.tabs.sms', [
+                'smsServices' => $this->getSmsServices(),
+                'orderStatuses' => trans('order::statuses'),
+            ]);
+        });
+    }
+
+    private function getSmsServices()
+    {
+        $smsServices = ['' => trans('setting::settings.form.select_service')];
+
+        return $smsServices += trans('sms::services');
+    }
+
     private function mail()
     {
         return tap(new Tab('mail', trans('setting::settings.tabs.mail')), function (Tab $tab) {
@@ -141,6 +171,7 @@ class SettingTabs extends Tabs
             $tab->fields(['mail_from_address']);
             $tab->view('setting::admin.settings.tabs.mail', [
                 'encryptionProtocols' => $this->getMailEncryptionProtocols(),
+                'orderStatuses' => trans('order::statuses'),
             ]);
         });
     }
@@ -267,10 +298,27 @@ class SettingTabs extends Tabs
         });
     }
 
+    private function paytm()
+    {
+        return tap(new Tab('paytm', trans('setting::settings.tabs.paytm')), function (Tab $tab) {
+            $tab->weight(62);
+
+            $tab->fields([
+                'paytm_enabled',
+                'paytm_label',
+                'paytm_description',
+                'paytm_merchant_id',
+                'paytm_merchant_key',
+            ]);
+
+            $tab->view('setting::admin.settings.tabs.paytm');
+        });
+    }
+
     private function razorpay()
     {
         return tap(new Tab('razorpay', trans('setting::settings.tabs.razorpay')), function (Tab $tab) {
-            $tab->weight(62);
+            $tab->weight(63);
 
             $tab->fields([
                 'razorpay_enabled',
@@ -287,7 +335,7 @@ class SettingTabs extends Tabs
     private function instamojo()
     {
         return tap(new Tab('instamojo', trans('setting::settings.tabs.instamojo')), function (Tab $tab) {
-            $tab->weight(63);
+            $tab->weight(64);
 
             $tab->fields([
                 'instamojo_enabled',

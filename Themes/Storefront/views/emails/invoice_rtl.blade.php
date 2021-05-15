@@ -206,7 +206,7 @@
                                                                             padding: 4px 0;
                                                                             word-break: break-all;"
                                                                     >
-                                                                        {{ $order->customer_phone ?: '-' }}
+                                                                        {{ $order->customer_phone }}
                                                                     </td>
                                                                 </tr>
 

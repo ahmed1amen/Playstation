@@ -2,7 +2,7 @@
     "name": "Cart",
     "alias": "cart",
     "description": "The FleetCart Cart Module.",
-    "order": 100,
+    "priority": 100,
     "providers": [
         "Modules\\Cart\\Providers\\CartServiceProvider",
         "Modules\\Cart\\Providers\\EventServiceProvider"

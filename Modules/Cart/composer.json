@@ -8,8 +8,8 @@
         }
     ],
     "require": {
-        "php": ">=7.2.5",
-        "darryldecode/cart": "^4.0"
+        "php": ">=7.3.0",
+        "darryldecode/cart": "^4.2"
     },
     "autoload": {
         "psr-4": {

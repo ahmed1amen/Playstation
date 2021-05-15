@@ -84,10 +84,8 @@ class ModuleServiceProvider extends ServiceProvider
      */
     private function loadModelFactories(Module $module)
     {
-        $path = "{$module->getPath()}/Database/Factories";
-
-        if (is_dir($path)) {
-            $this->app[ModelFactory::class]->load($path);
-        }
+        $this->callAfterResolving(ModelFactory::class, function (ModelFactory $factory) use ($module) {
+            $factory->load("{$module->getPath()}/Database/Factories");
+        });
     }
 }

@@ -3,6 +3,7 @@
         {{ Form::text('first_name', trans('user::attributes.users.first_name'), $errors, $user, ['required' => true]) }}
         {{ Form::text('last_name', trans('user::attributes.users.last_name'), $errors, $user, ['required' => true]) }}
         {{ Form::email('email', trans('user::attributes.users.email'), $errors, $user, ['required' => true]) }}
+        {{ Form::text('phone', trans('user::attributes.users.phone'), $errors, $user, ['required' => true]) }}
         {{ Form::select('roles', trans('user::attributes.users.roles'), $errors, $roles, $user, ['multiple' => true, 'required' => true, 'class' => 'selectize prevent-creation']) }}
 
         @if (request()->routeIs('admin.users.create'))

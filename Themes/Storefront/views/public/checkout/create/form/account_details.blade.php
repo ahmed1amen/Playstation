@@ -28,7 +28,7 @@
             <div class="col-md-9">
                 <div class="form-group">
                     <label for="phone">
-                        {{ trans('checkout::attributes.customer_phone') }}
+                        {{ trans('checkout::attributes.customer_phone') }}<span>*</span>
                     </label>
 
                     <input
@@ -38,6 +38,12 @@
                         id="phone"
                         class="form-control"
                     >
+
+                    <span
+                        class="error-message"
+                        v-if="errors.has('customer_phone')"
+                        v-text="errors.get('customer_phone')"
+                    ></span>
                 </div>
             </div>
 

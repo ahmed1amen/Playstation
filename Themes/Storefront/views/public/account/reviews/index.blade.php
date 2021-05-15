@@ -24,6 +24,7 @@
                             <tr>
                                 <th>{{ trans('storefront::account.image') }}</th>
                                 <th>{{ trans('storefront::account.product_name') }}</th>
+                                <th>{{ trans('storefront::account.status') }}</th>
                                 <th>{{ trans('storefront::account.date') }}</th>
                                 <th>{{ trans('storefront::account.reviews.rating') }}</th>
                             </tr>
@@ -46,6 +47,12 @@
                                         <a href="{{ route('products.show', ['slug' => $review->product->slug]) }}" class="product-name">
                                             {{ $review->product->name }}
                                         </a>
+                                    </td>
+
+                                    <td>
+                                        <span class="badge {{ $review->is_approved ? 'badge-success' : 'badge-secondary' }}">
+                                            {{ $review->status() }}
+                                        </span>
                                     </td>
 
                                     <td>

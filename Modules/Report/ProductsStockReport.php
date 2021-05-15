@@ -28,6 +28,7 @@ class ProductsStockReport extends Report
             })
             ->when(request('stock_availability') === 'out_of_stock', function ($query) {
                 $query->where('in_stock', false);
-            });
+            })
+            ->orderByDesc('qty');
     }
 }

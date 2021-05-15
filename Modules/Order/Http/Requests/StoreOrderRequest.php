@@ -6,7 +6,6 @@ use Modules\Support\Country;
 use Illuminate\Validation\Rule;
 use Modules\Payment\Facades\Gateway;
 use Modules\Core\Http\Requests\Request;
-use Modules\Shipping\Facades\ShippingMethod;
 
 class StoreOrderRequest extends Request
 {
@@ -26,6 +25,7 @@ class StoreOrderRequest extends Request
     {
         return [
             'customer_email' => ['required', 'email', $this->emailUniqueRule()],
+            'customer_phone' => ['required'],
             'billing.first_name' => 'required',
             'billing.last_name' => 'required',
             'billing.address_1' => 'required',
@@ -44,7 +44,6 @@ class StoreOrderRequest extends Request
             'shipping.country' => ['required_if:ship_to_a_different_address,1', Rule::in(Country::supportedCodes())],
             'shipping.state' => 'required_if:ship_to_a_different_address,1',
             'payment_method' => ['required', Rule::in(Gateway::names())],
-            'shipping_method' => ['required', Rule::in(ShippingMethod::names())],
             'terms_and_conditions' => 'accepted',
         ];
     }

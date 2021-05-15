@@ -4,6 +4,7 @@ return [
     'login' => 'Login',
     'logout' => 'Logout',
     'email' => 'Email',
+    'phone' => 'Phone',
     'password' => 'Password',
     'remember_me' => 'Remember me',
     'forgot_password' => 'forgot password?',

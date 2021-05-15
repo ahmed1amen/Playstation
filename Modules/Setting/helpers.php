@@ -1,8 +1,6 @@
 <?php
 
-use Modules\Setting\Repository;
-
-if (!function_exists('setting')) {
+if (! function_exists('setting')) {
     /**
      * Get / set the specified setting value.
      *
@@ -10,7 +8,7 @@ if (!function_exists('setting')) {
      *
      * @param string|array $key
      * @param mixed $default
-     * @return mixed|Repository
+     * @return mixed|\Modules\Setting\Repository
      */
     function setting($key = null, $default = null)
     {

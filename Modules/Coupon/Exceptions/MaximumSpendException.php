@@ -9,7 +9,7 @@ class MaximumSpendException extends Exception
     /**
      * The maximum amount that is allowed.
      *
-     * @var money
+     * @var \Modules\Support\Money
      */
     private $money;
 
@@ -31,7 +31,7 @@ class MaximumSpendException extends Exception
     public function render()
     {
         return response()->json([
-            'message' => trans('coupon::messages.maximum_spend', ['amount' => $this->money->format()]),
+            'message' => trans('coupon::messages.maximum_spend', ['amount' => $this->money->convertToCurrentCurrency()->format()]),
         ], 403);
     }
 }

@@ -13,7 +13,7 @@ class ChosenProductOptions
     public function __construct(Product $product, array $chosenOptions = [])
     {
         $this->product = $product;
-        $this->chosenOptions = $chosenOptions;
+        $this->chosenOptions = array_filter($chosenOptions);
     }
 
     public function getEntities()

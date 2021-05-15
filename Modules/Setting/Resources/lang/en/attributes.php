@@ -9,14 +9,9 @@ return [
     'customer_role' => 'Customer Role',
     'reviews_enabled' => 'Reviews & Ratings',
     'auto_approve_reviews' => 'Auto Approve Reviews',
-    'welcome_email' => 'Welcome Email',
-    'admin_order_email' => 'Admin Order Email',
-    'order_status_email' => 'Order Status Email',
-    'invoice_email' => 'Invoice Email',
     'cookie_bar_enabled' => 'Cookie Bar',
 
     'maintenance_mode' => 'Maintenance Mode',
-    'allowed_ips' => 'Allowed IPs',
 
     'translatable.store_tagline' => 'Store Tagline',
     'translatable.store_name' => 'Store Name',
@@ -28,6 +23,8 @@ return [
     'store_country' => 'Store Country',
     'store_state' => 'Store State',
     'store_zip' => 'Store Zip',
+    'store_phone_hide' => 'Hide Store Phone',
+    'store_email_hide' => 'Hide Store Email',
 
     'supported_currencies' => 'Supported Currencies',
     'default_currency' => 'Default Currency',
@@ -38,6 +35,17 @@ return [
     'auto_refresh_currency_rates' => 'Auto Refresh',
     'auto_refresh_currency_rate_frequency' => 'Frequency',
 
+    'sms_from' => 'SMS From',
+    'sms_service' => 'SMS Service',
+    'vonage_key' => 'API Key',
+    'vonage_secret' => 'API Secret',
+    'twilio_sid' => 'Account SID',
+    'twilio_token' => 'Auth Token',
+    'welcome_sms' => 'Welcome SMS',
+    'new_order_admin_sms' => 'New Order Admin SMS',
+    'new_order_sms' => 'New Order SMS',
+    'sms_order_statuses' => 'SMS Order Statuses',
+
     'mail_from_address' => 'Mail From Address',
     'mail_from_name' => 'Mail From Name',
     'mail_host' => 'Mail Host',
@@ -45,6 +53,10 @@ return [
     'mail_username' => 'Mail Username',
     'mail_password' => 'Mail Password',
     'mail_encryption' => 'Mail Encryption',
+    'welcome_email' => 'Welcome Email',
+    'admin_order_email' => 'New Order Admin Email',
+    'invoice_email' => 'Invoice Email',
+    'email_order_statuses' => 'Email Order Statuses',
 
     'newsletter_enabled' => 'Newsletter',
     'mailchimp_api_key' => 'Mailchimp API Key',
@@ -85,6 +97,13 @@ return [
     'translatable.stripe_description' => 'Description',
     'stripe_publishable_key' => 'Publishable Key',
     'stripe_secret_key' => 'Secret Key',
+
+    'paytm_enabled' => 'Status',
+    'translatable.paytm_label' => 'Label',
+    'translatable.paytm_description' => 'Description',
+    'paytm_test_mode' => 'Sandbox',
+    'paytm_merchant_id' => 'Merchant ID',
+    'paytm_merchant_key' => 'Merchant Key',
 
     'razorpay_enabled' => 'Status',
     'razorpay_label' => 'Label',

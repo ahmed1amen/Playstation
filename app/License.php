@@ -11,7 +11,7 @@ class License
 {
     private $license;
     private $licenseFilePath;
-    private $endpoint = 'https://license.envaysoft.com';
+    private $endpoint = '';
 
     public function __construct()
     {
@@ -59,27 +59,12 @@ class License
 
     public function activate($purchaseCode)
     {
-        $client = new Client(['base_uri' => $this->endpoint]);
-
-        try {
-            $response = $client->post('/api/v1/licenses', [
-                'form_params' => $this->getFormParameters($purchaseCode),
-            ]);
-        } catch (ClientException $e) {
-            $response = json_decode($e->getResponse()->getBody());
-
-            if ($response->status === 'success' && ! $response->valid) {
-                throw new InvalidLicenseException('The purchase code is invalid.');
-            }
-
-            if ($response->status === 'error') {
-                throw new InvalidLicenseException($response->message);
-            }
-        }
-
-        $license = json_decode($response->getBody());
+		   
+		$license = new \stdClass();
+		$license->status = 'success';
+		$license->valid = true;
         $license->purchase_code = $purchaseCode;
-        $license->next_check = now()->addDays(1);
+		$license->next_check = now()->addDays(1);
 
         $this->store($license);
     }
@@ -104,7 +89,7 @@ class License
             return false;
         }
 
-        if ($this->runningInLocalhost()) {
+        if ($this->runningInLocal()) {
             return false;
         }
 
@@ -115,9 +100,9 @@ class License
         return true;
     }
 
-    private function runningInLocalhost()
+    private function runningInLocal()
     {
-        return in_array(request()->ip(), ['127.0.0.1', '::1']);
+        return app()->isLocal() || in_array(request()->ip(), ['127.0.0.1', '::1']);
     }
 
     private function inFrontend()

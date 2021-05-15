@@ -17,6 +17,7 @@ return [
         'price' => 'Price',
         'inventory' => 'Inventory',
         'images' => 'Images',
+        'downloads' => 'Downloads',
         'seo' => 'SEO',
         'related_products' => 'Related Products',
         'up_sells' => 'Up-Sells',
@@ -24,6 +25,7 @@ return [
         'additional' => 'Additional',
     ],
     'form' => [
+        'the_product_won\'t_be_shipped' => 'The product won\'t be shipped',
         'enable_the_product' => 'Enable the product',
         'price_types' => [
             'fixed' => 'Fixed',
@@ -39,5 +41,10 @@ return [
         ],
         'base_image' => 'Base Image',
         'additional_images' => 'Additional Images',
+        'downloadable_files' => 'Downloadable Files',
+        'file' => 'File',
+        'choose' => 'Choose',
+        'delete_file' => 'Delete File',
+        'add_new_file' => 'Add New File',
     ],
 ];

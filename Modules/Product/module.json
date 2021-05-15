@@ -2,7 +2,7 @@
     "name": "Product",
     "alias": "product",
     "description": "The product module is responsible for managing products.",
-    "order": 100,
+    "priority": 100,
     "providers": [
         "Modules\\Product\\Providers\\ProductServiceProvider",
         "Modules\\Product\\Providers\\EventServiceProvider"

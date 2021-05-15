@@ -16,7 +16,7 @@
                     @foreach ($attributeSets as $attributeSet)
                         <optgroup label="{{ $attributeSet->name }}">
                             @foreach ($attributeSet->attributes as $attribute)
-                                <option value="{{ $attribute->id }}" data-values='@json($attribute->values->pluck('value', 'id'), JSON_FORCE_OBJECT)' <%= (attribute.attribute_id || attribute.id) == {{ $attribute->id }} ? 'selected' : '' %>>
+                                <option value="{{ $attribute->id }}" data-values="{{ json_encode($attribute->values->pluck('value', 'id'), JSON_FORCE_OBJECT) }}" <%= (attribute.attribute_id || attribute.id) == {{ $attribute->id }} ? 'selected' : '' %>>
                                     {{ $attribute->name }}
                                 </option>
                             @endforeach

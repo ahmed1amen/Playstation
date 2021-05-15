@@ -14,10 +14,15 @@ $('#auto_refresh_currency_rates').on('change', () => {
     $('#auto-refresh-frequency-field').toggleClass('hide');
 });
 
-$('#search_engine').on('change', (e) => {
-    $('.search-engine').addClass('hide');
 
-    $(`.search-engine#${e.currentTarget.value}`).removeClass('hide');
+let smsService = $('#sms_service');
+
+$(`#${smsService.val()}-service`).removeClass('hide');
+
+smsService.on('change', (e) => {
+    $('.sms-service').addClass('hide');
+
+    $(`#${e.currentTarget.value}-service`).removeClass('hide');
 });
 
 $('#facebook_login_enabled').on('change', () => {
@@ -34,6 +39,10 @@ $('#paypal_enabled').on('change', () => {
 
 $('#stripe_enabled').on('change', () => {
     $('#stripe-fields').toggleClass('hide');
+});
+
+$('#paytm_enabled').on('change', () => {
+    $('#paytm-fields').toggleClass('hide');
 });
 
 $('#razorpay_enabled').on('change', () => {

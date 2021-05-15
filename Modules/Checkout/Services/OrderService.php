@@ -2,10 +2,14 @@
 
 namespace Modules\Checkout\Services;
 
+use Modules\Cart\CartTax;
+use Modules\Cart\CartItem;
 use Modules\Cart\Facades\Cart;
 use Modules\Order\Entities\Order;
+use Modules\Address\Entities\Address;
 use Modules\FlashSale\Entities\FlashSale;
 use Modules\Currency\Entities\CurrencyRate;
+use Modules\Address\Entities\DefaultAddress;
 use Modules\Shipping\Facades\ShippingMethod;
 
 class OrderService
@@ -13,10 +17,12 @@ class OrderService
     public function create($request)
     {
         $this->mergeShippingAddress($request);
+        $this->saveAddress($request);
         $this->addShippingMethodToCart($request);
 
         return tap($this->store($request), function ($order) {
             $this->storeOrderProducts($order);
+            $this->storeOrderDownloads($order);
             $this->storeFlashSaleProductOrders($order);
             $this->incrementCouponUsage($order);
             $this->attachTaxes($order);
@@ -31,9 +37,56 @@ class OrderService
         ]);
     }
 
+    private function saveAddress($request)
+    {
+        if (auth()->guest()) {
+            return;
+        }
+
+        if ($request->newBillingAddress) {
+            $address = auth()->user()->addresses()->create(
+                $this->extractAddress($request->billing)
+            );
+
+            $this->makeDefaultAddress($address);
+        }
+
+        if ($request->ship_to_a_different_address && $request->newShippingAddress) {
+            auth()->user()->addresses()->create(
+                $this->extractAddress($request->shipping)
+            );
+        }
+    }
+
+    private function extractAddress($data)
+    {
+        return [
+            'first_name' => $data['first_name'],
+            'last_name' => $data['last_name'],
+            'address_1' => $data['address_1'],
+            'address_2' => $data['address_2'] ?? null,
+            'city' => $data['city'],
+            'state' => $data['state'],
+            'zip' => $data['zip'],
+            'country' => $data['country'],
+        ];
+    }
+
+    private function makeDefaultAddress(Address $address)
+    {
+        if (auth()->user()->addresses()->count() > 1) {
+            return;
+        }
+
+        DefaultAddress::create([
+            'address_id' => $address->id,
+            'customer_id' => auth()->id(),
+        ]);
+    }
+
     private function addShippingMethodToCart($request)
     {
-        if (! Cart::hasShippingMethod()) {
+        if (! Cart::allItemsAreVirtual() && ! Cart::hasShippingMethod()) {
             Cart::addShippingMethod(ShippingMethod::get($request->shipping_method));
         }
     }
@@ -79,14 +132,21 @@ class OrderService
 
     private function storeOrderProducts(Order $order)
     {
-        Cart::items()->each(function ($cartItem) use ($order) {
+        Cart::items()->each(function (CartItem $cartItem) use ($order) {
             $order->storeProducts($cartItem);
+        });
+    }
+
+    private function storeOrderDownloads(Order $order)
+    {
+        Cart::items()->each(function (CartItem $cartItem) use ($order) {
+            $order->storeDownloads($cartItem);
         });
     }
 
     private function storeFlashSaleProductOrders(Order $order)
     {
-        Cart::items()->each(function ($cartItem) use ($order) {
+        Cart::items()->each(function (CartItem $cartItem) use ($order) {
             if (! FlashSale::contains($cartItem->product)) {
                 return;
             }
@@ -109,7 +169,7 @@ class OrderService
 
     private function attachTaxes(Order $order)
     {
-        Cart::taxes()->each(function ($cartTax) use ($order) {
+        Cart::taxes()->each(function (CartTax $cartTax) use ($order) {
             $order->attachTax($cartTax);
         });
     }

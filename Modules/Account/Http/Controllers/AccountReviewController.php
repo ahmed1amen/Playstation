@@ -13,6 +13,7 @@ class AccountReviewController
     {
         $reviews = auth()->user()
             ->reviews()
+            ->withoutGlobalScope('approved')
             ->with('product.files')
             ->whereHas('product')
             ->paginate(20);

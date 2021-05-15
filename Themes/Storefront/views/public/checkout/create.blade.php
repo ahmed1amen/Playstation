@@ -5,6 +5,9 @@
 @section('content')
     <checkout-create
         customer-email="{{ auth()->user()->email ?? null }}"
+        customer-phone="{{ auth()->user()->phone ?? null }}"
+        :addresses="{{ $addresses }}"
+        :default-address="{{ $defaultAddress }}"
         :gateways="{{ $gateways }}"
         :countries="{{ json_encode($countries) }}"
         inline-template
@@ -46,6 +49,14 @@
 
     @if (setting('stripe_enabled'))
         <script src="https://js.stripe.com/v3/"></script>
+    @endif
+
+    @if (setting('paytm_enabled'))
+        @if (setting('paytm_test_mode'))
+            <script src="https://securegw-stage.paytm.in/merchantpgpui/checkoutjs/merchants/{{ setting('paytm_merchant_id') }}.js"></script>
+        @else
+            <script src="https://securegw.paytm.in/merchantpgpui/checkoutjs/merchants/{{ setting('paytm_merchant_id') }}.js"></script>
+        @endif
     @endif
 
     @if (setting('razorpay_enabled'))

@@ -1,0 +1,13 @@
+.digital-games-slider-wrap {
+	margin-top: 50px;
+
+}
+.game-slider-img{
+max-height: 450px !important;
+transition: transform .2s; /* Animation */
+}
+
+.game-slider-img:hover{
+    transform: scale(1.5);
+
+}

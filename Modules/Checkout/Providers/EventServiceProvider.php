@@ -14,7 +14,8 @@ class EventServiceProvider extends ServiceProvider
     protected $listen = [
         \Modules\Checkout\Events\OrderPlaced::class => [
             \Modules\Checkout\Listeners\UpdateOrderStatus::class,
-            \Modules\Checkout\Listeners\SendOrderEmails::class,
+            \Modules\Checkout\Listeners\SendNewOrderEmails::class,
+            \Modules\Checkout\Listeners\SendNewOrderSms::class,
             \Modules\Checkout\Listeners\AddPlacedOrderToSession::class,
         ],
     ];

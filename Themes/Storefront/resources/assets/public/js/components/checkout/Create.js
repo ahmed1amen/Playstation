@@ -9,14 +9,19 @@ export default {
         ProductHelpersMixin,
     ],
 
-    props: ['customerEmail', 'gateways', 'countries'],
+    props: ['customerEmail', 'customerPhone', 'gateways', 'defaultAddress', 'addresses', 'countries'],
 
     data() {
         return {
             form: {
                 customer_email: this.customerEmail,
+                customer_phone: this.customerPhone,
                 billing: {},
                 shipping: {},
+                billingAddressId: null,
+                shippingAddressId: null,
+                newBillingAddress: false,
+                newShippingAddress: false,
             },
             states: {
                 billing: {},
@@ -31,6 +36,10 @@ export default {
     },
 
     computed: {
+        hasAddress() {
+            return Object.keys(this.addresses).length !== 0;
+        },
+
         firstCountry() {
             return Object.keys(this.countries)[0];
         },
@@ -63,6 +72,14 @@ export default {
     },
 
     watch: {
+        'form.billingAddressId': function () {
+            this.mergeSavedAddresses();
+        },
+
+        'form.shippingAddressId': function () {
+            this.mergeSavedAddresses();
+        },
+
         'form.billing.city': function (newCity) {
             if (newCity) {
                 this.addTaxes();
@@ -119,8 +136,18 @@ export default {
     },
 
     created() {
-        this.changeBillingCountry(this.firstCountry);
-        this.changeShippingCountry(this.firstCountry);
+        if (this.defaultAddress.address_id) {
+            this.form.billingAddressId = this.defaultAddress.address_id;
+            this.form.shippingAddressId = this.defaultAddress.address_id;
+        }
+
+        if (! this.hasAddress) {
+            this.form.newBillingAddress = true;
+            this.form.newShippingAddress = true;
+
+            this.changeBillingCountry(this.firstCountry);
+            this.changeShippingCountry(this.firstCountry);
+        }
 
         this.$nextTick(() => {
             if (this.firstPaymentMethod) {
@@ -140,6 +167,34 @@ export default {
     },
 
     methods: {
+        addNewBillingAddress() {
+            this.errors.reset();
+
+            this.form.billing = {};
+            this.form.newBillingAddress = ! this.form.newBillingAddress;
+        },
+
+        addNewShippingAddress() {
+            this.errors.reset();
+
+            this.form.shipping = {};
+            this.form.newShippingAddress = ! this.form.newShippingAddress;
+        },
+
+        mergeSavedAddresses() {
+            if (! this.form.newBillingAddress && this.form.billingAddressId) {
+                this.form.billing = this.addresses[this.form.billingAddressId];
+            }
+
+            if (
+                this.form.ship_to_a_different_address
+                && ! this.form.newShippingAddress
+                && this.form.shippingAddressId
+            ) {
+                this.form.shipping = this.addresses[this.form.shippingAddressId];
+            }
+        },
+
         changeBillingCity(city) {
             this.$set(this.form.billing, 'city', city);
         },
@@ -229,6 +284,8 @@ export default {
                     window.location.href = response.redirectUrl;
                 } else if (this.form.payment_method === 'stripe') {
                     this.confirmStripePayment(response);
+                } else if (this.form.payment_method === 'paytm') {
+                    this.confirmPaytmPayment(response);
                 } else if (this.form.payment_method === 'razorpay') {
                     this.confirmRazorpayPayment(response);
                 } else {
@@ -342,6 +399,48 @@ export default {
             } else {
                 this.confirmOrder(orderId, 'stripe', result);
             }
+        },
+
+        confirmPaytmPayment({ orderId, amount, txnToken }) {
+            let config = {
+                root: '',
+                flow: 'DEFAULT',
+                data: {
+                    orderId: orderId,
+                    token: txnToken,
+                    tokenType: 'TXN_TOKEN',
+                    amount: amount,
+                },
+                merchant: {
+                    redirect: false,
+                },
+                handler: {
+                    transactionStatus: (response) => {
+                        if (response.STATUS === 'TXN_SUCCESS') {
+                            this.confirmOrder(orderId, 'paytm', response);
+                        } else if (response.STATUS === 'TXN_FAILURE') {
+                            this.placingOrder = false;
+
+                            this.deleteOrder(orderId);
+                        }
+
+                        window.Paytm.CheckoutJS.close();
+                    },
+                    notifyMerchant: (eventName) => {
+                        if (eventName === 'APP_CLOSED') {
+                            this.placingOrder = false;
+
+                            this.deleteOrder(orderId);
+                        }
+                    },
+                },
+            };
+
+            window.Paytm.CheckoutJS.init(config).then(() => {
+                window.Paytm.CheckoutJS.invoke();
+            }).catch(() => {
+                this.deleteOrder(orderId);
+            });
         },
 
         confirmRazorpayPayment(razorpayOrder) {

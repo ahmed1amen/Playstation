@@ -66,5 +66,13 @@
     .sidebar-cart-wrap {
         right: -150px;
         width: 300px;
+
+        .sidebar-cart-actions {
+            flex-direction: column;
+
+            .btn-view-cart {
+                margin-bottom: 10px;
+            }
+        }
     }
 }

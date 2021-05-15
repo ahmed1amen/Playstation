@@ -45,10 +45,12 @@
                                 </td>
                             </tr>
 
-                            <tr>
-                                <td>{{ trans('order::orders.shipping_method') }}</td>
-                                <td>{{ $order->shipping_method }}</td>
-                            </tr>
+                            @if ($order->shipping_method)
+                                <tr>
+                                    <td>{{ trans('order::orders.shipping_method') }}</td>
+                                    <td>{{ $order->shipping_method }}</td>
+                                </tr>
+                            @endif
 
                             <tr>
                                 <td>{{ trans('order::orders.payment_method') }}</td>
@@ -98,7 +100,7 @@
 
                             <tr>
                                 <td>{{ trans('order::orders.customer_phone') }}</td>
-                                <td>{{ $order->customer_phone ?: 'N/A' }}</td>
+                                <td>{{ $order->customer_phone }}</td>
                             </tr>
 
                             <tr>

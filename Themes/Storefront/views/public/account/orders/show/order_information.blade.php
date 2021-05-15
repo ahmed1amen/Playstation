@@ -3,12 +3,10 @@
         <h4>{{ trans('storefront::account.view_order.order_information') }}</h4>
 
         <ul class="list-inline order-information-list">
-            @if ($order->customer_phone)
-                <li>
-                    <label>{{ trans('storefront::account.view_order.phone') }}</label>
-                    <span>{{ $order->customer_phone ?: 'N/A' }}</span>
-                </li>
-            @endif
+            <li>
+                <label>{{ trans('storefront::account.view_order.phone') }}</label>
+                <span>{{ $order->customer_phone }}</span>
+            </li>
 
             <li>
                 <label>{{ trans('storefront::account.view_order.email') }}</label>

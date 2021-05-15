@@ -7,6 +7,7 @@ use Modules\Brand\Admin\BrandTable;
 use Modules\Support\Eloquent\Model;
 use Modules\Media\Eloquent\HasMedia;
 use Illuminate\Support\Facades\Cache;
+use Modules\Product\Entities\Product;
 use Modules\Meta\Eloquent\HasMetaData;
 use Modules\Support\Eloquent\Sluggable;
 use Modules\Support\Eloquent\Translatable;
@@ -113,6 +114,16 @@ class Brand extends Model
     public function getBannerAttribute()
     {
         return $this->files->where('pivot.zone', 'banner')->first() ?: new File;
+    }
+
+    /**
+     * Get related products.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function products()
+    {
+        return $this->hasMany(Product::class);
     }
 
     /**

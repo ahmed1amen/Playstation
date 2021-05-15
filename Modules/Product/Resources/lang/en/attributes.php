@@ -9,6 +9,7 @@ return [
     'categories' => 'Categories',
     'tax_class_id' => 'Tax Class',
     'tags' => 'Tags',
+    'virtual' => 'Virtual',
     'is_active' => 'Status',
     'price' => 'Price',
     'special_price' => 'Special Price',
@@ -21,5 +22,4 @@ return [
     'in_stock' => 'Stock Availability',
     'new_from' => 'Product New From',
     'new_to' => 'Product New To',
-    'is_reviewable' => 'Reviewable',
 ];

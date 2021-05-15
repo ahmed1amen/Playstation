@@ -19,6 +19,7 @@ class ProductTabs extends Tabs
             ->add($this->price())
             ->add($this->inventory())
             ->add($this->images())
+            ->add($this->downloads())
             ->add($this->seo());
 
         $this->group('advanced_information', trans('product::products.tabs.group.advanced_information'))
@@ -88,6 +89,14 @@ class ProductTabs extends Tabs
         return tap(new Tab('images', trans('product::products.tabs.images')), function (Tab $tab) {
             $tab->weight(20);
             $tab->view('product::admin.products.tabs.images');
+        });
+    }
+
+    private function downloads()
+    {
+        return tap(new Tab('downloads', trans('product::products.tabs.downloads')), function (Tab $tab) {
+            $tab->weight(22);
+            $tab->view('product::admin.products.tabs.downloads');
         });
     }
 

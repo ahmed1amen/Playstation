@@ -30,6 +30,13 @@
                             </a>
                         </li>
 
+                        <li class="{{ request()->routeIs('account.downloads.index') ? 'active' : '' }}">
+                            <a href="{{ route('account.downloads.index') }}">
+                                <i class="las la-download"></i>
+                                {{ trans('storefront::account.pages.my_downloads') }}
+                            </a>
+                        </li>
+
                         <li class="{{ request()->routeIs('account.wishlist.index') ? 'active' : '' }}">
                             <a href="{{ route('account.wishlist.index') }}">
                                 <i class="lar la-heart"></i>
@@ -41,6 +48,13 @@
                             <a href="{{ route('account.reviews.index') }}">
                                 <i class="las la-comment"></i>
                                 {{ trans('storefront::account.pages.my_reviews') }}
+                            </a>
+                        </li>
+
+                        <li class="{{ request()->routeIs('account.addresses.index') ? 'active' : '' }}">
+                            <a href="{{ route('account.addresses.index') }}">
+                                <i class="las la-address-book"></i>
+                                {{ trans('storefront::account.pages.my_addresses') }}
                             </a>
                         </li>
 

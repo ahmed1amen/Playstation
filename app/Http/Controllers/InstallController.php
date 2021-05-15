@@ -44,7 +44,7 @@ class InstallController extends Controller
         @set_time_limit(0);
 
         try {
-            $database->setup($request->db);
+         //   $database->setup($request->db);
             $admin->setup($request->admin);
             $store->setup($request->store);
             $app->setup();

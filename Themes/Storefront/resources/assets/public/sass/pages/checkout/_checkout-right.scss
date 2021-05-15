@@ -19,15 +19,18 @@
         }
 
         .form-radio {
-            label {
-                color: $color-black;
-            }
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: 500;
+            color: $color-black;
         }
 
         .helper-text {
             font-size: 13px;
             display: block;
-            margin: -4px 0 20px 28px;
+            margin: -4px 0 0 28px;
             color: $color-gray;
         }
 
@@ -68,10 +71,8 @@
     .checkout-right {
         .coupon-wrap {
             .form-group {
-                .form-input {
-                    input {
-                        width: auto;
-                    }
+                input {
+                    width: auto;
                 }
 
                 .btn-apply-coupon {

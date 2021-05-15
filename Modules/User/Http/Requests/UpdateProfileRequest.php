@@ -2,6 +2,7 @@
 
 namespace Modules\User\Http\Requests;
 
+use Illuminate\Validation\Rule;
 use Modules\Core\Http\Requests\Request;
 
 class UpdateProfileRequest extends Request
@@ -21,9 +22,11 @@ class UpdateProfileRequest extends Request
     public function rules()
     {
         return [
-            'first_name' => 'required',
-            'last_name' => 'required',
-            'password' => 'nullable|confirmed|min:6',
+            'email' => ['required', Rule::unique('users')->ignore($this->email, 'email')],
+            'phone' => ['required'],
+            'first_name' => ['required'],
+            'last_name' => ['required'],
+            'password' => ['nullable', 'confirmed', 'min:6'],
         ];
     }
 

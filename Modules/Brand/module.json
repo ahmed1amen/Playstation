@@ -2,7 +2,7 @@
     "name": "Brand",
     "alias": "brand",
     "description": "The FleetCart Brand Module.",
-    "order": 100,
+    "priority": 100,
     "providers": [
         "Modules\\Brand\\Providers\\BrandServiceProvider"
     ]

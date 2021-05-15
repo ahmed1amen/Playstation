@@ -40,8 +40,7 @@ class Instamojo implements GatewayInterface
                     'buyer_name' => $order->customer_full_name,
                     'email' => $order->customer_email,
                     'phone' => $order->customer_phone,
-                    // 'send_email' => true,
-                    'send_sms' => ! is_null($order->customer_phone),
+                    'send_sms' => true,
                     'redirect_url' => $this->getRedirectUrl($order),
                     'allow_repeated_payments' => false,
                 ]);

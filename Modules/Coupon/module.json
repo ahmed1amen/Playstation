@@ -2,7 +2,7 @@
     "name": "Coupon",
     "alias": "coupon",
     "description": "Coupon management",
-    "order": 100,
+    "priority": 100,
     "providers": [
         "Modules\\Coupon\\Providers\\CouponServiceProvider"
     ]

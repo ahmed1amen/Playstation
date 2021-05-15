@@ -99,6 +99,16 @@
                     </div>
                 </div>
 
+                <div class="form-group {{ $errors->has('admin.phone') ? 'has-error': '' }}">
+                    <label class="control-label col-sm-3" for="admin-phone">Phone <span>*</span></label>
+
+                    <div class="col-sm-9">
+                        <input type="text" name="admin[phone]" value="{{ old('admin.phone') }}" id="admin-phone" class="form-control">
+
+                        {!! $errors->first('admin.phone', '<span class="help-block">:message</span>') !!}
+                    </div>
+                </div>
+
                 <div class="form-group {{ $errors->has('admin.password') ? 'has-error': '' }}">
                     <label class="control-label col-sm-3" for="admin-password">Password <span>*</span></label>
 
@@ -140,6 +150,16 @@
                         <input type="text" name="store[store_email]" value="{{ old('store.store_email') }}" id="store-email" class="form-control">
 
                         {!! $errors->first('store.store_email', '<span class="help-block">:message</span>') !!}
+                    </div>
+                </div>
+
+                <div class="form-group {{ $errors->has('store.store_phone') ? 'has-error': '' }}">
+                    <label class="control-label col-sm-3" for="store-phone">Store Phone <span>*</span></label>
+
+                    <div class="col-sm-9">
+                        <input type="text" name="store[store_phone]" value="{{ old('store.store_phone') }}" id="store-phone" class="form-control">
+
+                        {!! $errors->first('store.store_phone', '<span class="help-block">:message</span>') !!}
                     </div>
                 </div>
 

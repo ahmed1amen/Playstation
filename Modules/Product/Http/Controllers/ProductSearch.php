@@ -59,7 +59,7 @@ trait ProductSearch
 
     private function filteringViaRootCategory()
     {
-        return Category::whereTranslation('name', request('category'))
+        return Category::where('slug', request('category'))
             ->firstOrNew([])
             ->isRoot();
     }

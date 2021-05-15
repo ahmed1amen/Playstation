@@ -3,19 +3,15 @@
         <h4>{{ trans('storefront::account.view_order.billing_address') }}</h4>
 
         <address>
-            {{ $order->billing_full_name }}
-            <br>
-            {{ $order->billing_address_1 }}
-            <br>
+            <span>{{ $order->billing_full_name }}</span>
+            <span>{{ $order->billing_address_1 }}</span>
 
             @if ($order->billing_address_2)
-                {{ $order->billing_address_2 }}
-                <br>
+                <span>{{ $order->billing_address_2 }}</span>
             @endif
 
-            {{ $order->billing_city }}, {{ $order->billing_state_name }} {{ $order->billing_zip }}
-            <br>
-            {{ $order->billing_country_name }}
+            <span>{{ $order->billing_city }}, {{ $order->billing_state_name }} {{ $order->billing_zip }}</span>
+            <span>{{ $order->billing_country_name }}</span>
         </address>
     </div>
 </div>

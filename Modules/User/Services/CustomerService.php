@@ -27,6 +27,7 @@ class CustomerService
     {
         return array_merge($request->billing, [
             'email' => $request->customer_email,
+            'phone' => $request->customer_phone,
             'password' => $request->password,
         ]);
     }

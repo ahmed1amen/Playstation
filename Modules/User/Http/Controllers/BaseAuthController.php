@@ -2,13 +2,13 @@
 
 namespace Modules\User\Http\Controllers;
 
-use Modules\User\Mail\Welcome;
 use Modules\User\Entities\Role;
 use Modules\User\Entities\User;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Mail;
 use Modules\User\Mail\ResetPasswordEmail;
 use Modules\User\Contracts\Authentication;
+use Modules\User\Events\CustomerRegistered;
 use Modules\User\Http\Requests\LoginRequest;
 use Modules\User\Http\Requests\RegisterRequest;
 use Modules\User\Http\Requests\PasswordResetRequest;
@@ -116,15 +116,13 @@ abstract class BaseAuthController extends Controller
             'first_name',
             'last_name',
             'email',
+            'phone',
             'password',
         ]));
 
         $this->assignCustomerRole($user);
 
-        if (setting('welcome_email')) {
-            Mail::to($request->email)
-                ->send(new Welcome($request->first_name));
-        }
+        event(new CustomerRegistered($user));
 
         return redirect($this->loginUrl())
             ->withSuccess(trans('user::messages.users.account_created'));

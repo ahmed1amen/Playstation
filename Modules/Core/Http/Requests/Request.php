@@ -59,23 +59,6 @@ abstract class Request extends FormRequest
      */
     public function messages()
     {
-        return array_merge([
-            '*.required_if' => trans('core::validation.required'),
-            '*.required_unless' => trans('core::validation.required'),
-            '*.required_with' => trans('core::validation.required'),
-            '*.required_with_all' => trans('core::validation.required'),
-            '*.required_without' => trans('core::validation.required'),
-            '*.required_without_all' => trans('core::validation.required'),
-        ], $this->getDefaultMessages());
-    }
-
-    /**
-     * Ger default validations messages for the given rules.
-     *
-     * @return array
-     */
-    protected function getDefaultMessages()
-    {
         $attributesAndRules = $this->parseRules($this->rules());
 
         $messages = [];

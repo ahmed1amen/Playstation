@@ -2,7 +2,7 @@
     "name": "Shipping",
     "alias": "shipping",
     "description": "The FleetCart Shipping Module.",
-    "order": 100,
+    "priority": 100,
     "providers": [
         "Modules\\Shipping\\Providers\\ShippingServiceProvider"
     ]
