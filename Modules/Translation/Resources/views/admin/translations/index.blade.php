@@ -1,8 +1,3 @@
-
-@php
-
-dd($translations )
-@endphp
 @extends('admin::layout')
 
 @section('title', trans('translation::translations.translations'))
