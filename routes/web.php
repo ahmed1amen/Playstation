@@ -9,3 +9,5 @@ Route::get('install/complete', 'InstallController@complete')->name('install.comp
 
 Route::get('license', 'LicenseController@create')->name('license.create');
 Route::post('license', 'LicenseController@store')->name('license.store');
+
+

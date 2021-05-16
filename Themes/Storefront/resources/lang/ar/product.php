@@ -1,0 +1,35 @@
+<?php
+
+return [
+    'left_in_stock' => ':count  المتبقي في المخزون',
+    'in_stock' => 'في المخزن',
+    'out_of_stock' => 'إنتهى من المخزن',
+    'wishlist' => 'قائمة الرغبات',
+    'compare' => 'قارن',
+    'options' => [
+        'choose_an_option' => 'إختر خيار',
+    ],
+    'quantity' => 'كمية',
+    'add_to_cart' => 'أضف إلى السلة',
+    'sku' => 'SKU:',
+    'categories' => 'فئات:',
+    'tags' => 'العلامات:',
+    'share' => 'يشارك:',
+    'facebook' => 'موقع التواصل الاجتماعي الفيسبوك',
+    'twitter' => 'تويتر',
+    'linkedin' => 'ينكدين',
+    'tumblr' => 'نعرفكم',
+    'you_might_also_like' => 'قد يعجبك ايضا',
+    'description' => 'وصف',
+    'specification' => 'تخصيص',
+    'reviews' => 'المراجعات (:count)',
+    'add_a_review' => 'إضافة إلى استعراض',
+    'review_form' => [
+        'your_rating' => 'تقييمك',
+        'name' => 'اسم',
+        'comment' => 'تعليق',
+        'submit' => 'إرسال',
+    ],
+    'be_the_first_one_to_review_this_product' => 'كن أول من يراجع هذا المنتج.',
+    'related_products' => 'منتجات ذات صله',
+];

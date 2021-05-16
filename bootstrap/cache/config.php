@@ -6,7 +6,7 @@
     'cache' => true,
     'env' => 'production',
     'debug' => false,
-    'url' => 'http://fleetcartnew.test',
+    'url' => 'http://fleetcart.test',
     'timezone' => 'Africa/Cairo',
     'locale' => 'en',
     'fallback_locale' => 'en',
@@ -450,14 +450,14 @@
       array (
         'driver' => 'local',
         'root' => '/media/ahmed/f/Laravel-Projects/FleetCart/storage/app/public',
-        'url' => 'http://fleetcartnew.test/storage',
+        'url' => 'http://fleetcart.test/storage',
         'visibility' => 'public',
       ),
       'public_storage' => 
       array (
         'driver' => 'local',
         'root' => '/media/ahmed/f/Laravel-Projects/FleetCart/public/storage',
-        'url' => 'http://fleetcartnew.test/storage',
+        'url' => 'http://fleetcart.test/storage',
         'visibility' => 'public',
       ),
       's3' => 
@@ -1029,13 +1029,13 @@
     array (
       'client_id' => NULL,
       'client_secret' => NULL,
-      'redirect' => 'http://fleetcartnew.test/login/facebook/callback',
+      'redirect' => 'http://fleetcart.test/login/facebook/callback',
     ),
     'google' => 
     array (
       'client_id' => NULL,
       'client_secret' => NULL,
-      'redirect' => 'http://fleetcartnew.test/login/google/callback',
+      'redirect' => 'http://fleetcart.test/login/google/callback',
     ),
   ),
   'session' => 
