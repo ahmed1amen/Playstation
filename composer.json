@@ -12,6 +12,7 @@
         "php": ">=7.3.0",
         "cache/filesystem-adapter": "^1.0",
         "cache/predis-adapter": "^1.0",
+        "darryldecode/cart": "^4.2",
         "doctrine/dbal": "^2.10",
         "fideloper/proxy": "^4.0",
         "jackiedo/dotenv-editor": "^1.0",
