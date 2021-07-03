@@ -3,9 +3,9 @@
   array (
     'name' => 'FleetCart',
     'installed' => true,
-    'cache' => true,
+    'cache' => false,
     'env' => 'production',
-    'debug' => false,
+    'debug' => true,
     'url' => 'http://fleetcart.test',
     'timezone' => 'Africa/Cairo',
     'locale' => 'en',
@@ -152,7 +152,7 @@
   ),
   'cache' => 
   array (
-    'default' => 'file',
+    'default' => 'array',
     'stores' => 
     array (
       'apc' => 
@@ -1060,6 +1060,15 @@
     'http_only' => true,
     'same_site' => NULL,
   ),
+  'shopping_cart' => 
+  array (
+    'format_numbers' => false,
+    'decimals' => 0,
+    'dec_point' => '.',
+    'thousands_sep' => ',',
+    'storage' => NULL,
+    'events' => NULL,
+  ),
   'stats' => 
   array (
     'paths' => 
@@ -1105,8 +1114,8 @@
   array (
     'locales' => 
     array (
-      0 => 'ar_EG',
-      1 => 'en',
+      0 => 'en',
+      1 => 'ar',
     ),
     'locale_separator' => '-',
     'locale' => NULL,
@@ -1127,15 +1136,6 @@
   'debug-server' => 
   array (
     'host' => 'tcp://127.0.0.1:9912',
-  ),
-  'shopping_cart' => 
-  array (
-    'format_numbers' => false,
-    'decimals' => 0,
-    'dec_point' => '.',
-    'thousands_sep' => ',',
-    'storage' => NULL,
-    'events' => NULL,
   ),
   'flare' => 
   array (
@@ -1264,13 +1264,13 @@
   array (
     'supportedLocales' => 
     array (
-      'ar_EG' => 
-      array (
-        'name' => 'Arabic (Egypt)',
-      ),
       'en' => 
       array (
         'name' => 'English',
+      ),
+      'ar' => 
+      array (
+        'name' => 'Arabic',
       ),
     ),
     'useAcceptLanguageHeader' => true,
