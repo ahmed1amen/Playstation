@@ -1,7 +1,7 @@
 <aside class="main-sidebar">
     <header class="main-header clearfix">
         <a class="logo" href="{{ route('admin.dashboard.index') }}">
-            <span class="logo-lg">ShrbiaStore</span>
+            <span class="logo-lg">ShrabiaStore</span>
         </a>
 
         <a href="javascript:void(0);" class="sidebar-toggle" data-toggle="offcanvas" role="button">

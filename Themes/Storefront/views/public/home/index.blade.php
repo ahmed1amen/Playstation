@@ -14,6 +14,9 @@
     @endif
 
     @if (setting('storefront_slider_games_enabled'))
+  <div class="row text-center justify-content-center mt-5">
+      <h1>asdasdasd</h1>
+  </div>
         <digital-games-slider :data="{{ json_encode($digitalGamesSlider) }}"></digital-games-slider>
     @endif
 
