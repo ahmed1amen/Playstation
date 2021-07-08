@@ -17,40 +17,38 @@
         <![endif]-->
 
         <div class="container">
-            <div class="invoice-wrapper clearfix">
+            <div class="invoice-wrapper">
                 <div class="row">
-                    <div class="invoice-header clearfix">
+                    <div class="invoice-header">
                         <div class="col-md-3">
-                            <div class="store-name">
+                            <img class="img-fluid"  width="200" height="75" src="{{$logo}}" alt="">
 
-                                <img class="img-fluid"  width="450" height="150" src="{{$logo}}" alt="">
-                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            {!! QrCode::size(100)->generate('https://shrabiastore.com/'); !!}
+
                         </div>
 
-                        <div class="col-md-9 clearfix">
-                            <div class="invoice-header-right pull-right">
 
-                                {!! QrCode::size(150)->generate('https://shrabiastore.com/'); !!}
-                                <div class="invoice-info clearfix">
-                                    <div class="invoice-id">
-                                        <label for="invoice-id">{{ trans('order::print.invoice_id') }}:</label>
-                                        <span>#{{ $order->id }}</span>
-                                    </div>
-
-                                    <div class="invoice-date">
-                                        <label for="invoice-date">{{ trans('order::print.date') }}:</label>
-                                        <span>{{ $order->created_at->format('Y / m / d') }}</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
-                <div class="invoice-body clearfix">
+                <div class="invoice-body">
+                    <div class="invoice-info">
+                        <div class="invoice-id">
+                            <label for="invoice-id">{{ trans('order::print.invoice_id') }}:</label>
+                            <span>#{{ $order->id }}</span>
+                        </div>
+
+                        <div class="invoice-date">
+                            <label for="invoice-date">{{ trans('order::print.date') }}:</label>
+                            <span>{{ $order->created_at->format('Y / m / d') }}</span>
+                        </div>
+                    </div>
+
                     <div class="invoice-details-wrapper">
                         <div class="row">
-                            <div class="col-md-6 col-sm-6">
+                            <div class="col-md-3 col-sm-3">
                                 <div class="invoice-details">
                                     <h5>{{ trans('order::print.order_details') }}</h5>
 
@@ -58,34 +56,35 @@
                                         <table class="table">
                                             <tbody>
                                                 <tr>
-                                                    <td>{{ trans('order::print.email') }}:</td>
-                                                    <td>{{ $order->customer_email }}</td>
+                                                                            <td style="font-weight: 800">{{ trans('order::print.email') }}:</td>
+                                                                            <td style="font-weight: 800">{{ $order->customer_email }}</td>
                                                 </tr>
 
                                                 <tr>
-                                                    <td>{{ trans('order::print.phone') }}:</td>
-                                                    <td>{{ $order->customer_phone }}</td>
+                                                                            <td style="font-weight: 800">{{ trans('order::print.phone') }}:</td>
+                                                                            <td style="font-weight: 800">{{ $order->customer_phone }}</td>
                                                 </tr>
 
                                                 @if ($order->shipping_method)
                                                     <tr>
-                                                        <td>{{ trans('order::print.shipping_method') }}:</td>
-                                                        <td>{{ $order->shipping_method }}</td>
+                                                                                <td style="font-weight: 800">{{ trans('order::print.shipping_method') }}:</td>
+                                                                                <td style="font-weight: 800">{{ $order->shipping_method }}</td>
                                                     </tr>
                                                 @endif
 
                                                 <tr>
-                                                    <td>{{ trans('order::print.payment_method') }}:</td>
-                                                    <td>{{ $order->payment_method }}</td>
+                                                                            <td style="font-weight: 800">{{ trans('order::print.payment_method') }}:</td>
+                                                                            <td style="font-weight: 800">{{ $order->payment_method }}</td>
                                                 </tr>
                                             </tbody>
                                         </table>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="row">
+                            <div class="col-md-6 col-sm-6">
+
+
                             <div class="col-md-6 col-sm-6">
                                 <div class="invoice-address">
                                     <h5>{{ trans('order::print.shipping_address') }}</h5>
@@ -109,13 +108,15 @@
                                     <span>{{ $order->billing_country_name }}</span>
                                 </div>
                             </div>
+                            </div>
                         </div>
+
                     </div>
 
                     <div class="row">
                         <div class="cart-list">
-                            <div class="table-responsive">
-                                <table class="table">
+                            <div class="table-responsive table-bordered">
+                                <table class="table table-bordered">
                                     <thead>
                                         <tr>
                                             <th>{{ trans('order::print.product') }}</th>
@@ -127,7 +128,7 @@
                                     <tbody>
                                         @foreach ($order->products as $product)
                                             <tr>
-                                                <td>
+                                                <td style="font-weight: 800">
                                                     <span>{{ $product->name }}</span>
 
                                                     @if ($product->hasAnyOption())
@@ -149,16 +150,16 @@
                                                     @endif
                                                 </td>
 
-                                                <td>
+                                                                        <td style="font-weight: 800">
                                                     <label class="visible-xs">{{ trans('order::print.unit_price') }}:</label>
                                                     <span>{{ $product->unit_price->convert($order->currency, $order->currency_rate)->convert($order->currency, $order->currency_rate)->format($order->currency) }}</span>
                                                 </td>
 
-                                                <td>
-                                                    <label class="visible-xs">{{ trans('order::print.quantity') }}:</label>
+                                                                        <td style="font-weight: 800;text-align: center; " >
+                                                    <label class="visible-xs ">{{ trans('order::print.quantity') }}:</label>
                                                     <span>{{ $product->qty }}</span>
                                                 </td>
-                                                <td>
+                                                                        <td style="font-weight: 800">
                                                     <label class="visible-xs">{{ trans('order::print.line_total') }}:</label>
                                                     <span>{{ $product->line_total->convert($order->currency, $order->currency_rate)->format($order->currency) }}</span>
                                                 </td>
@@ -169,38 +170,38 @@
                             </div>
                         </div>
 
-                        <div class="total pull-right">
+                        <div class="total">
                             <table class="table">
                                 <tbody>
                                     <tr>
-                                        <td>{{ trans('order::print.subtotal') }}</td>
-                                        <td>{{ $order->sub_total->convert($order->currency, $order->currency_rate)->format($order->currency) }}</td>
+                                                                <td style="font-weight: 800;padding-right: 10px;">{{ trans('order::print.subtotal') }}</td>
+                                                                <td style="font-weight: 800">{{ $order->sub_total->convert($order->currency, $order->currency_rate)->format($order->currency) }}</td>
                                     </tr>
 
                                     @if ($order->hasShippingMethod())
                                         <tr>
-                                            <td>{{ $order->shipping_method }}</td>
-                                            <td>{{ $order->shipping_cost->convert($order->currency, $order->currency_rate)->format($order->currency) }}</td>
+                                                                    <td style="font-weight: 800">{{ $order->shipping_method }}</td>
+                                                                    <td style="font-weight: 800">{{ $order->shipping_cost->convert($order->currency, $order->currency_rate)->format($order->currency) }}</td>
                                         </tr>
                                     @endif
 
                                     @if ($order->hasCoupon())
                                         <tr>
-                                            <td>{{ trans('order::orders.coupon') }} (<span class="coupon-code">{{ $order->coupon->code }}</span>)</td>
-                                            <td>&#8211;{{ $order->discount->convert($order->currency, $order->currency_rate)->format($order->currency) }}</td>
+                                                                    <td style="font-weight: 800">{{ trans('order::orders.coupon') }} (<span class="coupon-code">{{ $order->coupon->code }}</span>)</td>
+                                                                    <td style="font-weight: 800">&#8211;{{ $order->discount->convert($order->currency, $order->currency_rate)->format($order->currency) }}</td>
                                         </tr>
                                     @endif
 
                                     @foreach ($order->taxes as $tax)
                                         <tr>
-                                            <td>{{ $tax->name }}</td>
+                                                                    <td style="font-weight: 800">{{ $tax->name }}</td>
                                             <td class="text-right">{{ $tax->order_tax->amount->convert($order->currency, $order->currency_rate)->format($order->currency) }}</td>
                                         </tr>
                                     @endforeach
 
                                     <tr>
-                                        <td>{{ trans('order::print.total') }}</td>
-                                        <td>{{ $order->total->convert($order->currency, $order->currency_rate)->format($order->currency) }}</td>
+                                                                <td style="font-weight: 800">{{ trans('order::print.total') }}</td>
+                                                                <td style="font-weight: 800">{{ $order->total->convert($order->currency, $order->currency_rate)->format($order->currency) }}</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -210,8 +211,8 @@
             </div>
         </div>
 
-        <script>
-            window.print();
-        </script>
+{{--        <script>--}}
+{{--            window.print();--}}
+{{--        </script>--}}
     </body>
 </html>
