@@ -182,12 +182,12 @@ th {
             padding: 8px;
             line-height: 1.42857143;
             vertical-align: top;
-            border-top: 1px solid #dddddd;
+            border-top: 1px solid #000000;
         }
 
         thead > tr > th {
             vertical-align: bottom;
-            border-bottom: 2px solid #dddddd;
+            border-bottom: 2px solid #000000;
         }
 
         caption + thead > tr:first-child > th,
@@ -200,7 +200,7 @@ th {
         }
 
         tbody + tbody {
-            border-top: 2px solid #dddddd;
+            border-top: 2px solid #000000;
         }
     }
 
@@ -343,7 +343,6 @@ table {
         span {
             font-weight: 400;
             font-size: 15px;
-            float: right;
             color: #000000;
         }
     }
@@ -413,7 +412,7 @@ table {
 
     .table {
         margin: 0;
-        border-bottom: 1px solid #e9e9e9;
+        border-bottom: 1px solid #000000;
     }
 
     thead tr th {
@@ -422,7 +421,7 @@ table {
         color: #000000;
         padding-left: 0;
         padding-right: 0;
-        border-bottom: 1px solid #e9e9e9;
+        border-bottom: 1px solid #000000;
     }
 
     .table-responsive {
@@ -430,7 +429,7 @@ table {
 
         td {
 
-            border-top: 1px solid #f1f1f1;
+            border-top: 1px solid #000000;
             color: #000000;
             padding: 16px 0 18px;
             vertical-align: middle;
@@ -452,7 +451,7 @@ table {
             span {
                 display: inline-block;
                 margin-left: 2px;
-                color: #9a9a9a;
+                color: #000000;
             }
         }
     }
@@ -473,13 +472,13 @@ table {
 
 .invoice-body .total {
     width: 300px;
-    margin: 20px 15px 0 0;
+    margin: 20px 15px 0 11px;
 
     .table {
         margin-bottom: 0;
 
         tr:last-child {
-            border-top: 1px solid #e9e9e9;
+            border-top: 1px solid #000000;
         }
 
         td {
@@ -546,7 +545,7 @@ table {
         }
 
         .table {
-            border-top: 1px solid #e9e9e9;
+            border-top: 1px solid #000000;
         }
 
         thead {
@@ -554,7 +553,7 @@ table {
         }
 
         tr {
-            border-bottom: 1px solid #f1f1f1;
+            border-bottom: 1px solid #000000;
 
             &:last-child {
                 border-bottom: none;
@@ -619,8 +618,9 @@ table {
 }
 
 @media print {
+
     .invoice-wrapper .invoice-header {
-        margin-top: 30px;
+        margin-top: 10px;
     }
 
     .invoice-header {
@@ -669,7 +669,7 @@ table {
     }
 
     .invoice-details-wrapper .col-md-6 {
-        width: 50%;
+
         float: left;
     }
 
