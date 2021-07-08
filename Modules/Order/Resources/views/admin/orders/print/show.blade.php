@@ -8,6 +8,7 @@
 
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
         <link href="{{ v(Module::asset('order:admin/css/print.css')) }}" rel="stylesheet">
+
     </head>
 
     <body class="{{ is_rtl() ? 'rtl' : 'ltr' }}">
@@ -21,14 +22,15 @@
                     <div class="invoice-header clearfix">
                         <div class="col-md-3">
                             <div class="store-name">
-                                <h1>{{ setting('store_name') }}</h1>
+
+                                <img class="img-fluid"  width="450" height="150" src="{{$logo}}" alt="">
                             </div>
                         </div>
 
                         <div class="col-md-9 clearfix">
                             <div class="invoice-header-right pull-right">
-                                <span class="title">{{ trans('order::print.invoice') }}</span>
 
+                                {!! QrCode::size(150)->generate('https://shrabiastore.com/'); !!}
                                 <div class="invoice-info clearfix">
                                     <div class="invoice-id">
                                         <label for="invoice-id">{{ trans('order::print.invoice_id') }}:</label>

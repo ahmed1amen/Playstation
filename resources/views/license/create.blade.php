@@ -6,7 +6,7 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
-    <title>Activate ShrbiaStore</title>
+    <title>Activate ShrabiaStore</title>
 
     <style>
         html {
@@ -373,7 +373,7 @@
 
             <div class="form-inner clearfix">
                 <h3 class="text-center">Activation</h3>
-                <p class="text-center">Enter your purchase code to activate ShrbiaStore</p>
+                <p class="text-center">Enter your purchase code to activate ShrabiaStore</p>
 
                 <form method="POST" action="{{ route('license.store') }}">
                     @csrf

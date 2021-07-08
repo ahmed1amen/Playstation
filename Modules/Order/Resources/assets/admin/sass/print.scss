@@ -14,7 +14,7 @@ body {
 h1, h2, h3, h4, h5, h6, ul, li, p {
     margin: 0;
     padding: 0;
-    color: #444444;
+    color: #000000;
 }
 
 h1 {
@@ -329,7 +329,7 @@ table {
         font-size: 60px;
         font-weight: 600;
         display: block;
-        color: #444444;
+        color: #000000;
         margin-top: 6px;
     }
 
@@ -337,14 +337,14 @@ table {
         margin-left: 4px;
 
         label {
-            color: #444444;
+            color: #000000;
         }
 
         span {
             font-weight: 400;
             font-size: 15px;
             float: right;
-            color: #444444;
+            color: #000000;
         }
     }
 }
@@ -369,7 +369,7 @@ table {
 .invoice-details h5,
 .invoice-address h5 {
     font-weight: 600;
-    color: #444444;
+    color: #000000;
     margin-bottom: 8px;
 }
 
@@ -384,13 +384,13 @@ table {
 
         td {
             font-size: 15px;
-            color: #444444;
+            color: #000000;
             border: none;
             padding: 4px 8px;
 
             &:first-child {
                 font-weight: 600;
-                color: #555555;
+                color: #000000;
             }
         }
     }
@@ -403,7 +403,7 @@ table {
 .invoice-address > span {
     font-size: 15px;
     display: block;
-    color: #444444;
+    color: #000000;
     padding: 4px 0;
 }
 
@@ -419,7 +419,7 @@ table {
     thead tr th {
         font-weight: 600;
         font-size: 16px;
-        color: #444444;
+        color: #000000;
         padding-left: 0;
         padding-right: 0;
         border-bottom: 1px solid #e9e9e9;
@@ -429,8 +429,9 @@ table {
         padding: 0 15px;
 
         td {
+
             border-top: 1px solid #f1f1f1;
-            color: #444444;
+            color: #000000;
             padding: 16px 0 18px;
             vertical-align: middle;
 
@@ -484,7 +485,7 @@ table {
         td {
             font-size: 16px;
             border: none;
-            color: #444444;
+            color: #000000;
             padding: 6px 0;
 
             &:last-child {
@@ -680,7 +681,7 @@ table {
 
     .invoice-details .table td:last-child,
     .invoice-address > span {
-        color: #444444;
+        color: #000000;
     }
 
     .invoice-body .cart-list {

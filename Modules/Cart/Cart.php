@@ -3,6 +3,7 @@
 namespace Modules\Cart;
 
 use JsonSerializable;
+use Modules\Shipping\Method;
 use Modules\Support\Money;
 use Modules\Tax\Entities\TaxRate;
 use Illuminate\Support\Collection;
@@ -181,7 +182,13 @@ class Cart extends DarryldecodeCart implements JsonSerializable
 
     public function addShippingMethod($shippingMethod)
     {
+
+
         $this->removeShippingMethod();
+
+        if (!isset($shippingMethod->label)) {
+            $shippingMethod=  new Method('free_shipping', setting('free_shipping_label'), 0);
+        }
 
         $this->condition(new CartCondition([
             'name' => $shippingMethod->label,

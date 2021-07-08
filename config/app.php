@@ -10,7 +10,7 @@ return [
     | framework needs to place the application's name in a notification or
     | any other location as required by the application or its packages.
     */
-    'name' => 'FleetCart',
+    'name' => 'Shrabia Store',
 
     'installed' => env('APP_INSTALLED', false),
 
@@ -181,6 +181,9 @@ return [
         FleetCart\Providers\RouteServiceProvider::class,
         Nwidart\Modules\LaravelModulesServiceProvider::class,
         Mehedi\Stylist\StylistServiceProvider::class,
+        SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class
+
+
     ],
 
     /*
@@ -227,5 +230,8 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Notification' => Illuminate\Support\Facades\Notification::class,
         'Module' => \Nwidart\Modules\Facades\Module::class,
+        'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class
+
+
     ],
 ];
