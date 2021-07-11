@@ -142,29 +142,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-9">
-                    <div class="form-group">
-                        <label for="billing-zip">
-                            {{ trans('checkout::attributes.billing.zip') }}<span>*</span>
-                        </label>
 
-                        <input
-                            type="text"
-                            name="billing[zip]"
-                            :value="form.billing.zip"
-                            id="billing-zip"
-                            class="form-control"
-                            @change="changeBillingZip($event.target.value)"
-                        >
-
-                        <span
-                            class="error-message"
-                            v-if="errors.has('billing.zip')"
-                            v-text="errors.get('billing.zip')"
-                        >
-                        </span>
-                    </div>
-                </div>
 
                 <div class="col-md-9">
                     <div class="form-group">
@@ -196,47 +174,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-9">
-                    <div class="form-group">
-                        <label for="billing-state">
-                            {{ trans('checkout::attributes.billing.state') }}<span>*</span>
-                        </label>
 
-                        <input
-                            type="text"
-                            name="billing[state]"
-                            :value="form.billing.state"
-                            id="billing-state"
-                            class="form-control"
-                            v-if="! hasBillingStates"
-                            @change="changeBillingState($event.target.value)"
-                        >
-
-                        <select
-                            name="billing[state]"
-                            v-model="form.billing.state"
-                            id="billing-state"
-                            class="form-control arrow-black"
-                            v-else
-                        >
-                            <option value="">{{ trans('storefront::checkout.please_select') }}</option>
-
-                            <option
-                                v-for="(name, code) in states.billing"
-                                :value="code"
-                                v-text="name"
-                            >
-                            </option>
-                        </select>
-
-                        <span
-                            class="error-message"
-                            v-if="errors.has('billing.state')"
-                            v-text="errors.get('billing.state')"
-                        >
-                        </span>
-                    </div>
-                </div>
             </div>
         </div>
     </div>

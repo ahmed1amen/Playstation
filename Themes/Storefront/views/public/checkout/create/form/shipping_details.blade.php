@@ -33,7 +33,7 @@
                                 <span v-text="address.full_name"></span>
                                 <span v-text="address.address_1"></span>
                                 <span v-if="address.address_2" v-text="address.address_2"></span>
-                                <span>@{{ address.city }}, @{{ address.state_name }} @{{ address.zip }}</span>
+                                <span>@{{ address.city }}, </span>
                                 <span v-text="address.country_name"></span>
                             </label>
                         </div>
@@ -160,29 +160,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-9">
-                                <div class="form-group">
-                                    <label for="shipping-zip">
-                                        {{ trans('checkout::attributes.shipping.zip') }}<span>*</span>
-                                    </label>
 
-                                    <input
-                                        type="text"
-                                        name="shipping[zip]"
-                                        :value="form.shipping.zip"
-                                        id="shipping-zip"
-                                        class="form-control"
-                                        @change="changeShippingZip($event.target.value)"
-                                    >
-
-                                    <span
-                                        class="error-message"
-                                        v-if="errors.has('shipping.zip')"
-                                        v-text="errors.get('shipping.zip')"
-                                    >
-                                    </span>
-                                </div>
-                            </div>
 
                             <div class="col-md-9">
                                 <div class="form-group">
@@ -214,48 +192,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-9">
-                                <div class="form-group">
-                                    <label for="shipping-state">
-                                        {{ trans('checkout::attributes.shipping.state') }}<span>*</span>
-                                    </label>
 
-                                    <input
-                                        type="text"
-                                        name="shipping[state]"
-                                        :value="form.shipping.state"
-                                        id="shipping-state"
-                                        class="form-control"
-                                        v-if="! hasShippingStates"
-                                        @change="changeShippingState($event.target.value)"
-                                    >
-
-                                    <select
-                                        name="shipping[state]"
-                                        v-model="form.shipping.state"
-                                        id="shipping-state"
-                                        class="form-control arrow-black"
-                                        v-else
-                                        v-cloak
-                                    >
-                                        <option value="">{{ trans('storefront::checkout.please_select') }}</option>
-
-                                        <option
-                                            v-for="(name, code) in states.shipping"
-                                            :value="code"
-                                            v-text="name"
-                                        >
-                                        </option>
-                                    </select>
-
-                                    <span
-                                        class="error-message"
-                                        v-if="errors.has('shipping.state')"
-                                        v-text="errors.get('shipping.state')"
-                                    >
-                                    </span>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>

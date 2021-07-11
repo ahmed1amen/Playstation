@@ -12,6 +12,13 @@
                 'name' => 'storefront_slider_banner_2',
                 'banner' => $banners['banner_2'],
             ])
+
+
+            @include('admin.storefront.tabs.partials.single_banner', [
+                'label' => trans('storefront::storefront.form.banner_3'),
+                'name' => 'storefront_slider_banner_3',
+                'banner' => $banners['banner_3'],
+            ])
         </div>
     </div>
 </div>
