@@ -184,28 +184,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-md-9">
-                                            <div class="form-group">
-                                                <label for="zip">
-                                                    {{ trans('storefront::account.addresses.zip') }}<span>*</span>
-                                                </label>
 
-                                                <input
-                                                    v-model="form.zip"
-                                                    name="zip"
-                                                    type="text"
-                                                    id="zip"
-                                                    class="form-control"
-                                                >
-
-                                                <span
-                                                    class="error-message"
-                                                    v-if="errors.has('zip')"
-                                                    v-text="errors.get('zip')"
-                                                >
-                                                </span>
-                                            </div>
-                                        </div>
 
                                         <div class="col-md-9">
                                             <div class="form-group">
@@ -237,48 +216,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-md-9">
-                                            <div class="form-group">
-                                                <label for="state">
-                                                    {{ trans('storefront::account.addresses.state') }}<span>*</span>
-                                                </label>
 
-                                                <input
-                                                    v-model="form.state"
-                                                    name="state"
-                                                    type="text"
-                                                    id="state"
-                                                    class="form-control"
-                                                    v-if="hasNoStates"
-                                                >
-
-                                                <select
-                                                    v-model="form.state"
-                                                    name="state"
-                                                    id="state"
-                                                    class="form-control arrow-black"
-                                                    v-else
-                                                >
-                                                    <option value="">
-                                                        {{ trans('storefront::account.addresses.please_select') }}
-                                                    </option>
-
-                                                    <option
-                                                        v-for="(name, code) in states"
-                                                        :value="code"
-                                                        v-text="name"
-                                                    >
-                                                    </option>
-                                                </select>
-
-                                                <span
-                                                    class="error-message"
-                                                    v-if="errors.has('state')"
-                                                    v-text="errors.get('state')"
-                                                >
-                                                </span>
-                                            </div>
-                                        </div>
 
                                         <div class="col-md-18">
                                             <button

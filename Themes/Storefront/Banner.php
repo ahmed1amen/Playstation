@@ -28,6 +28,7 @@ class Banner
         return [
             'banner_1' => self::findByName('storefront_slider_banner_1'),
             'banner_2' => self::findByName('storefront_slider_banner_2'),
+            'banner_3' => self::findByName('storefront_slider_banner_3'),
         ];
     }
 

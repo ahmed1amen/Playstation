@@ -64,10 +64,10 @@
 37 silly hasDependencyInstalled admin-module datatables.net
 38 silly dependencyIsSatisfied [
 38 silly dependencyIsSatisfied   'datatables.net',
-38 silly dependencyIsSatisfied   '^1.10.15',
+38 silly dependencyIsSatisfied   '^1.10.22',
 38 silly dependencyIsSatisfied   '/media/ahmed/f/Laravel-Projects/FleetCart/Modules/Admin/node_modules'
 38 silly dependencyIsSatisfied ]
-39 verbose dependencyIsSatisfied datatables.net true
+39 verbose dependencyIsSatisfied datatables.net false
 40 silly hasDependencyInstalled admin-module datatables.net-bs
 41 silly dependencyIsSatisfied [
 41 silly dependencyIsSatisfied   'datatables.net-bs',
@@ -349,8 +349,8 @@
 128 silly leaf dependencies       "isSatisfied": true
 128 silly leaf dependencies     },
 128 silly leaf dependencies     {
-128 silly leaf dependencies       "dependency": "datatables.net@^1.10.15",
-128 silly leaf dependencies       "isSatisfied": true
+128 silly leaf dependencies       "dependency": "datatables.net@^1.10.22",
+128 silly leaf dependencies       "isSatisfied": false
 128 silly leaf dependencies     },
 128 silly leaf dependencies     {
 128 silly leaf dependencies       "dependency": "datatables.net-bs@^1.10.15",
@@ -450,7 +450,7 @@
 134 silly installInDir Admin [
 134 silly installInDir   'bootstrap@^3.3.7',
 134 silly installInDir   'chart.js@^2.7.3',
-134 silly installInDir   'datatables.net@^1.10.15',
+134 silly installInDir   'datatables.net@^1.10.22',
 134 silly installInDir   'datatables.net-bs@^1.10.15',
 134 silly installInDir   'flatpickr@^3.0.6',
 134 silly installInDir   'font-awesome@^4.7.0',
@@ -492,7 +492,7 @@
 138 silly installInDir   dependencies: {
 138 silly installInDir     bootstrap: '^3.3.7',
 138 silly installInDir     'chart.js': '^2.7.3',
-138 silly installInDir     'datatables.net': '^1.10.15',
+138 silly installInDir     'datatables.net': '^1.10.22',
 138 silly installInDir     'datatables.net-bs': '^1.10.15',
 138 silly installInDir     flatpickr: '^3.0.6',
 138 silly installInDir     'font-awesome': '^4.7.0',

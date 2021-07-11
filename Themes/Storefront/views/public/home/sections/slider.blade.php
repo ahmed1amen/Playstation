@@ -50,8 +50,12 @@
                             </div>
                         @endforeach
                     </div>
+                    <a href="{{ $sliderBanners['banner_3']->call_to_action_url }}"
+                       class="banner m-t-30 my-3"
+                       target="{{ $sliderBanners['banner_3']->open_in_new_window ? '_blank' : '_self' }}"    >
+                        <img src="{{ $sliderBanners['banner_3']->image->path }}" alt="banner">
+                    </a>
                 </div>
-
                 @include('public.home.sections.slider_banners')
             </div>
         </div>

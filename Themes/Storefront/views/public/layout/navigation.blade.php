@@ -4,7 +4,7 @@
             @include('public.layout.navigation.category_menu')
             @include('public.layout.navigation.primary_menu')
 
-            <span class="navigation-text">
+            <span class="navigation-text mx-auto">
                 {{ setting('storefront_navbar_text') }}
             </span>
         </div>
